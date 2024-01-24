@@ -9,6 +9,8 @@ import javax.swing.text.MaskFormatter;
 import org.springframework.format.annotation.NumberFormat;
 import org.springframework.format.annotation.NumberFormat.Style;
 
+import com.objetivo.utils.FormataTelefone;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -85,7 +87,7 @@ public class Pessoa {
 	}
 
 	public String getTelefone() {
-		return telefone;
+		return FormataTelefone.format(telefone);
 	}
 	public void setTelefone(String telefone) {
 		this.telefone = telefone;

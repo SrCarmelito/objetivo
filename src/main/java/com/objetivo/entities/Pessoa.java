@@ -4,60 +4,67 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.swing.text.MaskFormatter;
-
-import org.springframework.format.annotation.NumberFormat;
-import org.springframework.format.annotation.NumberFormat.Style;
+import org.hibernate.annotations.Formula;
+import org.hibernate.validator.constraints.br.CPF;
 
 import com.objetivo.utils.FormataTelefone;
 
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Past;
 
-@Entity
+@Entity(name = "pessoa")
 @Table(schema = "elo", name = "pessoa")
 public class Pessoa {
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Id	
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_pessoa")
+	@SequenceGenerator(name = "seq_pessoa", schema = "elo", sequenceName = "s_pessoa", allocationSize=1)
 	public Integer id;
-	
-	@NotBlank(message = "Não é permitido nome vazio")
+		
+	@NotBlank(message = "É Necessário informar o Nome!")
+	@Column(name = "nome")
 	public String nome;
 	
-	@NotNull(message = "Não é permitido Data de Nascimento Vazia")
-	public LocalDate datanascimento;
+	@NotNull(message = "Não é permitido Data de Nascimento Vazia!")
+	@Past(message = "Não é permitido Data de Nascimento no futuro!")
+	@Column(name = "datanascimento")
+	public LocalDate dataNascimento;
 	
-	@NotBlank
-	public String cnpj_cpf;
+	@NotBlank(message = "É necessário informar o CPF")
+	@CPF(message = "CPF Inválido! Verifique!")
+	@Column(name = "cpf", unique = true, nullable = false)
+	public String cpf;
 	
-	@NotBlank
+	@NotBlank(message = "É Necessário Informar o Telefone!")
+	@Column(name = "telefone", length = 11)
 	public String telefone;
 	
-	@NotBlank
-	public String idade;
+	@Formula("(select (current_date - dataNascimento) / 365)")
+	public Integer idade;
 	
-	@OneToMany
-	@JoinColumn(name = "pessoa_id", referencedColumnName = "id")
+	@OneToMany(cascade = {CascadeType.ALL}, orphanRemoval = true, mappedBy = "pessoa")
 	public List<Endereco> enderecos = new ArrayList<Endereco>();
 		
 	public Pessoa() {
 		
 	}
 		
-	public Pessoa(Integer id, String nome, LocalDate datanascimento, String cnpj_cpf, String telefone, String idade) {
+	public Pessoa(Integer id, String nome, LocalDate dataNascimento, String cpf, String telefone, Integer idade) {
 		super();
 		this.id = id;
 		this.nome = nome;
-		this.datanascimento = datanascimento;
-		this.cnpj_cpf = cnpj_cpf;
+		this.dataNascimento = dataNascimento;
+		this.cpf = cpf;
 		this.telefone = telefone;
 		this.idade = idade;
 	}
@@ -73,30 +80,32 @@ public class Pessoa {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public LocalDate getDatanascimento() {
-		return datanascimento;
+	public LocalDate getdataNascimento() {
+		return dataNascimento;
 	}
-	public void setDatanascimento(LocalDate datanascimento) {
-		this.datanascimento = datanascimento;
+	public void setdataNascimento(LocalDate dataNascimento) {
+		this.dataNascimento = dataNascimento;
 	}
-	public String getCnpj_cpf() {
-		return cnpj_cpf;
+	public String getCpf() {
+		return cpf;
 	}
-	public void setCnpj_cpf(String cnpj_cpf) {
-		this.cnpj_cpf = cnpj_cpf;
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
 	}
 
 	public String getTelefone() {
-		return FormataTelefone.format(telefone);
+	 	return FormataTelefone.format(telefone);
 	}
 	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
-	public String getIdade() {
-		return idade;
+
+	public List<Endereco> getEnderecos() {
+		return enderecos;
 	}
-	public void setIdade(String idade) {
-		this.idade = idade;
+
+	public void setEnderecos(List<Endereco> enderecos) {
+		this.enderecos = enderecos;
 	}
-		
+
 }

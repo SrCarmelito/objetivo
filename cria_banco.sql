@@ -7,8 +7,7 @@ CREATE TABLE elo.pessoa (
 	nome varchar(150) NOT NULL,
 	datanascimento date NOT NULL,
 	cnpj_cpf varchar(20) NOT NULL,
-	telefone varchar(11) NOT NULL,
-	idade varchar(20) NOT NULL
+	telefone varchar(11) NOT NULL
 );
 
 create table elo.endereco  (

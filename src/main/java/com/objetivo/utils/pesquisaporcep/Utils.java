@@ -9,6 +9,7 @@ public class Utils {
 	        while ((resposta = buffereReader.readLine()) != null) {
 	            jsonEmString += resposta;
 	        }
+	        
 	        return jsonEmString;
 	    }
 }

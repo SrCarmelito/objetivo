@@ -1,6 +1,6 @@
 package com.objetivo.utils.pesquisaporcep;
 
-public class Endereco {
+public class EnderecoJson {
 
 	private String cep;
 	private String logradouro;
@@ -39,11 +39,5 @@ public class Endereco {
 	public void setUf(String uf) {
 		this.uf = uf;
 	}
-	
-	@Override
-	public String toString() {
-		return "Endereco [cep=" + cep + ", logradouro=" + logradouro + ", bairro="
-				+ bairro + ", localidade=" + localidade + ", uf=" + uf + "]";
-	}
-			
+				
 }

@@ -1,0 +1,195 @@
+body {
+    background: rgb(179, 198, 223);
+}
+
+#div-back{
+    display: flex;
+    width: 15%;
+    height: 250%;
+    background-color: blue;
+    border-radius: 5px;
+}
+
+#pessoa {
+    max-width: 100%;
+    margin-bottom: 0;
+    align-items: center ;
+}
+
+#back {
+    width: 100%;
+    height: 60%;
+    font-size: 15px;
+}
+
+#texto-div-enderec {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    background-color: rgb(41, 83, 138);
+}
+
+#btn-edit-end{
+    cursor: pointer;
+    width: 15px;
+}
+
+#btn-apaga-end{
+  cursor: pointer;
+  width: 8px;
+}
+
+#btn-apaga-end:hover{
+  background-color: red;
+  height: 25px;
+}
+
+#ico-edit-end{
+  width: 2%;
+}
+
+#submit{
+    max-width: 80%;
+    margin-top: 0.8%;
+    height: 35px;
+    width: 20%;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: limegreen; 
+  }
+
+
+  input {
+    margin-left: 3px;
+    margin-right: 10px;
+    border: 2px solid rgb(48, 41, 41);
+    border-radius: 5px;
+    height: 3ch;
+    width: 35cap;
+  }
+
+
+
+
+#icon-new{
+    color: rgb(21, 139, 21);
+  }
+
+#new-enderec{
+    background-color: rgb(41, 83, 138);
+    border: none;
+    cursor: pointer;
+}
+
+#grava-endereco{
+    cursor: pointer;
+    background-color:  rgb(21, 139, 21);
+    height: 5ch;
+    border-radius: 5PX;
+}
+
+#edit-endereco{
+    width: 90%;
+    margin: 4px;
+    border-radius: 8px;
+    border-style: ridge;
+    border-width: 8px;
+    border-color: rgb(13, 68, 50);
+}
+
+#iCepNew{
+    width: 5%;
+  }
+  
+  #iUfNew{
+    width: 3%;
+  }
+  
+  #iNumeroNew{
+    width: 3%;
+  }
+  
+  #iLogradouroNew{
+    width: 20%;
+  }
+
+#iCidadeNew{
+    width: 12%;
+}
+
+#iBairroNew{
+  width: 10%;
+}
+
+
+#iCep{
+    width: 5%;
+  }
+  
+  #iUf{
+    width: 3%;
+  }
+  
+  #iNumero{
+    width: 3%;
+  }
+  
+  #iLogradouro{
+    width: 20%;
+  }
+
+#iCidade{
+    width: 12%;
+}
+
+#iId{
+    width: 2.5%;
+}
+
+#iBairro{
+  width: 10%;
+}
+
+
+#id{
+  width: 2%;
+  background-color: bisque;
+}
+
+#birth{
+  width: 7%;
+}
+
+#telefone{
+  width: 6.8%;
+}
+
+#cpf{
+  width: 6.5%;
+}
+
+#idade{
+  width: 2%;
+  
+}
+
+/* input:focus {
+  border: 4px solid red;
+} */
+
+@keyframes btn-pisca {
+  0% { opacity: 0; }
+  25% { opacity: 0.25; }
+  50% { opacity: 0.5; }
+  750% { opacity: 0.75; }
+  100% { opacity: 1; }
+}
+
+input:focus {
+  text-decoration: none; 
+
+  -webkit-animation: btn-pisca 1.3s linear infinite;
+  -moz-animation: btn-pisca 1.3s linear infinite;
+  -ms-animation: btn-pisca 1.3s linear infinite;
+  -o-animation: btn-pisca 1.3s linear infinite; 
+  animation: btn-pisca 1.3s linear infinite;
+}

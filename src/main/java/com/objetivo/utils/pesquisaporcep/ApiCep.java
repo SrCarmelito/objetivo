@@ -9,10 +9,10 @@ import com.google.gson.Gson;
 
 public class ApiCep {
 
-	static String web = "https://viacep.com.br/ws/";
-	static int successo = 200;
+	public static String web = "https://viacep.com.br/ws/";
+	public static int successo = 200;
 	
-	public static Endereco buscaCep(String cep) throws Exception {
+	public static EnderecoJson buscaCep(String cep) throws Exception {
 		String params = web + cep + "/json";
 		
 		try {
@@ -21,15 +21,16 @@ public class ApiCep {
 			HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 			
 			if(connection.getResponseCode() != successo) {
+				System.out.println("to aqui");
 				throw new RuntimeException("HTTP error code : " + connection.getResponseCode());
 			}
 			
 			BufferedReader response = new BufferedReader(new InputStreamReader((connection.getInputStream())));
 
-			String jsonString = Utils.converteJsonEmString(response);
-			
+			String jsonString = Utils.converteJsonEmString(response);			
 			Gson gson = new Gson();
-			Endereco endereco = gson.fromJson(jsonString, Endereco.class);
+			
+			EnderecoJson endereco = gson.fromJson(jsonString, EnderecoJson.class);
 			
 			return endereco;			
 		} catch (Exception e) {

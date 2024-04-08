@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="scrips.js" defer></script>
+    <script src="https://kit.fontawesome.com/c13dabf0e8.js" crossorigin="anonymous"></script>
+    <script src="formats.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
+    <title>Pessoas</title>
+</head>
+<body>
+    <div id="filter">
+        <div id="filter">
+            <label id="lb-count"></label>
+            <label id="lb-filter-cpf">Filtre por CPF:</label>
+            <input type="text" id="input-filter-cpf">
+            <label id="lb-filter-nome">Filtre por Nome:</label>
+            <input type="text" id="input-filter-nome">
+            <label id="lb-filter-id">Filtre por ID:</label>
+            <input type="text" id="input-filter-id">
+            <button id="executa-pesquisa">Pesquisar</button>
+
+            <div id="paginate">
+                <label for="" id="lb-page-size">Quantidade por página: </label>
+                <select id="cbPageSize">
+                    <option value="20">20</option>
+                    <option value="30">30</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                </select>
+                <label id="pageNumber">Página Nº</label>
+                <button class="bt-paginacao" id="first-page"><i class="fa-solid fa-backward-step"></i></button>
+                <button class="bt-paginacao" id="previous"><i class="fa-solid fa-caret-left"></i></button>
+                <div id="five-pages"></div>
+                <button class="bt-paginacao" id="next"><i class="fa-solid fa-caret-right"></i></button>
+                <button class="bt-paginacao" id="last-page"><i class="fa-solid fa-forward-step"></i></button>
+            </div>
+        </div>
+    </div>
+    <button id="btn-novo"><i id="icon-new" class="fa-solid fa-circle-plus fa-2x"></i></button>
+    <div class="modal"></div>
+    <div id="pessoas-container"></div>
+
+</body>
+</html>

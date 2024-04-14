@@ -14237,3 +14237,8 @@ List of constraint violations:[
 2024-04-14T14:59:59.615-03:00 DEBUG 15824 --- [http-nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
 2024-04-14T14:59:59.616-03:00 DEBUG 15824 --- [http-nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Sun Apr 14 14:59:59 BRT 2024, status=404, error=Not Found, trace=org.springframework.web. (truncated)...]
 2024-04-14T14:59:59.623-03:00 DEBUG 15824 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
+2024-04-14T15:03:56.842-03:00 DEBUG 15824 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/pessoas/318", parameters={}
+2024-04-14T15:03:56.842-03:00 DEBUG 15824 --- [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.PessoaController#obterPessoaPorId(Integer)
+2024-04-14T15:03:56.848-03:00 DEBUG 15824 --- [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-04-14T15:03:56.849-03:00 DEBUG 15824 --- [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Writing [Optional[com.objetivo.entities.Pessoa@35831ba2]]
+2024-04-14T15:03:56.851-03:00 DEBUG 15824 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK

@@ -1,5 +1,6 @@
 package com.objetivo.controller;
 
+import java.net.URI;
 import java.util.Optional;
 
 import lombok.extern.slf4j.Slf4j;
@@ -24,6 +25,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.objetivo.entities.Pessoa;
 import com.objetivo.repository.PessoaRepository;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 @RestController
 @RequestMapping(value = "/pessoas")
@@ -67,7 +69,7 @@ public class PessoaController {
 	@PostMapping
 	public @ResponseBody Pessoa novaPessoa(@RequestBody @Validated Pessoa pessoa) throws Exception {
 		Pessoa novaPessoa = pessoa;
-					
+
 		if (!pessoaRepository.findByCpfContaining(pessoa.cpf).isEmpty()){
 			throw new Exception("CPF informado já existe no cadastro");
 		} else {
@@ -105,7 +107,7 @@ public class PessoaController {
 	@Transactional()
 	@CrossOrigin(allowedHeaders = "*")
 	@DeleteMapping(path = "/{id}")
-	public void excluirPessoa(@PathVariable int id) {
+	public void excluirPessoa(@PathVariable Integer id) {
 		pessoaRepository.deleteById(id);
 	};
 				

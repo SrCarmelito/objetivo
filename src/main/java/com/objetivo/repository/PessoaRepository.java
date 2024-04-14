@@ -17,7 +17,7 @@ public interface PessoaRepository extends JpaRepository<Pessoa, Integer>{
 	public List<Pessoa> findAllByOrderByIdAsc();
 	
 	@Query(nativeQuery = true, value = "select p.id, p.nome, p.datanascimento, p.cpf, p.telefone, "
-			+ "(select (current_date - p.dataNascimento) / 365) as idade"
+			+ "(replace(replace(replace(replace(replace(replace(cast(age(datanascimento) as varchar), 'years', 'Anos'), 'year', 'Ano'), 'mons', 'Meses'), 'mon', 'Mês'), 'days', 'Dias'), 'day', 'Dia')) as idade"
 			+ " from elo.Pessoa p where p.cpf ilike %:cpf% and p.nome ilike %:nome%"
 			+ " and cast(p.id as varchar) like %:id%")
 	Page<Pessoa> findByCpfNome(String id, String cpf, String nome, Pageable pageable);

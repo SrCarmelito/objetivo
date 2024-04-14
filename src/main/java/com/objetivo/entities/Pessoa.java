@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import org.hibernate.annotations.Formula;
 import org.hibernate.validator.constraints.br.CPF;
 
@@ -34,12 +35,12 @@ public class Pessoa {
 	@NotBlank(message = "É Necessário informar o Nome!")
 	@Column(name = "nome")
 	public String nome;
-	
+
 	@NotNull(message = "Não é permitido Data de Nascimento Vazia!")
 	@Past(message = "Não é permitido Data de Nascimento no futuro!")
 	@Column(name = "datanascimento")
 	public LocalDate dataNascimento;
-	
+
 	@NotBlank(message = "É necessário informar o CPF")
 	@CPF(message = "CPF Inválido! Verifique!")
 	@Column(name = "cpf", unique = true, nullable = false)
@@ -49,8 +50,9 @@ public class Pessoa {
 	@Column(name = "telefone", length = 11)
 	public String telefone;
 	
-	@Formula("(select (current_date - dataNascimento) / 365)")
-	public Integer idade;
+	//@Formula("(select (current_date - dataNascimento) / 365)")
+	@Formula("(select replace(replace(replace(replace(replace(replace(cast(age(datanascimento) as varchar), 'years', 'Anos'), 'year', 'Ano'), 'mons', 'Meses'), 'mon', 'Mês'), 'days', 'Dias'), 'day', 'Dia'))")
+	public String idade;
 	
 	@OneToMany(cascade = {CascadeType.ALL}, orphanRemoval = true, mappedBy = "pessoa")
 	public List<Endereco> enderecos = new ArrayList<Endereco>();
@@ -59,7 +61,7 @@ public class Pessoa {
 		
 	}
 		
-	public Pessoa(Integer id, String nome, LocalDate dataNascimento, String cpf, String telefone, Integer idade) {
+	public Pessoa(Integer id, String nome, LocalDate dataNascimento, String cpf, String telefone, String idade) {
 		super();
 		this.id = id;
 		this.nome = nome;

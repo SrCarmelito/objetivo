@@ -14242,3 +14242,13 @@ List of constraint violations:[
 2024-04-14T15:03:56.848-03:00 DEBUG 15824 --- [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
 2024-04-14T15:03:56.849-03:00 DEBUG 15824 --- [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Writing [Optional[com.objetivo.entities.Pessoa@35831ba2]]
 2024-04-14T15:03:56.851-03:00 DEBUG 15824 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-04-14T15:16:26.171-03:00 DEBUG 15824 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/pessoas?id=&cpf=&nome=&page=0&size=20&sort=nome,asc", parameters={masked}
+2024-04-14T15:16:26.171-03:00 DEBUG 15824 --- [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.PessoaController#findAllPaginada(String, String, String, Pageable)
+2024-04-14T15:16:26.180-03:00 DEBUG 15824 --- [http-nio-8080-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-04-14T15:16:26.180-03:00 DEBUG 15824 --- [http-nio-8080-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [Page 1 of 36 containing com.objetivo.entities.Pessoa instances]
+2024-04-14T15:16:26.196-03:00 DEBUG 15824 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-04-14T15:16:26.225-03:00 DEBUG 15824 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/pessoas/count", parameters={}
+2024-04-14T15:16:26.226-03:00 DEBUG 15824 --- [http-nio-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.PessoaController#quantidadePessoas()
+2024-04-14T15:16:26.227-03:00 DEBUG 15824 --- [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-04-14T15:16:26.227-03:00 DEBUG 15824 --- [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Writing [711]
+2024-04-14T15:16:26.228-03:00 DEBUG 15824 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK

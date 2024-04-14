@@ -51,6 +51,8 @@ async function getAll() {
     pageSize = data.pageable.pageSize; 
     totalPages = data.totalPages;
 
+    criaBotoes(page, totalPages);
+
     data.content.map((pessoa) => {
 
         const div = document.createElement("div");
@@ -64,13 +66,14 @@ async function getAll() {
 
         name.innerText = `${pessoa.id} - ${pessoa.nome}`;
         name.setAttribute("id", "meuh2");
-        birthDate.innerText = `Data de Nascimento: ${pessoa.dataNascimento}`;
+  
+        birthDate.innerText = `Data de Nascimento: ${dataFormatada(new Date(pessoa.dataNascimento))}`;
  
         cpf.innerText = `CPF: ${formataCpf(pessoa.cpf)}`;
         phone.innerText = `Telefone: ${phoneMask(pessoa.telefone)}`;
         age.innerText = `Idade: ${pessoa.idade}`;
         link.setAttribute("class", "fa-solid fa-pen-to-square fa-1x");
-        link.setAttribute("href", `/EditPessoa/edit.html?id=${pessoa.id}`);
+        link.setAttribute("href", `/front-end/EditPessoa/edit.html?id=${pessoa.id}`);
         trash.setAttribute("class", "fa-solid fa-trash-can fa 1x");
         div.setAttribute("id", "dados-pessoas");
         
@@ -113,8 +116,6 @@ async function getAll() {
         });
         
     });
-
-    criaBotoes(page, totalPages);
 
 };
 
@@ -294,26 +295,32 @@ async function postPessoa(novaPessoa) {
             }) 
         }
         else {
-            alert("Pessoa Cadastrada corretamente!");
-            const modal = document.querySelector('.modal');
-            modal.style.display = 'none';
-            redirectPessoa();
+            e.json().then((e) => {
+                console.log(e.id);
+                alert("Pessoa Cadastrada corretamente!");
+                const modal = document.querySelector('.modal');
+                modal.style.display = 'none';
+                redirectPessoa(e.id);
+            });
         };     
     });
 };
 
-async function redirectPessoa() {
-    const response = await fetch("http://localhost:8080/endereco/max-pessoas");
+async function redirectPessoa(novaPessoa) {
+    console.log(novaPessoa);
+    const response = await fetch(`http://localhost:8080/pessoas?id=${novaPessoa}`);
     const pessoa = await response.json();
-    window.location.href = `/EditPessoa/edit.html?id=${pessoa}`;
+    window.location.href = `/front-end/EditPessoa/edit.html?id=${novaPessoa}`;
 };
 
 ///////////////////////Paginação /////////////////////////
 document.querySelector("#cbPageSize").addEventListener("click", (e => {
-    console.log(cbPageSize.value);
+    page = totalPages -1;
     size = cbPageSize.value
     document.querySelector("#pessoas-container-dados").remove();
-    getAll(size);
+    document.querySelector("#paginas").remove();
+    getAll(page, size);
+    criaBotoes(page, totalPages);
 }));
 
 document.querySelector("#next").addEventListener("click", (e) => {

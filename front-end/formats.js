@@ -45,3 +45,21 @@ async function cpfNumerico(cpf) {
     };
     return cpfNumerico;
 };
+
+function dataFormatada(date) {    
+    // let zeroDia = "0";
+    // let zeroMes = "0";
+    // date.getDate() > 9 ? zeroDia = "" : zeroDia = "0";
+    // date.getMonth() > 9 ? zeroMes = "" : zeroMes = "0";
+
+    // const dataFormatada = 
+    //     // (zeroDia + date.getDate()).substring(-2) + 
+    //     // "/" +
+    //     // (zeroMes + (date.getMonth() + 1)).substring(-2) +
+    //     // "/" +
+    //     // date.getFullYear();
+
+    //Uma alternativa mais legível é toISOString, porém ela não tem suporte em IE8
+
+    return date.toISOString().substr(0, 10).split('-').reverse().join('/');
+}

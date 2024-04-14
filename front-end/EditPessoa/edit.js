@@ -134,7 +134,7 @@ async function getPessoa(id) {
         iconEditEnd.setAttribute("class", "fa-solid fa-pen-to-square fa-1x");
         iconApagaEnd.setAttribute("class", "fa-solid fa-trash-can fa-1x");
         iconEditEnd.setAttribute("id", "ico-edit-end");
-        btnEditEnd.setAttribute("href", `/Endereco/endereco.html?id=${e.id}`);
+        btnEditEnd.setAttribute("href", `/front-end/Endereco/endereco.html?id=${e.id}`);
 
         btnApagaEnd.value = e.id;
 

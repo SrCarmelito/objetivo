@@ -1,6 +1,6 @@
 const pessoaContainer = document.querySelector("#pessoas-container");
 
-let url = `${window.location.origin}/pessoas?sort=nome,asc`;
+let url = `objetivo.onrender.com/pessoas?sort=nome,asc`;
 
 const urlSearchParams = new URLSearchParams(window.location.search);
 const pessoaId = urlSearchParams.get("id");
@@ -14,12 +14,13 @@ let size = 20;
 
 document.querySelector("#executa-pesquisa").addEventListener("click", (e) => {
     e.preventDefault();
+
+    console.log(window.location.origin);
+
     filtroValorCpf = document.querySelector("#input-filter-cpf").value;
     filtroValorNome = document.querySelector("#input-filter-nome").value;
     filtroValorId = document.querySelector("#input-filter-id").value;
     document.querySelector("#pessoas-container-dados").remove();
-
-    console.log(window.location.origin);
 
     getAll(filtroValorCpf, filtroValorNome);
 });
@@ -35,7 +36,7 @@ getAll();
 async function getAll() {
 
     if (filtroValorCpf || filtroValorNome || page || size) {
-        url = `${window.location.origin}/pessoas?id=${filtroValorId}&cpf=${filtroValorCpf}&nome=${filtroValorNome}&page=${page}&size=${size}&sort=nome,asc`;
+        url = `objetivo.onrender.com/pessoas?id=${filtroValorId}&cpf=${filtroValorCpf}&nome=${filtroValorNome}&page=${page}&size=${size}&sort=nome,asc`;
     };
 
     const response = await fetch(url);

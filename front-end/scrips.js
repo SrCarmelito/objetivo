@@ -19,6 +19,8 @@ document.querySelector("#executa-pesquisa").addEventListener("click", (e) => {
     filtroValorId = document.querySelector("#input-filter-id").value;
     document.querySelector("#pessoas-container-dados").remove();
 
+    console.log(window.location.origin);
+
     getAll(filtroValorCpf, filtroValorNome);
 });
 
@@ -73,7 +75,7 @@ async function getAll() {
         phone.innerText = `Telefone: ${phoneMask(pessoa.telefone)}`;
         age.innerText = `Idade: ${pessoa.idade}`;
         link.setAttribute("class", "fa-solid fa-pen-to-square fa-1x");
-        link.setAttribute("href", `/front-end/EditPessoa/edit.html?id=${pessoa.id}`);
+        link.setAttribute("href", `/EditPessoa/edit.html?id=${pessoa.id}`);
         trash.setAttribute("class", "fa-solid fa-trash-can fa 1x");
         div.setAttribute("id", "dados-pessoas");
         
@@ -310,7 +312,7 @@ async function redirectPessoa(novaPessoa) {
     console.log(novaPessoa);
     const response = await fetch(`http://localhost:8080/pessoas?id=${novaPessoa}`);
     const pessoa = await response.json();
-    window.location.href = `/front-end/EditPessoa/edit.html?id=${novaPessoa}`;
+    window.location.href = `/EditPessoa/edit.html?id=${novaPessoa}`;
 };
 
 ///////////////////////Paginação /////////////////////////

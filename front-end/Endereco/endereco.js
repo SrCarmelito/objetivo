@@ -140,7 +140,7 @@ async function putEndereco(enderecoAtualizado) {
             async function getPessoaId(enderecoId) {
                 const response = await fetch(`${url}/end/${enderecoId}`);
                 const pessoaId = await response.json();
-                window.location.href = `/front-end/EditPessoa/edit.html?id=${pessoaId}`;
+                window.location.href = `/EditPessoa/edit.html?id=${pessoaId}`;
             }; 
         }
     });

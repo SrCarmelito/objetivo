@@ -45,7 +45,7 @@ async function getAll() {
 
     console.log(url);
 
-    const response = await fetch(url);
+    const response = await fetch("https://objetivo.onrender.com/pessoas?page=2");
     const data = await response.json();
 
     const responseCount = await fetch("http://localhost:8080/pessoas/count");

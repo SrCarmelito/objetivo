@@ -1,6 +1,6 @@
 const pessoaContainer = document.querySelector("#pessoas-container");
 
-let url = "http://localhost:8080/pessoas?sort=nome,asc";
+let url = `${window.location.origin}/pessoas?sort=nome,asc`;
 
 const urlSearchParams = new URLSearchParams(window.location.search);
 const pessoaId = urlSearchParams.get("id");
@@ -35,7 +35,7 @@ getAll();
 async function getAll() {
 
     if (filtroValorCpf || filtroValorNome || page || size) {
-        url = `http://localhost:8080/pessoas?id=${filtroValorId}&cpf=${filtroValorCpf}&nome=${filtroValorNome}&page=${page}&size=${size}&sort=nome,asc`;
+        url = `${window.location.origin}/pessoas?id=${filtroValorId}&cpf=${filtroValorCpf}&nome=${filtroValorNome}&page=${page}&size=${size}&sort=nome,asc`;
     };
 
     const response = await fetch(url);

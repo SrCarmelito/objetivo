@@ -5446,3 +5446,344 @@ java.lang.Exception: CPF informado já existe no cadastro
 2024-05-30T23:05:57.453-03:00 DEBUG 47420 --- [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
 2024-05-30T23:05:57.453-03:00 DEBUG 47420 --- [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Writing [707]
 2024-05-30T23:05:57.454-03:00 DEBUG 47420 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-05-30T23:12:30.716-03:00 DEBUG 47420 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : OPTIONS "/pessoas?id=&cpf=&nome=&page=0&size=20&sort=nome,asc", parameters={masked}
+2024-05-30T23:12:30.716-03:00 DEBUG 47420 --- [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.PessoaController#findAllPaginada(String, String, String, Pageable)
+2024-05-30T23:12:30.717-03:00 DEBUG 47420 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-05-30T23:12:30.725-03:00 DEBUG 47420 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/pessoas?id=&cpf=&nome=&page=0&size=20&sort=nome,asc", parameters={masked}
+2024-05-30T23:12:30.725-03:00 DEBUG 47420 --- [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.PessoaController#findAllPaginada(String, String, String, Pageable)
+2024-05-30T23:12:30.731-03:00 DEBUG 47420 --- [http-nio-8080-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-05-30T23:12:30.731-03:00 DEBUG 47420 --- [http-nio-8080-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [Page 1 of 36 containing com.objetivo.entities.Pessoa instances]
+2024-05-30T23:12:30.743-03:00 DEBUG 47420 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-05-30T23:12:30.754-03:00 DEBUG 47420 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : OPTIONS "/pessoas/count", parameters={}
+2024-05-30T23:12:30.754-03:00 DEBUG 47420 --- [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.PessoaController#quantidadePessoas()
+2024-05-30T23:12:30.754-03:00 DEBUG 47420 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-05-30T23:12:30.759-03:00 DEBUG 47420 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/pessoas/count", parameters={}
+2024-05-30T23:12:30.759-03:00 DEBUG 47420 --- [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.PessoaController#quantidadePessoas()
+2024-05-30T23:12:30.761-03:00 DEBUG 47420 --- [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-05-30T23:12:30.761-03:00 DEBUG 47420 --- [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Writing [707]
+2024-05-30T23:12:30.761-03:00 DEBUG 47420 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-05-30T23:12:33.268-03:00 DEBUG 47420 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : OPTIONS "/pessoas?id=&cpf=&nome=&page=0&size=20&sort=nome,asc", parameters={masked}
+2024-05-30T23:12:33.268-03:00 DEBUG 47420 --- [http-nio-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.PessoaController#findAllPaginada(String, String, String, Pageable)
+2024-05-30T23:12:33.268-03:00 DEBUG 47420 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-05-30T23:12:33.272-03:00 DEBUG 47420 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/pessoas?id=&cpf=&nome=&page=0&size=20&sort=nome,asc", parameters={masked}
+2024-05-30T23:12:33.272-03:00 DEBUG 47420 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.PessoaController#findAllPaginada(String, String, String, Pageable)
+2024-05-30T23:12:33.278-03:00 DEBUG 47420 --- [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-05-30T23:12:33.278-03:00 DEBUG 47420 --- [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [Page 1 of 36 containing com.objetivo.entities.Pessoa instances]
+2024-05-30T23:12:33.286-03:00 DEBUG 47420 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-05-30T23:12:33.295-03:00 DEBUG 47420 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : OPTIONS "/pessoas/count", parameters={}
+2024-05-30T23:12:33.296-03:00 DEBUG 47420 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.PessoaController#quantidadePessoas()
+2024-05-30T23:12:33.297-03:00 DEBUG 47420 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-05-30T23:12:33.304-03:00 DEBUG 47420 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/pessoas/count", parameters={}
+2024-05-30T23:12:33.305-03:00 DEBUG 47420 --- [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.PessoaController#quantidadePessoas()
+2024-05-30T23:12:33.307-03:00 DEBUG 47420 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-05-30T23:12:33.307-03:00 DEBUG 47420 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Writing [707]
+2024-05-30T23:12:33.307-03:00 DEBUG 47420 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-05-30T23:12:33.677-03:00 DEBUG 47420 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : OPTIONS "/pessoas?id=&cpf=&nome=&page=0&size=20&sort=nome,asc", parameters={masked}
+2024-05-30T23:12:33.677-03:00 DEBUG 47420 --- [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.PessoaController#findAllPaginada(String, String, String, Pageable)
+2024-05-30T23:12:33.677-03:00 DEBUG 47420 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-05-30T23:12:33.683-03:00 DEBUG 47420 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/pessoas?id=&cpf=&nome=&page=0&size=20&sort=nome,asc", parameters={masked}
+2024-05-30T23:12:33.683-03:00 DEBUG 47420 --- [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.PessoaController#findAllPaginada(String, String, String, Pageable)
+2024-05-30T23:12:33.688-03:00 DEBUG 47420 --- [http-nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-05-30T23:12:33.688-03:00 DEBUG 47420 --- [http-nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [Page 1 of 36 containing com.objetivo.entities.Pessoa instances]
+2024-05-30T23:12:33.694-03:00 DEBUG 47420 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-05-30T23:12:33.729-03:00 DEBUG 47420 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : OPTIONS "/pessoas/count", parameters={}
+2024-05-30T23:12:33.730-03:00 DEBUG 47420 --- [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.PessoaController#quantidadePessoas()
+2024-05-30T23:12:33.730-03:00 DEBUG 47420 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-05-30T23:12:33.737-03:00 DEBUG 47420 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/pessoas/count", parameters={}
+2024-05-30T23:12:33.737-03:00 DEBUG 47420 --- [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.PessoaController#quantidadePessoas()
+2024-05-30T23:12:33.739-03:00 DEBUG 47420 --- [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-05-30T23:12:33.739-03:00 DEBUG 47420 --- [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Writing [707]
+2024-05-30T23:12:33.740-03:00 DEBUG 47420 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-05-30T23:12:35.540-03:00 DEBUG 47420 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : OPTIONS "/pessoas?id=&cpf=&nome=&page=1&size=20&sort=nome,asc", parameters={masked}
+2024-05-30T23:12:35.540-03:00 DEBUG 47420 --- [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.PessoaController#findAllPaginada(String, String, String, Pageable)
+2024-05-30T23:12:35.540-03:00 DEBUG 47420 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-05-30T23:12:35.545-03:00 DEBUG 47420 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/pessoas?id=&cpf=&nome=&page=1&size=20&sort=nome,asc", parameters={masked}
+2024-05-30T23:12:35.545-03:00 DEBUG 47420 --- [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.PessoaController#findAllPaginada(String, String, String, Pageable)
+2024-05-30T23:12:35.552-03:00 DEBUG 47420 --- [http-nio-8080-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-05-30T23:12:35.552-03:00 DEBUG 47420 --- [http-nio-8080-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [Page 2 of 36 containing com.objetivo.entities.Pessoa instances]
+2024-05-30T23:12:35.561-03:00 DEBUG 47420 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-05-30T23:12:35.572-03:00 DEBUG 47420 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : OPTIONS "/pessoas/count", parameters={}
+2024-05-30T23:12:35.572-03:00 DEBUG 47420 --- [http-nio-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.PessoaController#quantidadePessoas()
+2024-05-30T23:12:35.572-03:00 DEBUG 47420 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-05-30T23:12:35.576-03:00 DEBUG 47420 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/pessoas/count", parameters={}
+2024-05-30T23:12:35.576-03:00 DEBUG 47420 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.PessoaController#quantidadePessoas()
+2024-05-30T23:12:35.578-03:00 DEBUG 47420 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-05-30T23:12:35.578-03:00 DEBUG 47420 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing [707]
+2024-05-30T23:12:35.578-03:00 DEBUG 47420 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-05-30T23:12:36.362-03:00 DEBUG 47420 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : OPTIONS "/pessoas?id=&cpf=&nome=&page=3&size=20&sort=nome,asc", parameters={masked}
+2024-05-30T23:12:36.362-03:00 DEBUG 47420 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.PessoaController#findAllPaginada(String, String, String, Pageable)
+2024-05-30T23:12:36.362-03:00 DEBUG 47420 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-05-30T23:12:36.367-03:00 DEBUG 47420 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/pessoas?id=&cpf=&nome=&page=3&size=20&sort=nome,asc", parameters={masked}
+2024-05-30T23:12:36.367-03:00 DEBUG 47420 --- [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.PessoaController#findAllPaginada(String, String, String, Pageable)
+2024-05-30T23:12:36.374-03:00 DEBUG 47420 --- [http-nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-05-30T23:12:36.375-03:00 DEBUG 47420 --- [http-nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [Page 4 of 36 containing com.objetivo.entities.Pessoa instances]
+2024-05-30T23:12:36.383-03:00 DEBUG 47420 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-05-30T23:12:36.393-03:00 DEBUG 47420 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : OPTIONS "/pessoas/count", parameters={}
+2024-05-30T23:12:36.393-03:00 DEBUG 47420 --- [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.PessoaController#quantidadePessoas()
+2024-05-30T23:12:36.393-03:00 DEBUG 47420 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-05-30T23:12:36.398-03:00 DEBUG 47420 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/pessoas/count", parameters={}
+2024-05-30T23:12:36.399-03:00 DEBUG 47420 --- [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.PessoaController#quantidadePessoas()
+2024-05-30T23:12:36.400-03:00 DEBUG 47420 --- [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-05-30T23:12:36.400-03:00 DEBUG 47420 --- [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Writing [707]
+2024-05-30T23:12:36.400-03:00 DEBUG 47420 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-05-30T23:12:37.162-03:00 DEBUG 47420 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : OPTIONS "/pessoas?id=&cpf=&nome=&page=6&size=20&sort=nome,asc", parameters={masked}
+2024-05-30T23:12:37.162-03:00 DEBUG 47420 --- [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.PessoaController#findAllPaginada(String, String, String, Pageable)
+2024-05-30T23:12:37.162-03:00 DEBUG 47420 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-05-30T23:12:37.166-03:00 DEBUG 47420 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/pessoas?id=&cpf=&nome=&page=6&size=20&sort=nome,asc", parameters={masked}
+2024-05-30T23:12:37.167-03:00 DEBUG 47420 --- [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.PessoaController#findAllPaginada(String, String, String, Pageable)
+2024-05-30T23:12:37.175-03:00 DEBUG 47420 --- [http-nio-8080-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-05-30T23:12:37.175-03:00 DEBUG 47420 --- [http-nio-8080-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [Page 7 of 36 containing com.objetivo.entities.Pessoa instances]
+2024-05-30T23:12:37.182-03:00 DEBUG 47420 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-05-30T23:12:37.192-03:00 DEBUG 47420 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : OPTIONS "/pessoas/count", parameters={}
+2024-05-30T23:12:37.192-03:00 DEBUG 47420 --- [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.PessoaController#quantidadePessoas()
+2024-05-30T23:12:37.192-03:00 DEBUG 47420 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-05-30T23:12:37.198-03:00 DEBUG 47420 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/pessoas/count", parameters={}
+2024-05-30T23:12:37.198-03:00 DEBUG 47420 --- [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.PessoaController#quantidadePessoas()
+2024-05-30T23:12:37.199-03:00 DEBUG 47420 --- [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-05-30T23:12:37.199-03:00 DEBUG 47420 --- [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Writing [707]
+2024-05-30T23:12:37.200-03:00 DEBUG 47420 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-05-30T23:12:47.785-03:00 DEBUG 47420 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : OPTIONS "/pessoas?id=&cpf=&nome=&page=7&size=20&sort=nome,asc", parameters={masked}
+2024-05-30T23:12:47.786-03:00 DEBUG 47420 --- [http-nio-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.PessoaController#findAllPaginada(String, String, String, Pageable)
+2024-05-30T23:12:47.786-03:00 DEBUG 47420 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-05-30T23:12:47.791-03:00 DEBUG 47420 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/pessoas?id=&cpf=&nome=&page=7&size=20&sort=nome,asc", parameters={masked}
+2024-05-30T23:12:47.791-03:00 DEBUG 47420 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.PessoaController#findAllPaginada(String, String, String, Pageable)
+2024-05-30T23:12:47.799-03:00 DEBUG 47420 --- [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-05-30T23:12:47.799-03:00 DEBUG 47420 --- [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [Page 8 of 36 containing com.objetivo.entities.Pessoa instances]
+2024-05-30T23:12:47.810-03:00 DEBUG 47420 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-05-30T23:12:47.822-03:00 DEBUG 47420 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : OPTIONS "/pessoas/count", parameters={}
+2024-05-30T23:12:47.822-03:00 DEBUG 47420 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.PessoaController#quantidadePessoas()
+2024-05-30T23:12:47.822-03:00 DEBUG 47420 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-05-30T23:12:47.826-03:00 DEBUG 47420 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/pessoas/count", parameters={}
+2024-05-30T23:12:47.826-03:00 DEBUG 47420 --- [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.PessoaController#quantidadePessoas()
+2024-05-30T23:12:47.827-03:00 DEBUG 47420 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-05-30T23:12:47.828-03:00 DEBUG 47420 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Writing [707]
+2024-05-30T23:12:47.828-03:00 DEBUG 47420 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-05-30T23:12:57.034-03:00 DEBUG 47420 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : OPTIONS "/pessoas?id=&cpf=&nome=&page=7&size=20&sort=nome,asc", parameters={masked}
+2024-05-30T23:12:57.034-03:00 DEBUG 47420 --- [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.PessoaController#findAllPaginada(String, String, String, Pageable)
+2024-05-30T23:12:57.035-03:00 DEBUG 47420 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-05-30T23:12:57.041-03:00 DEBUG 47420 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/pessoas?id=&cpf=&nome=&page=7&size=20&sort=nome,asc", parameters={masked}
+2024-05-30T23:12:57.042-03:00 DEBUG 47420 --- [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.PessoaController#findAllPaginada(String, String, String, Pageable)
+2024-05-30T23:12:57.048-03:00 DEBUG 47420 --- [http-nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-05-30T23:12:57.049-03:00 DEBUG 47420 --- [http-nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [Page 8 of 36 containing com.objetivo.entities.Pessoa instances]
+2024-05-30T23:12:57.058-03:00 DEBUG 47420 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-05-30T23:12:57.066-03:00 DEBUG 47420 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : OPTIONS "/pessoas/count", parameters={}
+2024-05-30T23:12:57.067-03:00 DEBUG 47420 --- [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.PessoaController#quantidadePessoas()
+2024-05-30T23:12:57.067-03:00 DEBUG 47420 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-05-30T23:12:57.070-03:00 DEBUG 47420 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/pessoas/count", parameters={}
+2024-05-30T23:12:57.070-03:00 DEBUG 47420 --- [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.PessoaController#quantidadePessoas()
+2024-05-30T23:12:57.071-03:00 DEBUG 47420 --- [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-05-30T23:12:57.071-03:00 DEBUG 47420 --- [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Writing [707]
+2024-05-30T23:12:57.071-03:00 DEBUG 47420 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-05-30T23:16:40.324-03:00 DEBUG 47420 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/index.html", parameters={}
+2024-05-30T23:16:40.328-03:00 DEBUG 47420 --- [http-nio-8080-exec-9] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2024-05-30T23:16:40.334-03:00 DEBUG 47420 --- [http-nio-8080-exec-9] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2024-05-30T23:16:40.336-03:00 DEBUG 47420 --- [http-nio-8080-exec-9] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource index.html.]
+2024-05-30T23:16:40.336-03:00 DEBUG 47420 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2024-05-30T23:16:40.345-03:00 DEBUG 47420 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+2024-05-30T23:16:40.346-03:00 DEBUG 47420 --- [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#errorHtml(HttpServletRequest, HttpServletResponse)
+2024-05-30T23:16:40.369-03:00 DEBUG 47420 --- [http-nio-8080-exec-9] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, text/html;q=0.8]
+2024-05-30T23:16:40.377-03:00 DEBUG 47420 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
+2024-05-30T23:16:40.522-03:00 DEBUG 47420 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/favicon.ico", parameters={}
+2024-05-30T23:16:40.523-03:00 DEBUG 47420 --- [http-nio-8080-exec-10] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2024-05-30T23:16:40.524-03:00 DEBUG 47420 --- [http-nio-8080-exec-10] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2024-05-30T23:16:40.524-03:00 DEBUG 47420 --- [http-nio-8080-exec-10] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
+2024-05-30T23:16:40.525-03:00 DEBUG 47420 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2024-05-30T23:16:40.525-03:00 DEBUG 47420 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+2024-05-30T23:16:40.525-03:00 DEBUG 47420 --- [http-nio-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2024-05-30T23:16:40.529-03:00 DEBUG 47420 --- [http-nio-8080-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json;q=0.8', given [image/avif, image/webp, image/apng, image/svg+xml, image/*, */*;q=0.8] and supported [application/json, application/*+json]
+2024-05-30T23:16:40.531-03:00 DEBUG 47420 --- [http-nio-8080-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Thu May 30 23:16:40 BRT 2024, status=404, error=Not Found, trace=org.springframework.web. (truncated)...]
+2024-05-30T23:16:40.542-03:00 DEBUG 47420 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
+2024-05-30T23:17:55.986-03:00 DEBUG 47420 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/index.html", parameters={}
+2024-05-30T23:17:55.988-03:00 DEBUG 47420 --- [http-nio-8080-exec-3] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2024-05-30T23:17:55.990-03:00 DEBUG 47420 --- [http-nio-8080-exec-3] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2024-05-30T23:17:55.990-03:00 DEBUG 47420 --- [http-nio-8080-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource index.html.]
+2024-05-30T23:17:55.990-03:00 DEBUG 47420 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2024-05-30T23:17:55.990-03:00 DEBUG 47420 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+2024-05-30T23:17:55.991-03:00 DEBUG 47420 --- [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#errorHtml(HttpServletRequest, HttpServletResponse)
+2024-05-30T23:17:56.005-03:00 DEBUG 47420 --- [http-nio-8080-exec-3] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, text/html;q=0.8]
+2024-05-30T23:17:56.005-03:00 DEBUG 47420 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
+2024-05-30T23:18:52.290-03:00 DEBUG 47420 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/pessoas?id=&cpf=&nome=&page=0&size=20&sort=nome,asc", parameters={masked}
+2024-05-30T23:18:52.290-03:00 DEBUG 47420 --- [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.PessoaController#findAllPaginada(String, String, String, Pageable)
+2024-05-30T23:18:52.300-03:00 DEBUG 47420 --- [http-nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-05-30T23:18:52.300-03:00 DEBUG 47420 --- [http-nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [Page 1 of 36 containing com.objetivo.entities.Pessoa instances]
+2024-05-30T23:18:52.309-03:00 DEBUG 47420 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-05-30T23:18:52.341-03:00 DEBUG 47420 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/pessoas/count", parameters={}
+2024-05-30T23:18:52.341-03:00 DEBUG 47420 --- [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.PessoaController#quantidadePessoas()
+2024-05-30T23:18:52.344-03:00 DEBUG 47420 --- [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-05-30T23:18:52.344-03:00 DEBUG 47420 --- [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Writing [707]
+2024-05-30T23:18:52.344-03:00 DEBUG 47420 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-05-30T23:18:57.909-03:00 DEBUG 47420 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/pessoas?id=&cpf=&nome=&page=0&size=20&sort=nome,asc", parameters={masked}
+2024-05-30T23:18:57.909-03:00 DEBUG 47420 --- [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.PessoaController#findAllPaginada(String, String, String, Pageable)
+2024-05-30T23:18:57.917-03:00 DEBUG 47420 --- [http-nio-8080-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-05-30T23:18:57.920-03:00 DEBUG 47420 --- [http-nio-8080-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [Page 1 of 36 containing com.objetivo.entities.Pessoa instances]
+2024-05-30T23:18:57.931-03:00 DEBUG 47420 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-05-30T23:18:57.963-03:00 DEBUG 47420 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/pessoas/count", parameters={}
+2024-05-30T23:18:57.963-03:00 DEBUG 47420 --- [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.PessoaController#quantidadePessoas()
+2024-05-30T23:18:57.965-03:00 DEBUG 47420 --- [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-05-30T23:18:57.966-03:00 DEBUG 47420 --- [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Writing [707]
+2024-05-30T23:18:57.966-03:00 DEBUG 47420 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-05-30T23:18:59.496-03:00 DEBUG 47420 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/pessoas?id=&cpf=&nome=&page=0&size=20&sort=nome,asc", parameters={masked}
+2024-05-30T23:18:59.497-03:00 DEBUG 47420 --- [http-nio-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.PessoaController#findAllPaginada(String, String, String, Pageable)
+2024-05-30T23:18:59.504-03:00 DEBUG 47420 --- [http-nio-8080-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-05-30T23:18:59.504-03:00 DEBUG 47420 --- [http-nio-8080-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [Page 1 of 36 containing com.objetivo.entities.Pessoa instances]
+2024-05-30T23:18:59.513-03:00 DEBUG 47420 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-05-30T23:18:59.521-03:00 DEBUG 47420 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/pessoas/count", parameters={}
+2024-05-30T23:18:59.521-03:00 DEBUG 47420 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.PessoaController#quantidadePessoas()
+2024-05-30T23:18:59.522-03:00 DEBUG 47420 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-05-30T23:18:59.522-03:00 DEBUG 47420 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing [707]
+2024-05-30T23:18:59.522-03:00 DEBUG 47420 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-05-30T23:19:28.374-03:00 DEBUG 47420 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/index.html", parameters={}
+2024-05-30T23:19:28.375-03:00 DEBUG 47420 --- [http-nio-8080-exec-1] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2024-05-30T23:19:28.379-03:00 DEBUG 47420 --- [http-nio-8080-exec-1] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2024-05-30T23:19:28.379-03:00 DEBUG 47420 --- [http-nio-8080-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource index.html.]
+2024-05-30T23:19:28.379-03:00 DEBUG 47420 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2024-05-30T23:19:28.380-03:00 DEBUG 47420 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+2024-05-30T23:19:28.380-03:00 DEBUG 47420 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#errorHtml(HttpServletRequest, HttpServletResponse)
+2024-05-30T23:19:28.391-03:00 DEBUG 47420 --- [http-nio-8080-exec-1] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, text/html;q=0.8]
+2024-05-30T23:19:28.392-03:00 DEBUG 47420 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
+2024-05-30T23:19:43.776-03:00 DEBUG 47420 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/index.html", parameters={}
+2024-05-30T23:19:43.776-03:00 DEBUG 47420 --- [http-nio-8080-exec-3] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2024-05-30T23:19:43.778-03:00 DEBUG 47420 --- [http-nio-8080-exec-3] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2024-05-30T23:19:43.778-03:00 DEBUG 47420 --- [http-nio-8080-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource index.html.]
+2024-05-30T23:19:43.778-03:00 DEBUG 47420 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2024-05-30T23:19:43.778-03:00 DEBUG 47420 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+2024-05-30T23:19:43.778-03:00 DEBUG 47420 --- [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#errorHtml(HttpServletRequest, HttpServletResponse)
+2024-05-30T23:19:43.789-03:00 DEBUG 47420 --- [http-nio-8080-exec-3] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, text/html;q=0.8]
+2024-05-30T23:19:43.791-03:00 DEBUG 47420 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
+2024-05-30T23:19:44.577-03:00 DEBUG 47420 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/index.html", parameters={}
+2024-05-30T23:19:44.578-03:00 DEBUG 47420 --- [http-nio-8080-exec-5] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2024-05-30T23:19:44.578-03:00 DEBUG 47420 --- [http-nio-8080-exec-5] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2024-05-30T23:19:44.579-03:00 DEBUG 47420 --- [http-nio-8080-exec-5] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource index.html.]
+2024-05-30T23:19:44.579-03:00 DEBUG 47420 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2024-05-30T23:19:44.579-03:00 DEBUG 47420 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+2024-05-30T23:19:44.579-03:00 DEBUG 47420 --- [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#errorHtml(HttpServletRequest, HttpServletResponse)
+2024-05-30T23:19:44.589-03:00 DEBUG 47420 --- [http-nio-8080-exec-5] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, text/html;q=0.8]
+2024-05-30T23:19:44.591-03:00 DEBUG 47420 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
+2024-05-30T23:19:44.821-03:00 DEBUG 47420 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/index.html", parameters={}
+2024-05-30T23:19:44.822-03:00 DEBUG 47420 --- [http-nio-8080-exec-6] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2024-05-30T23:19:44.822-03:00 DEBUG 47420 --- [http-nio-8080-exec-6] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2024-05-30T23:19:44.823-03:00 DEBUG 47420 --- [http-nio-8080-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource index.html.]
+2024-05-30T23:19:44.823-03:00 DEBUG 47420 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2024-05-30T23:19:44.823-03:00 DEBUG 47420 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+2024-05-30T23:19:44.823-03:00 DEBUG 47420 --- [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#errorHtml(HttpServletRequest, HttpServletResponse)
+2024-05-30T23:19:44.836-03:00 DEBUG 47420 --- [http-nio-8080-exec-6] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, text/html;q=0.8]
+2024-05-30T23:19:44.837-03:00 DEBUG 47420 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
+2024-05-30T23:19:45.009-03:00 DEBUG 47420 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/index.html", parameters={}
+2024-05-30T23:19:45.010-03:00 DEBUG 47420 --- [http-nio-8080-exec-4] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2024-05-30T23:19:45.011-03:00 DEBUG 47420 --- [http-nio-8080-exec-4] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2024-05-30T23:19:45.011-03:00 DEBUG 47420 --- [http-nio-8080-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource index.html.]
+2024-05-30T23:19:45.011-03:00 DEBUG 47420 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2024-05-30T23:19:45.011-03:00 DEBUG 47420 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+2024-05-30T23:19:45.012-03:00 DEBUG 47420 --- [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#errorHtml(HttpServletRequest, HttpServletResponse)
+2024-05-30T23:19:45.026-03:00 DEBUG 47420 --- [http-nio-8080-exec-4] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, text/html;q=0.8]
+2024-05-30T23:19:45.028-03:00 DEBUG 47420 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
+2024-05-30T23:19:45.187-03:00 DEBUG 47420 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/index.html", parameters={}
+2024-05-30T23:19:45.187-03:00 DEBUG 47420 --- [http-nio-8080-exec-7] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2024-05-30T23:19:45.188-03:00 DEBUG 47420 --- [http-nio-8080-exec-7] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2024-05-30T23:19:45.188-03:00 DEBUG 47420 --- [http-nio-8080-exec-7] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource index.html.]
+2024-05-30T23:19:45.188-03:00 DEBUG 47420 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2024-05-30T23:19:45.188-03:00 DEBUG 47420 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+2024-05-30T23:19:45.190-03:00 DEBUG 47420 --- [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#errorHtml(HttpServletRequest, HttpServletResponse)
+2024-05-30T23:19:45.203-03:00 DEBUG 47420 --- [http-nio-8080-exec-7] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, text/html;q=0.8]
+2024-05-30T23:19:45.204-03:00 DEBUG 47420 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
+2024-05-30T23:19:45.359-03:00 DEBUG 47420 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/index.html", parameters={}
+2024-05-30T23:19:45.359-03:00 DEBUG 47420 --- [http-nio-8080-exec-8] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2024-05-30T23:19:45.368-03:00 DEBUG 47420 --- [http-nio-8080-exec-8] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2024-05-30T23:19:45.368-03:00 DEBUG 47420 --- [http-nio-8080-exec-8] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource index.html.]
+2024-05-30T23:19:45.368-03:00 DEBUG 47420 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2024-05-30T23:19:45.368-03:00 DEBUG 47420 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+2024-05-30T23:19:45.368-03:00 DEBUG 47420 --- [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#errorHtml(HttpServletRequest, HttpServletResponse)
+2024-05-30T23:19:45.382-03:00 DEBUG 47420 --- [http-nio-8080-exec-8] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, text/html;q=0.8]
+2024-05-30T23:19:45.383-03:00 DEBUG 47420 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
+2024-05-30T23:19:45.756-03:00 DEBUG 47420 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/index.html", parameters={}
+2024-05-30T23:19:45.757-03:00 DEBUG 47420 --- [http-nio-8080-exec-9] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2024-05-30T23:19:45.758-03:00 DEBUG 47420 --- [http-nio-8080-exec-9] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2024-05-30T23:19:45.758-03:00 DEBUG 47420 --- [http-nio-8080-exec-9] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource index.html.]
+2024-05-30T23:19:45.758-03:00 DEBUG 47420 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2024-05-30T23:19:45.758-03:00 DEBUG 47420 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+2024-05-30T23:19:45.758-03:00 DEBUG 47420 --- [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#errorHtml(HttpServletRequest, HttpServletResponse)
+2024-05-30T23:19:45.772-03:00 DEBUG 47420 --- [http-nio-8080-exec-9] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, text/html;q=0.8]
+2024-05-30T23:19:45.773-03:00 DEBUG 47420 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
+2024-05-30T23:19:45.962-03:00 DEBUG 47420 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/index.html", parameters={}
+2024-05-30T23:19:45.962-03:00 DEBUG 47420 --- [http-nio-8080-exec-10] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2024-05-30T23:19:45.963-03:00 DEBUG 47420 --- [http-nio-8080-exec-10] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2024-05-30T23:19:45.965-03:00 DEBUG 47420 --- [http-nio-8080-exec-10] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource index.html.]
+2024-05-30T23:19:45.965-03:00 DEBUG 47420 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2024-05-30T23:19:45.966-03:00 DEBUG 47420 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+2024-05-30T23:19:45.966-03:00 DEBUG 47420 --- [http-nio-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#errorHtml(HttpServletRequest, HttpServletResponse)
+2024-05-30T23:19:45.978-03:00 DEBUG 47420 --- [http-nio-8080-exec-10] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, text/html;q=0.8]
+2024-05-30T23:19:45.978-03:00 DEBUG 47420 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
+2024-05-30T23:19:46.141-03:00 DEBUG 47420 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/index.html", parameters={}
+2024-05-30T23:19:46.142-03:00 DEBUG 47420 --- [http-nio-8080-exec-2] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2024-05-30T23:19:46.142-03:00 DEBUG 47420 --- [http-nio-8080-exec-2] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2024-05-30T23:19:46.142-03:00 DEBUG 47420 --- [http-nio-8080-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource index.html.]
+2024-05-30T23:19:46.143-03:00 DEBUG 47420 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2024-05-30T23:19:46.143-03:00 DEBUG 47420 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+2024-05-30T23:19:46.143-03:00 DEBUG 47420 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#errorHtml(HttpServletRequest, HttpServletResponse)
+2024-05-30T23:19:46.154-03:00 DEBUG 47420 --- [http-nio-8080-exec-2] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, text/html;q=0.8]
+2024-05-30T23:19:46.155-03:00 DEBUG 47420 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
+2024-05-30T23:19:46.408-03:00 DEBUG 47420 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/index.html", parameters={}
+2024-05-30T23:19:46.408-03:00 DEBUG 47420 --- [http-nio-8080-exec-1] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2024-05-30T23:19:46.409-03:00 DEBUG 47420 --- [http-nio-8080-exec-1] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2024-05-30T23:19:46.409-03:00 DEBUG 47420 --- [http-nio-8080-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource index.html.]
+2024-05-30T23:19:46.409-03:00 DEBUG 47420 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2024-05-30T23:19:46.409-03:00 DEBUG 47420 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+2024-05-30T23:19:46.409-03:00 DEBUG 47420 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#errorHtml(HttpServletRequest, HttpServletResponse)
+2024-05-30T23:19:46.419-03:00 DEBUG 47420 --- [http-nio-8080-exec-1] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, text/html;q=0.8]
+2024-05-30T23:19:46.419-03:00 DEBUG 47420 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
+2024-05-30T23:19:46.802-03:00 DEBUG 47420 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/index.html", parameters={}
+2024-05-30T23:19:46.802-03:00 DEBUG 47420 --- [http-nio-8080-exec-3] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2024-05-30T23:19:46.804-03:00 DEBUG 47420 --- [http-nio-8080-exec-3] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2024-05-30T23:19:46.804-03:00 DEBUG 47420 --- [http-nio-8080-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource index.html.]
+2024-05-30T23:19:46.804-03:00 DEBUG 47420 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2024-05-30T23:19:46.804-03:00 DEBUG 47420 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+2024-05-30T23:19:46.804-03:00 DEBUG 47420 --- [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#errorHtml(HttpServletRequest, HttpServletResponse)
+2024-05-30T23:19:46.816-03:00 DEBUG 47420 --- [http-nio-8080-exec-3] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, text/html;q=0.8]
+2024-05-30T23:19:46.816-03:00 DEBUG 47420 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
+2024-05-30T23:19:46.995-03:00 DEBUG 47420 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/index.html", parameters={}
+2024-05-30T23:19:46.997-03:00 DEBUG 47420 --- [http-nio-8080-exec-5] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2024-05-30T23:19:46.997-03:00 DEBUG 47420 --- [http-nio-8080-exec-5] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2024-05-30T23:19:46.997-03:00 DEBUG 47420 --- [http-nio-8080-exec-5] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource index.html.]
+2024-05-30T23:19:46.998-03:00 DEBUG 47420 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2024-05-30T23:19:46.998-03:00 DEBUG 47420 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+2024-05-30T23:19:46.998-03:00 DEBUG 47420 --- [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#errorHtml(HttpServletRequest, HttpServletResponse)
+2024-05-30T23:19:47.009-03:00 DEBUG 47420 --- [http-nio-8080-exec-5] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, text/html;q=0.8]
+2024-05-30T23:19:47.010-03:00 DEBUG 47420 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
+2024-05-30T23:19:47.155-03:00 DEBUG 47420 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/index.html", parameters={}
+2024-05-30T23:19:47.156-03:00 DEBUG 47420 --- [http-nio-8080-exec-6] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2024-05-30T23:19:47.156-03:00 DEBUG 47420 --- [http-nio-8080-exec-6] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2024-05-30T23:19:47.156-03:00 DEBUG 47420 --- [http-nio-8080-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource index.html.]
+2024-05-30T23:19:47.156-03:00 DEBUG 47420 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2024-05-30T23:19:47.156-03:00 DEBUG 47420 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+2024-05-30T23:19:47.157-03:00 DEBUG 47420 --- [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#errorHtml(HttpServletRequest, HttpServletResponse)
+2024-05-30T23:19:47.168-03:00 DEBUG 47420 --- [http-nio-8080-exec-6] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, text/html;q=0.8]
+2024-05-30T23:19:47.169-03:00 DEBUG 47420 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
+2024-05-30T23:19:57.734-03:00 DEBUG 47420 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/pessoas?id=&cpf=&nome=&page=0&size=20&sort=nome,asc", parameters={masked}
+2024-05-30T23:19:57.735-03:00 DEBUG 47420 --- [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.PessoaController#findAllPaginada(String, String, String, Pageable)
+2024-05-30T23:19:57.740-03:00 DEBUG 47420 --- [http-nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-05-30T23:19:57.741-03:00 DEBUG 47420 --- [http-nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [Page 1 of 36 containing com.objetivo.entities.Pessoa instances]
+2024-05-30T23:19:57.750-03:00 DEBUG 47420 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-05-30T23:19:57.781-03:00 DEBUG 47420 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/pessoas/count", parameters={}
+2024-05-30T23:19:57.781-03:00 DEBUG 47420 --- [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.PessoaController#quantidadePessoas()
+2024-05-30T23:19:57.783-03:00 DEBUG 47420 --- [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-05-30T23:19:57.783-03:00 DEBUG 47420 --- [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Writing [707]
+2024-05-30T23:19:57.783-03:00 DEBUG 47420 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-05-30T23:20:00.264-03:00 DEBUG 47420 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/index.html", parameters={}
+2024-05-30T23:20:00.266-03:00 DEBUG 47420 --- [http-nio-8080-exec-8] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2024-05-30T23:20:00.268-03:00 DEBUG 47420 --- [http-nio-8080-exec-8] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2024-05-30T23:20:00.268-03:00 DEBUG 47420 --- [http-nio-8080-exec-8] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource index.html.]
+2024-05-30T23:20:00.268-03:00 DEBUG 47420 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2024-05-30T23:20:00.268-03:00 DEBUG 47420 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+2024-05-30T23:20:00.269-03:00 DEBUG 47420 --- [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#errorHtml(HttpServletRequest, HttpServletResponse)
+2024-05-30T23:20:00.278-03:00 DEBUG 47420 --- [http-nio-8080-exec-8] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, text/html;q=0.8]
+2024-05-30T23:20:00.279-03:00 DEBUG 47420 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
+2024-05-30T23:20:05.332-03:00 DEBUG 47420 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/pessoas?id=&cpf=&nome=&page=0&size=20&sort=nome,asc", parameters={masked}
+2024-05-30T23:20:05.332-03:00 DEBUG 47420 --- [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.PessoaController#findAllPaginada(String, String, String, Pageable)
+2024-05-30T23:20:05.340-03:00 DEBUG 47420 --- [http-nio-8080-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-05-30T23:20:05.340-03:00 DEBUG 47420 --- [http-nio-8080-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [Page 1 of 36 containing com.objetivo.entities.Pessoa instances]
+2024-05-30T23:20:05.348-03:00 DEBUG 47420 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-05-30T23:20:05.366-03:00 DEBUG 47420 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/pessoas/count", parameters={}
+2024-05-30T23:20:05.366-03:00 DEBUG 47420 --- [http-nio-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.PessoaController#quantidadePessoas()
+2024-05-30T23:20:05.367-03:00 DEBUG 47420 --- [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-05-30T23:20:05.369-03:00 DEBUG 47420 --- [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Writing [707]
+2024-05-30T23:20:05.369-03:00 DEBUG 47420 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK

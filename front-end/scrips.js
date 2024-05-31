@@ -36,11 +36,8 @@ document.querySelector("#filter").addEventListener("keypress", (e) => {
 getAll();
 
 async function getAll() {
-
-    console.log(url);
-
         
-        url = `https://objetivo.onrender.com/pessoas?id=${filtroValorId}&cpf=${filtroValorCpf}&nome=${filtroValorNome}&page=${page}&size=${size}&sort=nome,asc`;
+    url = `https://objetivo.onrender.com/pessoas?id=${filtroValorId}&cpf=${filtroValorCpf}&nome=${filtroValorNome}&page=${page}&size=${size}&sort=nome,asc`;
 
     const response = await fetch(url);
     const data = await response.json();
@@ -127,7 +124,7 @@ async function getAll() {
 
 async function deletePessoa(pessoaExcluida) {
 
-    url = "http://localhost:8080/pessoas";
+    url = "https://objetivo.onrender.com/pessoas";
 
     const response = await fetch(`${url}/${pessoaExcluida}`,
     {
@@ -279,7 +276,7 @@ window.onclick = function(event) {
 // função para atualizar a pessoa
 async function postPessoa(novaPessoa) {
 
-    await fetch("http://localhost:8080/pessoas",
+    await fetch("https://objetivo.onrender.com/pessoas",
     {
         body: JSON.stringify(novaPessoa),
         method: 'POST',
@@ -314,7 +311,7 @@ async function postPessoa(novaPessoa) {
 
 async function redirectPessoa(novaPessoa) {
     console.log(novaPessoa);
-    const response = await fetch(`http://localhost:8080/pessoas?id=${novaPessoa}`);
+    const response = await fetch(`https://objetivo.onrender.com/pessoas?id=${novaPessoa}`);
     const pessoa = await response.json();
     window.location.href = `/EditPessoa/edit.html?id=${novaPessoa}`;
 };

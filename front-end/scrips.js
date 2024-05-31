@@ -36,7 +36,7 @@ getAll();
 async function getAll() {
 
     if (filtroValorCpf || filtroValorNome || page || size) {
-        url = `/pessoas?id=${filtroValorId}&cpf=${filtroValorCpf}&nome=${filtroValorNome}&page=${page}&size=${size}&sort=nome,asc`;
+        url = `/tigaspessoas?id=${filtroValorId}&cpf=${filtroValorCpf}&nome=${filtroValorNome}&page=${page}&size=${size}&sort=nome,asc`;
     };
 
     const response = await fetch(url);

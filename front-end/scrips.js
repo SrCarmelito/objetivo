@@ -40,12 +40,12 @@ async function getAll() {
     console.log(url);
 
     if (filtroValorCpf || filtroValorNome || page || size) {
-        url = `/pessoas?id=${filtroValorId}&cpf=${filtroValorCpf}&nome=${filtroValorNome}&page=${page}&size=${size}&sort=nome,asc`;
+        const urlToGet = `/pessoas?id=${filtroValorId}&cpf=${filtroValorCpf}&nome=${filtroValorNome}&page=${page}&size=${size}&sort=nome,asc`;
     };
 
-    console.log(url);
+    console.log(urlToGet);
 
-    const response = await fetch("https://objetivo.onrender.com/pessoas?page=2");
+    const response = await fetch(urlToGet);
     const data = await response.json();
 
     const responseCount = await fetch("http://localhost:8080/pessoas/count");

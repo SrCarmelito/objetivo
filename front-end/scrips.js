@@ -43,6 +43,8 @@ async function getAll() {
         url = `/pessoas?id=${filtroValorId}&cpf=${filtroValorCpf}&nome=${filtroValorNome}&page=${page}&size=${size}&sort=nome,asc`;
     };
 
+    console.log(url);
+
     const response = await fetch(url);
     const data = await response.json();
 

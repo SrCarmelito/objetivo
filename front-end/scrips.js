@@ -39,16 +39,13 @@ async function getAll() {
 
     console.log(url);
 
-    if (filtroValorCpf || filtroValorNome || page || size) {
-        const urlToGet = `/pessoas?id=${filtroValorId}&cpf=${filtroValorCpf}&nome=${filtroValorNome}&page=${page}&size=${size}&sort=nome,asc`;
-    };
+        
+        url = `https://objetivo.onrender.com/pessoas?id=${filtroValorId}&cpf=${filtroValorCpf}&nome=${filtroValorNome}&page=${page}&size=${size}&sort=nome,asc`;
 
-    console.log(urlToGet);
-
-    const response = await fetch(urlToGet);
+    const response = await fetch(url);
     const data = await response.json();
 
-    const responseCount = await fetch("http://localhost:8080/pessoas/count");
+    const responseCount = await fetch("https://objetivo.onrender.com/pessoas/count");
     const dataCount = await responseCount.json();
     const lbCount = document.querySelector("#lb-count");
     lbCount.textContent = `${dataCount} Pessoas Cadastradas`;

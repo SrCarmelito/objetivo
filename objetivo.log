@@ -90,3 +90,175 @@
 2024-05-31T09:40:43.857-03:00  INFO 48792 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2024-05-31T09:40:43.861-03:00  INFO 48792 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2024-05-31T09:40:43.868-03:00  INFO 48792 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-05-31T09:42:59.686-03:00  INFO 37168 --- [restartedMain] com.objetivo.ObjetivoApplication         : Starting ObjetivoApplication using Java 21.0.2 with PID 37168 (C:\eclipse-workspace\objetivo\target\classes started by carmelito.benali in C:\eclipse-workspace\objetivo)
+2024-05-31T09:42:59.688-03:00  INFO 37168 --- [restartedMain] com.objetivo.ObjetivoApplication         : The following 1 profile is active: "prod"
+2024-05-31T09:42:59.731-03:00  INFO 37168 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-05-31T09:43:00.483-03:00  INFO 37168 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-31T09:43:00.551-03:00  INFO 37168 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 60 ms. Found 2 JPA repository interfaces.
+2024-05-31T09:43:01.282-03:00  INFO 37168 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-05-31T09:43:01.295-03:00  INFO 37168 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-31T09:43:01.295-03:00  INFO 37168 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.18]
+2024-05-31T09:43:01.355-03:00  INFO 37168 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-05-31T09:43:01.356-03:00  INFO 37168 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1624 ms
+2024-05-31T09:43:01.373-03:00 DEBUG 37168 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping filters: characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105
+2024-05-31T09:43:01.373-03:00 DEBUG 37168 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping servlets: dispatcherServlet urls=[/]
+2024-05-31T09:43:01.544-03:00  INFO 37168 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-31T09:43:01.608-03:00  INFO 37168 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.1.Final
+2024-05-31T09:43:01.646-03:00  INFO 37168 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-31T09:43:01.897-03:00  INFO 37168 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-31T09:43:01.928-03:00  INFO 37168 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-05-31T09:43:02.065-03:00  INFO 37168 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@60197be7
+2024-05-31T09:43:02.067-03:00  INFO 37168 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-05-31T09:43:02.117-03:00  WARN 37168 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000511: The 9.6.0 version for [org.hibernate.dialect.PostgreSQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 12.0.0. Check the community dialects project for available legacy versions.
+2024-05-31T09:43:02.982-03:00  INFO 37168 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-31T09:43:03.037-03:00  INFO 37168 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-31T09:43:03.338-03:00  INFO 37168 --- [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-05-31T09:43:03.562-03:00  WARN 37168 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-31T09:43:03.673-03:00 DEBUG 37168 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 17 mappings in 'requestMappingHandlerMapping'
+2024-05-31T09:43:03.752-03:00 DEBUG 37168 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-05-31T09:43:03.796-03:00 DEBUG 37168 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-05-31T09:43:03.829-03:00 DEBUG 37168 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-05-31T09:43:03.970-03:00  INFO 37168 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-05-31T09:43:04.015-03:00  INFO 37168 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-05-31T09:43:04.025-03:00  INFO 37168 --- [restartedMain] com.objetivo.ObjetivoApplication         : Started ObjetivoApplication in 4.758 seconds (process running for 5.3)
+2024-05-31T09:43:04.028-03:00  INFO 37168 --- [restartedMain] com.objetivo.profiles.ConfigProd         : Profile active is PRODUCTION!!!
+2024-05-31T09:43:07.878-03:00  INFO 37168 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-31T09:43:07.879-03:00  INFO 37168 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-05-31T09:43:07.879-03:00 DEBUG 37168 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2024-05-31T09:43:07.879-03:00 DEBUG 37168 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2024-05-31T09:43:07.879-03:00 DEBUG 37168 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2024-05-31T09:43:07.880-03:00 DEBUG 37168 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@58b3f58e
+2024-05-31T09:43:07.880-03:00 DEBUG 37168 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@7d4b4d12
+2024-05-31T09:43:07.880-03:00 DEBUG 37168 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2024-05-31T09:43:07.880-03:00  INFO 37168 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-05-31T09:43:07.890-03:00 DEBUG 37168 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : OPTIONS "/pessoas/count", parameters={}
+2024-05-31T09:43:07.898-03:00 DEBUG 37168 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.PessoaController#quantidadePessoas()
+2024-05-31T09:43:07.916-03:00 DEBUG 37168 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-05-31T09:43:07.926-03:00 DEBUG 37168 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/pessoas/count", parameters={}
+2024-05-31T09:43:07.926-03:00 DEBUG 37168 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.PessoaController#quantidadePessoas()
+2024-05-31T09:43:08.308-03:00 DEBUG 37168 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-05-31T09:43:08.310-03:00 DEBUG 37168 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing [707]
+2024-05-31T09:43:08.322-03:00 DEBUG 37168 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-05-31T09:43:11.913-03:00 DEBUG 37168 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : OPTIONS "/pessoas/count", parameters={}
+2024-05-31T09:43:11.913-03:00 DEBUG 37168 --- [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.PessoaController#quantidadePessoas()
+2024-05-31T09:43:11.914-03:00 DEBUG 37168 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-05-31T09:43:11.921-03:00 DEBUG 37168 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/pessoas/count", parameters={}
+2024-05-31T09:43:11.921-03:00 DEBUG 37168 --- [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.PessoaController#quantidadePessoas()
+2024-05-31T09:43:11.929-03:00 DEBUG 37168 --- [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-05-31T09:43:11.929-03:00 DEBUG 37168 --- [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Writing [707]
+2024-05-31T09:43:11.930-03:00 DEBUG 37168 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-05-31T09:47:08.295-03:00 DEBUG 37168 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/pessoas", parameters={}
+2024-05-31T09:47:08.296-03:00 DEBUG 37168 --- [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.PessoaController#findAllPaginada(String, String, String, Pageable)
+2024-05-31T09:47:08.441-03:00 DEBUG 37168 --- [http-nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json;q=0.8', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7] and supported [application/json, application/*+json]
+2024-05-31T09:47:08.442-03:00 DEBUG 37168 --- [http-nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [Page 1 of 36 containing com.objetivo.entities.Pessoa instances]
+2024-05-31T09:47:08.502-03:00 DEBUG 37168 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-05-31T09:47:08.667-03:00 DEBUG 37168 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/favicon.ico", parameters={}
+2024-05-31T09:47:08.673-03:00 DEBUG 37168 --- [http-nio-8080-exec-8] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2024-05-31T09:47:08.675-03:00 DEBUG 37168 --- [http-nio-8080-exec-8] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2024-05-31T09:47:08.677-03:00 DEBUG 37168 --- [http-nio-8080-exec-8] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
+2024-05-31T09:47:08.677-03:00 DEBUG 37168 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2024-05-31T09:47:08.680-03:00 DEBUG 37168 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+2024-05-31T09:47:08.681-03:00 DEBUG 37168 --- [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2024-05-31T09:47:08.686-03:00 DEBUG 37168 --- [http-nio-8080-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json;q=0.8', given [image/avif, image/webp, image/apng, image/svg+xml, image/*, */*;q=0.8] and supported [application/json, application/*+json]
+2024-05-31T09:47:08.689-03:00 DEBUG 37168 --- [http-nio-8080-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Fri May 31 09:47:08 BRT 2024, status=404, error=Not Found, trace=org.springframework.web. (truncated)...]
+2024-05-31T09:47:08.701-03:00 DEBUG 37168 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
+2024-05-31T09:49:24.530-03:00 DEBUG 37168 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/pessoas/count", parameters={}
+2024-05-31T09:49:24.531-03:00 DEBUG 37168 --- [http-nio-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.PessoaController#quantidadePessoas()
+2024-05-31T09:49:24.534-03:00 DEBUG 37168 --- [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-05-31T09:49:24.535-03:00 DEBUG 37168 --- [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Writing [707]
+2024-05-31T09:49:24.536-03:00 DEBUG 37168 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-05-31T09:49:29.531-03:00 DEBUG 37168 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/pessoas/count", parameters={}
+2024-05-31T09:49:29.532-03:00 DEBUG 37168 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.PessoaController#quantidadePessoas()
+2024-05-31T09:49:29.534-03:00 DEBUG 37168 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-05-31T09:49:29.535-03:00 DEBUG 37168 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [707]
+2024-05-31T09:49:29.535-03:00 DEBUG 37168 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-05-31T09:50:07.125-03:00 DEBUG 37168 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/pessoas/count", parameters={}
+2024-05-31T09:50:07.125-03:00 DEBUG 37168 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.PessoaController#quantidadePessoas()
+2024-05-31T09:50:07.128-03:00 DEBUG 37168 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-05-31T09:50:07.128-03:00 DEBUG 37168 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing [707]
+2024-05-31T09:50:07.129-03:00 DEBUG 37168 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-05-31T10:19:11.960-03:00 DEBUG 37168 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/pessoas/count", parameters={}
+2024-05-31T10:19:11.962-03:00 DEBUG 37168 --- [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.PessoaController#quantidadePessoas()
+2024-05-31T10:19:11.966-03:00 DEBUG 37168 --- [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-05-31T10:19:11.966-03:00 DEBUG 37168 --- [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Writing [707]
+2024-05-31T10:19:11.967-03:00 DEBUG 37168 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-05-31T10:20:44.561-03:00 DEBUG 37168 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/pessoas/count", parameters={}
+2024-05-31T10:20:44.561-03:00 DEBUG 37168 --- [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.PessoaController#quantidadePessoas()
+2024-05-31T10:20:44.565-03:00 DEBUG 37168 --- [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-05-31T10:20:44.565-03:00 DEBUG 37168 --- [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Writing [707]
+2024-05-31T10:20:44.566-03:00 DEBUG 37168 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-05-31T10:20:59.190-03:00 DEBUG 37168 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/pessoas/count", parameters={}
+2024-05-31T10:20:59.191-03:00 DEBUG 37168 --- [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.PessoaController#quantidadePessoas()
+2024-05-31T10:20:59.193-03:00 DEBUG 37168 --- [http-nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-05-31T10:20:59.193-03:00 DEBUG 37168 --- [http-nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Writing [707]
+2024-05-31T10:20:59.194-03:00 DEBUG 37168 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-05-31T10:21:25.277-03:00 DEBUG 37168 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/pessoas/count", parameters={}
+2024-05-31T10:21:25.278-03:00 DEBUG 37168 --- [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.PessoaController#quantidadePessoas()
+2024-05-31T10:21:25.280-03:00 DEBUG 37168 --- [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-05-31T10:21:25.281-03:00 DEBUG 37168 --- [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Writing [707]
+2024-05-31T10:21:25.281-03:00 DEBUG 37168 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-05-31T10:21:46.174-03:00 DEBUG 37168 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/pessoas/count", parameters={}
+2024-05-31T10:21:46.175-03:00 DEBUG 37168 --- [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.PessoaController#quantidadePessoas()
+2024-05-31T10:21:46.178-03:00 DEBUG 37168 --- [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-05-31T10:21:46.178-03:00 DEBUG 37168 --- [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Writing [707]
+2024-05-31T10:21:46.179-03:00 DEBUG 37168 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-05-31T10:21:54.065-03:00 DEBUG 37168 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/pessoas/count", parameters={}
+2024-05-31T10:21:54.066-03:00 DEBUG 37168 --- [http-nio-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.PessoaController#quantidadePessoas()
+2024-05-31T10:21:54.068-03:00 DEBUG 37168 --- [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-05-31T10:21:54.068-03:00 DEBUG 37168 --- [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Writing [707]
+2024-05-31T10:21:54.069-03:00 DEBUG 37168 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-05-31T10:21:56.877-03:00 DEBUG 37168 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/pessoas/count", parameters={}
+2024-05-31T10:21:56.877-03:00 DEBUG 37168 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.PessoaController#quantidadePessoas()
+2024-05-31T10:21:56.880-03:00 DEBUG 37168 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-05-31T10:21:56.880-03:00 DEBUG 37168 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [707]
+2024-05-31T10:21:56.881-03:00 DEBUG 37168 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-05-31T10:34:05.880-03:00 DEBUG 37168 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/pessoas/count", parameters={}
+2024-05-31T10:34:05.881-03:00 DEBUG 37168 --- [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.PessoaController#quantidadePessoas()
+2024-05-31T10:34:05.887-03:00 DEBUG 37168 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-05-31T10:34:05.887-03:00 DEBUG 37168 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Writing [707]
+2024-05-31T10:34:05.888-03:00 DEBUG 37168 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-05-31T10:34:16.389-03:00 DEBUG 37168 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/pessoas/count", parameters={}
+2024-05-31T10:34:16.390-03:00 DEBUG 37168 --- [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.PessoaController#quantidadePessoas()
+2024-05-31T10:34:16.393-03:00 DEBUG 37168 --- [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-05-31T10:34:16.394-03:00 DEBUG 37168 --- [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Writing [707]
+2024-05-31T10:34:16.394-03:00 DEBUG 37168 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-05-31T10:38:23.110-03:00 DEBUG 37168 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/pessoas/count", parameters={}
+2024-05-31T10:38:23.110-03:00 DEBUG 37168 --- [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.PessoaController#quantidadePessoas()
+2024-05-31T10:38:23.114-03:00 DEBUG 37168 --- [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-05-31T10:38:23.114-03:00 DEBUG 37168 --- [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Writing [707]
+2024-05-31T10:38:23.115-03:00 DEBUG 37168 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-05-31T10:38:38.274-03:00 DEBUG 37168 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/pessoas/count", parameters={}
+2024-05-31T10:38:38.274-03:00 DEBUG 37168 --- [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.PessoaController#quantidadePessoas()
+2024-05-31T10:38:38.277-03:00 DEBUG 37168 --- [http-nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-05-31T10:38:38.277-03:00 DEBUG 37168 --- [http-nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Writing [707]
+2024-05-31T10:38:38.278-03:00 DEBUG 37168 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-05-31T10:39:20.404-03:00 DEBUG 37168 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/pessoas/count", parameters={}
+2024-05-31T10:39:20.405-03:00 DEBUG 37168 --- [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.PessoaController#quantidadePessoas()
+2024-05-31T10:39:20.407-03:00 DEBUG 37168 --- [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-05-31T10:39:20.407-03:00 DEBUG 37168 --- [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Writing [707]
+2024-05-31T10:39:20.407-03:00 DEBUG 37168 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-05-31T10:39:24.095-03:00 DEBUG 37168 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/pessoas/count", parameters={}
+2024-05-31T10:39:24.096-03:00 DEBUG 37168 --- [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.PessoaController#quantidadePessoas()
+2024-05-31T10:39:24.098-03:00 DEBUG 37168 --- [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-05-31T10:39:24.098-03:00 DEBUG 37168 --- [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Writing [707]
+2024-05-31T10:39:24.100-03:00 DEBUG 37168 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-05-31T10:39:36.295-03:00 DEBUG 37168 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/pessoas/count", parameters={}
+2024-05-31T10:39:36.295-03:00 DEBUG 37168 --- [http-nio-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.PessoaController#quantidadePessoas()
+2024-05-31T10:39:36.297-03:00 DEBUG 37168 --- [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-05-31T10:39:36.297-03:00 DEBUG 37168 --- [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Writing [707]
+2024-05-31T10:39:36.298-03:00 DEBUG 37168 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-05-31T10:39:37.496-03:00 DEBUG 37168 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/pessoas/count", parameters={}
+2024-05-31T10:39:37.496-03:00 DEBUG 37168 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.PessoaController#quantidadePessoas()
+2024-05-31T10:39:37.498-03:00 DEBUG 37168 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-05-31T10:39:37.498-03:00 DEBUG 37168 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [707]
+2024-05-31T10:39:37.499-03:00 DEBUG 37168 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-05-31T10:39:39.690-03:00 DEBUG 37168 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/pessoas/count", parameters={}
+2024-05-31T10:39:39.691-03:00 DEBUG 37168 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.PessoaController#quantidadePessoas()
+2024-05-31T10:39:39.693-03:00 DEBUG 37168 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-05-31T10:39:39.694-03:00 DEBUG 37168 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing [707]
+2024-05-31T10:39:39.694-03:00 DEBUG 37168 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-05-31T10:44:59.212-03:00 DEBUG 37168 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/pessoas/count", parameters={}
+2024-05-31T10:44:59.213-03:00 DEBUG 37168 --- [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.PessoaController#quantidadePessoas()
+2024-05-31T10:44:59.217-03:00 DEBUG 37168 --- [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-05-31T10:44:59.217-03:00 DEBUG 37168 --- [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Writing [707]
+2024-05-31T10:44:59.218-03:00 DEBUG 37168 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK

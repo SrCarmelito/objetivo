@@ -1630,6 +1630,22 @@ INSERT INTO elo.endereco (id, pessoa_id, cep, logradouro, numero, cidade, uf, ba
 INSERT INTO elo.endereco (id, pessoa_id, cep, logradouro, numero, cidade, uf, bairro) VALUES(999, 387, '87050000', 'Rua Afonso Pena', '999', 'SAO ROQUE DE MINAS', 'TO', 'A DEFINIR!');
 INSERT INTO elo.endereco (id, pessoa_id, cep, logradouro, numero, cidade, uf, bairro) VALUES(1000, 571, '13088061', 'AV DOS PALMARES', '1000', 'Juripiranga', 'AC', 'A DEFINIR!');
 
+CREATE SEQUENCE elo.s_endereco
+	INCREMENT BY 1
+	MINVALUE 1
+	MAXVALUE 9223372036854775807
+	START 1
+	CACHE 1
+	NO CYCLE;
+
+CREATE SEQUENCE elo.s_pessoa
+	INCREMENT BY 1
+	MINVALUE 1
+	MAXVALUE 9223372036854775807
+	START 1
+	CACHE 1
+	NO CYCLE;
+
 select setval('s_pessoa', (select max(id) from elo.pessoa));
 
 select setval('s_endereco', (select max(id) from elo.endereco));

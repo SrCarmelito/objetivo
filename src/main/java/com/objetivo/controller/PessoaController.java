@@ -1,8 +1,8 @@
 package com.objetivo.controller;
 
-import java.net.URI;
-import java.util.Optional;
-
+import com.objetivo.entities.Pessoa;
+import com.objetivo.repository.PessoaRepository;
+import jakarta.persistence.EntityNotFoundException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -23,9 +23,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.objetivo.entities.Pessoa;
-import com.objetivo.repository.PessoaRepository;
-import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
+import java.util.Optional;
 
 @RestController
 @RequestMapping(value = "/pessoas")
@@ -34,81 +32,75 @@ public class PessoaController {
 	
 	@Autowired
 	private PessoaRepository pessoaRepository;
-	
-	// pesquisa paginada nos parâmetros da url
+
 	@CrossOrigin(allowedHeaders = "*")
 	@GetMapping
 	public ResponseEntity<Page<Pessoa>> findAllPaginada (
 			@RequestParam(value = "id", required = false, defaultValue = "") String id,
 			@RequestParam(value = "cpf", required = false, defaultValue = "") String cpf,
 			@RequestParam(value = "nome", required = false, defaultValue = "") String nome,			
-			Pageable pageable) throws Exception{
+			Pageable pageable) {
 		
 		return ResponseEntity
 				.status(HttpStatus.OK)
-				.body(this.pessoaRepository.findByCpfNome(id, cpf, nome, pageable));
-	};
-	
-	// pesquisa quantidade de pessoas
+				.body(this.pessoaRepository.findByIdCpfNomeContaining(id, cpf, nome, pageable));
+	}
+
 	@CrossOrigin(allowedHeaders = "*")
 	@GetMapping(path = "/count")
 	public Long quantidadePessoas() {
 		return pessoaRepository.count();
-	};
-	
-	// pesquisa por id específico
+	}
+
 	@CrossOrigin(allowedHeaders = "*")
 	@GetMapping(path = "/{id}")
-	public Optional<Pessoa> obterPessoaPorId(@PathVariable Integer id) {
+	public Optional<Pessoa> obterPessoaPorId(@PathVariable Long id) {
 		return pessoaRepository.findById(id);
-	};
+	}
 		
-	// insere uma nova pessoa // 
+
 	@Transactional()
 	@CrossOrigin(allowedHeaders = "*")
 	@PostMapping
-	public @ResponseBody Pessoa novaPessoa(@RequestBody @Validated Pessoa pessoa) throws Exception {
-		Pessoa novaPessoa = pessoa;
+	public @ResponseBody Pessoa novaPessoa(@RequestBody @Validated Pessoa pessoa)  {
 
-		if (!pessoaRepository.findByCpfContaining(pessoa.cpf).isEmpty()){
-			throw new Exception("CPF informado já existe no cadastro");
+        if (!pessoaRepository.findByCpfContaining(pessoa.getCpf()).isEmpty()){
+			throw new IllegalArgumentException("CPF informado já existe no cadastro");
 		} else {
-			novaPessoa.setCpf(pessoa.cpf);
-			novaPessoa.setNome(pessoa.nome);
-			novaPessoa.setdataNascimento(pessoa.dataNascimento);
-			novaPessoa.setTelefone(pessoa.telefone);
-			return pessoaRepository.save(novaPessoa);
+			pessoa.setCpf(pessoa.getCpf());
+			pessoa.setNome(pessoa.getNome());
+			pessoa.setDataNascimento(pessoa.getDataNascimento());
+			pessoa.setTelefone(pessoa.getTelefone());
+			return pessoaRepository.save(pessoa);
 		}
 	
-	};
+	}
 
-	//atualiza a pessoa // 
 	@Transactional()
 	@CrossOrigin(allowedHeaders = "*")
 	@PutMapping(path = "/{id}")
 	public Pessoa alterarPessoa(
-			@PathVariable("id") Integer id, 
-			@RequestBody @Validated Pessoa pessoa) throws Exception {		
+			@PathVariable("id") Long id,
+			@RequestBody @Validated Pessoa pessoa) {
 		Pessoa pessoaAlterada = pessoaRepository.findById(id)
-				.orElseThrow(() -> new Exception("Registro não encontrado."));
+				.orElseThrow(() -> new EntityNotFoundException("Registro não encontrado."));
 		
-		if (pessoaRepository.findByCpfContaining(pessoa.cpf).size() > 1){
-			throw new Exception("CPF informado já existe no cadastro");
+		if (pessoaRepository.findByCpfContaining(pessoa.getCpf()).size() > 1){
+			throw new IllegalArgumentException("CPF informado já existe no cadastro");
 		} else {
-			pessoaAlterada.setNome(pessoa.nome);
-			pessoaAlterada.setCpf(pessoa.cpf);
-			pessoaAlterada.setTelefone(pessoa.telefone);
-			pessoaAlterada.setdataNascimento(pessoa.dataNascimento);
+			pessoaAlterada.setNome(pessoa.getNome());
+			pessoaAlterada.setCpf(pessoa.getCpf());
+			pessoaAlterada.setTelefone(pessoa.getTelefone());
+			pessoaAlterada.setDataNascimento(pessoa.getDataNascimento());
 			return pessoaRepository.save(pessoaAlterada);
 		}
-	};
-	
-	// deleta uma pessoa pelo id
+	}
+
 	@Transactional()
 	@CrossOrigin(allowedHeaders = "*")
 	@DeleteMapping(path = "/{id}")
-	public void excluirPessoa(@PathVariable Integer id) {
+	public void excluirPessoa(@PathVariable Long id) {
 		pessoaRepository.deleteById(id);
-	};
-				
+	}
+
 }

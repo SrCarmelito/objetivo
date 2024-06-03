@@ -1,8 +1,6 @@
-create database objetivo;
-
-create schema elo;
 
 
+create or replace schema elo;
 
 CREATE TABLE elo.pessoa (
 	id int NOT NULL,
@@ -19,7 +17,8 @@ create table elo.endereco  (
 	logradouro varchar(150) NOT NULL,
 	numero varchar(10) NOT NULL,
 	cidade varchar(100) NOT NULL,
-	uf varchar(2) NOT NULL
+	uf varchar(2) NOT NULL,
+	bairro varchar(100) NOT NULL
 );
 
 alter table elo.pessoa add CONSTRAINT pkpessoa PRIMARY KEY (id);
@@ -1630,22 +1629,10 @@ INSERT INTO elo.endereco (id, pessoa_id, cep, logradouro, numero, cidade, uf, ba
 INSERT INTO elo.endereco (id, pessoa_id, cep, logradouro, numero, cidade, uf, bairro) VALUES(999, 387, '87050000', 'Rua Afonso Pena', '999', 'SAO ROQUE DE MINAS', 'TO', 'A DEFINIR!');
 INSERT INTO elo.endereco (id, pessoa_id, cep, logradouro, numero, cidade, uf, bairro) VALUES(1000, 571, '13088061', 'AV DOS PALMARES', '1000', 'Juripiranga', 'AC', 'A DEFINIR!');
 
-CREATE SEQUENCE elo.s_endereco
-	INCREMENT BY 1
-	MINVALUE 1
-	MAXVALUE 9223372036854775807
-	START 1
-	CACHE 1
-	NO CYCLE;
+CREATE SEQUENCE elo.s_endereco;
 
-CREATE SEQUENCE elo.s_pessoa
-	INCREMENT BY 1
-	MINVALUE 1
-	MAXVALUE 9223372036854775807
-	START 1
-	CACHE 1
-	NO CYCLE;
+CREATE SEQUENCE elo.s_pessoa;
 
-select setval('s_pessoa', (select max(id) from elo.pessoa));
+alter sequence elo.s_pessoa restart with (select max(id) from elo.pessoa) ;
 
-select setval('s_endereco', (select max(id) from elo.endereco));
+alter sequence elo.s_endereco restart with (select max(id) from elo.endereco) ;

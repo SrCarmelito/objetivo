@@ -58,13 +58,13 @@ public class EnderecoController {
 	
 	@CrossOrigin(allowedHeaders = "*")
 	@GetMapping(path = "/{id}")
-	public Optional<Endereco> obterPessoaPorId(@PathVariable Integer id) {
+	public Optional<Endereco> obterPessoaPorId(@PathVariable Long id) {
 		return enderecoRepository.findById(id);
 	}
 	
 	@CrossOrigin(allowedHeaders = "*")
 	@GetMapping(path = "/end/{id}")
-	public Integer pessoa(@PathVariable Integer id) {
+	public Long pessoa(@PathVariable Long id) {
 		return enderecoRepository.findPessoaByEndereco(id);
 	}
 		
@@ -72,17 +72,17 @@ public class EnderecoController {
 	@CrossOrigin(allowedHeaders = "*")
 	@PutMapping(path = "/{id}")
 	public Endereco enderecoAlterado(
-			@PathVariable("id") Integer id,
+			@PathVariable("id") Long id,
 			@RequestBody  Endereco endereco
 			) {
 		Endereco enderecoAlterado = enderecoRepository.findById(id).orElseThrow();
 		Pessoa pessoaEndereco = pessoaRepository.findById(enderecoRepository.findPessoaByEndereco(id)).orElseThrow();
-		enderecoAlterado.setCep(endereco.cep);
-		enderecoAlterado.setLogradouro(endereco.logradouro);
-		enderecoAlterado.setNumero(endereco.numero);
-		enderecoAlterado.setCidade(endereco.cidade);
-		enderecoAlterado.setUf(endereco.uf); 
-		enderecoAlterado.setBairro(endereco.bairro); 
+		enderecoAlterado.setCep(endereco.getCep());
+		enderecoAlterado.setLogradouro(endereco.getLogradouro());
+		enderecoAlterado.setNumero(endereco.getNumero());
+		enderecoAlterado.setCidade(endereco.getCidade());
+		enderecoAlterado.setUf(endereco.getUf());
+		enderecoAlterado.setBairro(endereco.getBairro());
 		enderecoAlterado.setPessoa(pessoaEndereco);
 		return enderecoRepository.save(enderecoAlterado);
 	}
@@ -90,16 +90,16 @@ public class EnderecoController {
 	@CrossOrigin(allowedHeaders = "*")
 	@PostMapping(path = "/{pessoa}")
 	public @ResponseBody Endereco novoEndereco(
-			@PathVariable("pessoa") Integer pessoa,
+			@PathVariable("pessoa") Long pessoa,
 			@RequestBody Endereco endereco) {
 		Pessoa pessoaEndereco = pessoaRepository.findById(pessoa).orElseThrow();
 		Endereco novoEndereco = endereco;
-		novoEndereco.setCep(endereco.cep);
-		novoEndereco.setLogradouro(endereco.logradouro);
-		novoEndereco.setNumero(endereco.numero);
-		novoEndereco.setCidade(endereco.cidade);
-		novoEndereco.setUf(endereco.uf);
-		novoEndereco.setBairro(endereco.bairro);
+		novoEndereco.setCep(endereco.getCep());
+		novoEndereco.setLogradouro(endereco.getLogradouro());
+		novoEndereco.setNumero(endereco.getNumero());
+		novoEndereco.setCidade(endereco.getCidade());
+		novoEndereco.setUf(endereco.getUf());
+		novoEndereco.setBairro(endereco.getBairro());
 		novoEndereco.setPessoa(pessoaEndereco);
 		return enderecoRepository.save(novoEndereco);
 	}
@@ -118,7 +118,7 @@ public class EnderecoController {
 	
 	@CrossOrigin(allowedHeaders = "*")
 	@DeleteMapping(path = "/{id}")
-	public void deleteAdress(@PathVariable int id) {
+	public void deleteAdress(@PathVariable Long id) {
 		enderecoRepository.deleteById(id);
 	}
 	

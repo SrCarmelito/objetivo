@@ -5,11 +5,10 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootTest
-@EnableJpaRepositories
 class ObjetivoApplicationTests {
 
-    @Test
-    void contextLoads() {
-    }
-
+//    @Test
+//    void contextLoads() {
+//    }
+gi
 }

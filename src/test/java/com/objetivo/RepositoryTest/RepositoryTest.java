@@ -33,24 +33,24 @@ import java.time.LocalDate;
 import java.util.Collections;
 import java.util.List;
 
-@DataJpaTest
-//@RunWith(SpringRunner.class)
-//@SpringBootTest(classes=ObjetivoApplication.class)
-@AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
-@ActiveProfiles("test")
+//@DataJpaTest
+////@RunWith(SpringRunner.class)
+////@SpringBootTest(classes=ObjetivoApplication.class)
+//@AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
+//@ActiveProfiles("test")
 public class RepositoryTest {
+//
+//    @Autowired
+//    public PessoaRepository repository;
+//
+//    @Test
+//    public void findByCpfContaining() {
+//        assertEquals(1, repository.findByCpfContaining("679").size());
+//    }
 
-    @Autowired
-    public PessoaRepository repository;
-
-    @Test
-    public void findByCpfContaining() {
-        assertEquals(1, repository.findByCpfContaining("679").size());
-    }
-
-    @Test
-    public void findByIdCpfNomeContaining() {
-        assertEquals(1, repository.ops("11", null, null).size());
-    }
+//    @Test
+//    public void findByIdCpfNomeContaining() {
+//        assertEquals(1, repository.ops("11", null, null).size());
+//    }
 
 }

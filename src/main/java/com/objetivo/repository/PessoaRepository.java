@@ -21,10 +21,4 @@ public interface PessoaRepository extends JpaRepository<Pessoa, Long>{
 
 	List<Pessoa> findByCpfContaining(@Param("cpf") String cpf);
 
-	@Query(nativeQuery = true, value = "select p.id, p.nome, p.datanascimento, p.cpf, p.telefone, p.idade "
-			//+ "(replace(replace(replace(replace(replace(replace(cast(age(datanascimento) as varchar), 'years', 'Anos'), 'year', 'Ano'), 'mons', 'Meses'), 'mon', 'Mês'), 'days', 'Dias'), 'day', 'Dia')) as idade"
-			+ " from elo.pessoa p where p.cpf ilike %:cpf% and p.nome ilike %:nome%"
-			+ " and cast(p.id as varchar) like %:id%")
-	List<Pessoa> ops(@Param("id") String id, @Param("cpf") String cpf, @Param("nome") String nome);
-
 }

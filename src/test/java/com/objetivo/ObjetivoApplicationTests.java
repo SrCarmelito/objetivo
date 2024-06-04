@@ -7,8 +7,5 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @SpringBootTest
 class ObjetivoApplicationTests {
 
-//    @Test
-//    void contextLoads() {
-//    }
 
 }

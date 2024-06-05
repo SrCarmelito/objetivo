@@ -39,38 +39,45 @@ import java.util.List;
 
 
 @DataJpaTest
+@ActiveProfiles("test")
 public class RepositoryTest {
 
-    @MockBean
+    //@MockBean
+    @Autowired
     public PessoaRepository repository;
 
+//    @Test
+//    public void findByCpfContaining() {
+//
+//        Pessoa pessoa = new Pessoa(1L, "Tigas e os 300", LocalDate.now(), "06455083903",
+//                "4431233830", null, null);
+//
+//        when(this.repository.findByCpfContaining("064")).thenReturn(List.of(pessoa));
+//
+//        assertEquals(1, repository.findByCpfContaining("064").size());
+//    }
+//
+//    @Test
+//    public void findByIdCpfNomeContaining() {
+//
+//        Pessoa pessoa = new Pessoa(19676L, "Tigas e os 300", LocalDate.now(), "06455083903",
+//                "4431233830", null, null);
+//
+//        List<Pessoa> pessoas = new ArrayList<>();
+//        pessoas.add(pessoa);
+//        Page<Pessoa> page = new PageImpl<>(pessoas);
+//
+//        when(this.repository.findByIdCpfNomeContaining("96", "839", "300", null)).thenReturn(page);
+//        assertEquals(1, repository.findByIdCpfNomeContaining("96", "839", "300", null).getSize());
+//
+//        Page<Pessoa> pessoaEncontrada = this.repository.findByIdCpfNomeContaining("96", "839", "300", null);
+//
+//        assertTrue(pessoaEncontrada.stream().findFirst().get().getNome().equals("Tigas e os 300"));
+//    }
+
     @Test
-    public void findByCpfContaining() {
-
-        Pessoa pessoa = new Pessoa(1L, "Tigas e os 300", LocalDate.now(), "06455083903",
-                "4431233830", null, null);
-
-        Mockito.when(this.repository.findByCpfContaining("064")).thenReturn(List.of(pessoa));
-
-        assertEquals(1, repository.findByCpfContaining("064").size());
-    }
-
-    @Test
-    public void findByIdCpfNomeContaining() {
-
-        Pessoa pessoa = new Pessoa(19676L, "Tigas e os 300", LocalDate.now(), "06455083903",
-                "4431233830", null, null);
-
-        List<Pessoa> pessoas = new ArrayList<>();
-        pessoas.add(pessoa);
-        Page<Pessoa> page = new PageImpl<>(pessoas);
-
-        Mockito.when(this.repository.findByIdCpfNomeContaining("96", "839", "300", null)).thenReturn(page);
-        assertEquals(1, repository.findByIdCpfNomeContaining("96", "839", "300", null).getSize());
-
-        Page<Pessoa> pessoaEncontrada = this.repository.findByIdCpfNomeContaining("96", "839", "300", null);
-
-        assertTrue(pessoaEncontrada.stream().findFirst().get().getNome().equals("Tigas e os 300"));
+    void teste() {
+        assertFalse(this.repository.findByIdCpfNomeContaining("", "1", "", Pageable.ofSize(1)).isEmpty());
     }
 
 }

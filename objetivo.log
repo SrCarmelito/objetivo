@@ -130,3 +130,75 @@
 2024-06-05T20:58:20.969-03:00  INFO 9604 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2024-06-05T20:58:20.974-03:00  INFO 9604 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2024-06-05T20:58:20.981-03:00  INFO 9604 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-06-05T21:42:05.353-03:00  INFO 36352 --- [restartedMain] com.objetivo.ObjetivoApplication         : Starting ObjetivoApplication using Java 21.0.2 with PID 36352 (C:\eclipse-workspace\objetivo\target\classes started by carmelito.benali in C:\eclipse-workspace\objetivo)
+2024-06-05T21:42:05.354-03:00  INFO 36352 --- [restartedMain] com.objetivo.ObjetivoApplication         : The following 1 profile is active: "dev"
+2024-06-05T21:42:05.403-03:00  INFO 36352 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-06-05T21:42:06.179-03:00  INFO 36352 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-05T21:42:06.252-03:00  INFO 36352 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 63 ms. Found 2 JPA repository interfaces.
+2024-06-05T21:42:06.952-03:00  INFO 36352 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-06-05T21:42:06.962-03:00  INFO 36352 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-05T21:42:06.964-03:00  INFO 36352 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.18]
+2024-06-05T21:42:07.022-03:00  INFO 36352 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-05T21:42:07.022-03:00  INFO 36352 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1618 ms
+2024-06-05T21:42:07.066-03:00  INFO 36352 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-06-05T21:42:07.209-03:00  INFO 36352 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@42a9048
+2024-06-05T21:42:07.211-03:00  INFO 36352 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-06-05T21:42:07.224-03:00  INFO 36352 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/objetivo'
+2024-06-05T21:42:07.242-03:00 DEBUG 36352 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping filters: characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105
+2024-06-05T21:42:07.242-03:00 DEBUG 36352 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping servlets: dispatcherServlet urls=[/], h2Console urls=[/h2-console/*]
+2024-06-05T21:42:07.396-03:00  INFO 36352 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-05T21:42:07.491-03:00  INFO 36352 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.1.Final
+2024-06-05T21:42:07.526-03:00  INFO 36352 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-06-05T21:42:07.787-03:00  INFO 36352 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-05T21:42:07.867-03:00  WARN 36352 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000511: The 9.6.0 version for [org.hibernate.dialect.PostgreSQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 12.0.0. Check the community dialects project for available legacy versions.
+2024-06-05T21:42:08.754-03:00  INFO 36352 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-05T21:42:08.816-03:00  INFO 36352 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-05T21:42:09.161-03:00  INFO 36352 --- [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-06-05T21:42:09.368-03:00  WARN 36352 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-05T21:42:09.476-03:00 DEBUG 36352 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 14 mappings in 'requestMappingHandlerMapping'
+2024-06-05T21:42:09.582-03:00 DEBUG 36352 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-06-05T21:42:09.624-03:00 DEBUG 36352 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-06-05T21:42:09.657-03:00 DEBUG 36352 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-06-05T21:42:09.828-03:00  INFO 36352 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-06-05T21:42:09.868-03:00  INFO 36352 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-06-05T21:42:09.878-03:00  INFO 36352 --- [restartedMain] com.objetivo.ObjetivoApplication         : Started ObjetivoApplication in 5.029 seconds (process running for 5.587)
+2024-06-05T21:42:09.882-03:00  INFO 36352 --- [restartedMain] com.objetivo.profiles.ConfigDev          : Profile active is DEV!!!
+2024-06-05T21:42:24.119-03:00  INFO 36352 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-05T21:42:24.122-03:00  INFO 36352 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-06-05T21:42:24.127-03:00  INFO 36352 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-06-05T22:01:16.028-03:00  INFO 10048 --- [restartedMain] com.objetivo.ObjetivoApplication         : Starting ObjetivoApplication using Java 21.0.2 with PID 10048 (C:\eclipse-workspace\objetivo\target\classes started by carmelito.benali in C:\eclipse-workspace\objetivo)
+2024-06-05T22:01:16.030-03:00  INFO 10048 --- [restartedMain] com.objetivo.ObjetivoApplication         : The following 1 profile is active: "dev"
+2024-06-05T22:01:16.079-03:00  INFO 10048 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-06-05T22:01:16.825-03:00  INFO 10048 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-05T22:01:16.884-03:00  INFO 10048 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 52 ms. Found 2 JPA repository interfaces.
+2024-06-05T22:01:17.576-03:00  INFO 10048 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-06-05T22:01:17.588-03:00  INFO 10048 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-05T22:01:17.588-03:00  INFO 10048 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.18]
+2024-06-05T22:01:17.641-03:00  INFO 10048 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-05T22:01:17.643-03:00  INFO 10048 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1564 ms
+2024-06-05T22:01:17.677-03:00  INFO 10048 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-06-05T22:01:17.833-03:00  INFO 10048 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6cd131f3
+2024-06-05T22:01:17.835-03:00  INFO 10048 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-06-05T22:01:17.844-03:00  INFO 10048 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/objetivo'
+2024-06-05T22:01:17.862-03:00 DEBUG 10048 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping filters: characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105
+2024-06-05T22:01:17.863-03:00 DEBUG 10048 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping servlets: dispatcherServlet urls=[/], h2Console urls=[/h2-console/*]
+2024-06-05T22:01:18.025-03:00  INFO 10048 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-05T22:01:18.119-03:00  INFO 10048 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.1.Final
+2024-06-05T22:01:18.175-03:00  INFO 10048 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-06-05T22:01:18.457-03:00  INFO 10048 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-05T22:01:18.541-03:00  WARN 10048 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000511: The 9.6.0 version for [org.hibernate.dialect.PostgreSQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 12.0.0. Check the community dialects project for available legacy versions.
+2024-06-05T22:01:19.389-03:00  INFO 10048 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-05T22:01:19.453-03:00  INFO 10048 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-05T22:01:19.794-03:00  INFO 10048 --- [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-06-05T22:01:20.028-03:00  WARN 10048 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-05T22:01:20.122-03:00 DEBUG 10048 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 14 mappings in 'requestMappingHandlerMapping'
+2024-06-05T22:01:20.200-03:00 DEBUG 10048 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-06-05T22:01:20.232-03:00 DEBUG 10048 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-06-05T22:01:20.270-03:00 DEBUG 10048 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-06-05T22:01:20.410-03:00  INFO 10048 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-06-05T22:01:20.442-03:00  INFO 10048 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-06-05T22:01:20.459-03:00  INFO 10048 --- [restartedMain] com.objetivo.ObjetivoApplication         : Started ObjetivoApplication in 4.923 seconds (process running for 5.549)
+2024-06-05T22:01:20.463-03:00  INFO 10048 --- [restartedMain] com.objetivo.profiles.ConfigDev          : Profile active is DEV!!!
+2024-06-05T22:10:33.415-03:00  INFO 10048 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-05T22:10:33.419-03:00  INFO 10048 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-06-05T22:10:33.423-03:00  INFO 10048 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

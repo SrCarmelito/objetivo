@@ -37,12 +37,12 @@ getAll();
 
 async function getAll() {
         
-    url = `http://objetivo.onrender.com/pessoas?id=${filtroValorId}&cpf=${filtroValorCpf}&nome=${filtroValorNome}&page=${page}&size=${size}&sort=nome,asc`;
+    url = `objetivo.onrender.com/pessoas?id=${filtroValorId}&cpf=${filtroValorCpf}&nome=${filtroValorNome}&page=${page}&size=${size}&sort=nome,asc`;
 
     const response = await fetch(url);
     const data = await response.json();
 
-    const responseCount = await fetch("http://objetivo.onrender.com/pessoas/count");
+    const responseCount = await fetch("objetivo.onrender.com/pessoas/count");
     const dataCount = await responseCount.json();
     const lbCount = document.querySelector("#lb-count");
     lbCount.textContent = `${dataCount} Pessoas Cadastradas`;
@@ -124,7 +124,7 @@ async function getAll() {
 
 async function deletePessoa(pessoaExcluida) {
 
-    url = "http://objetivo.onrender.com/pessoas";
+    url = "objetivo.onrender.com/pessoas";
 
     const response = await fetch(`${url}/${pessoaExcluida}`,
     {
@@ -276,7 +276,7 @@ window.onclick = function(event) {
 // função para atualizar a pessoa
 async function postPessoa(novaPessoa) {
 
-    await fetch("http://objetivo.onrender.com/pessoas",
+    await fetch("objetivo.onrender.com/pessoas",
     {
         body: JSON.stringify(novaPessoa),
         method: 'POST',
@@ -311,7 +311,7 @@ async function postPessoa(novaPessoa) {
 
 async function redirectPessoa(novaPessoa) {
     console.log(novaPessoa);
-    const response = await fetch(`http://objetivo.onrender.com/pessoas?id=${novaPessoa}`);
+    const response = await fetch(`objetivo.onrender.com/pessoas?id=${novaPessoa}`);
     const pessoa = await response.json();
     window.location.href = `/EditPessoa/edit.html?id=${novaPessoa}`;
 };

@@ -16,8 +16,5 @@ public interface EnderecoRepository  extends JpaRepository<Endereco, Long>{
 	
 	@Query(nativeQuery = true, value = "select e.pessoa_id from elo.endereco e where e.id = :id")
 	Long findPessoaByEndereco(@Param("id") Long id);
-	
-	@Query(nativeQuery = true, value = "select max(p.id) from elo.pessoa p")
-	Integer findMaxPessoa();
 
 }

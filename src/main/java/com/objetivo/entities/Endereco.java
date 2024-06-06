@@ -25,8 +25,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class Endereco {
-	
-	
+
 	@Id	
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_endereco")
 	@SequenceGenerator(name = "seq_endereco", schema = "elo", sequenceName = "s_endereco", allocationSize=1)

@@ -94,3 +94,39 @@
 2024-06-05T07:46:23.254-03:00  INFO 12636 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2024-06-05T07:46:23.258-03:00  INFO 12636 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2024-06-05T07:46:23.264-03:00  INFO 12636 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-06-05T20:51:01.274-03:00  INFO 9604 --- [restartedMain] com.objetivo.ObjetivoApplication         : Starting ObjetivoApplication using Java 21.0.2 with PID 9604 (C:\eclipse-workspace\objetivo\target\classes started by carmelito.benali in C:\eclipse-workspace\objetivo)
+2024-06-05T20:51:01.276-03:00  INFO 9604 --- [restartedMain] com.objetivo.ObjetivoApplication         : The following 1 profile is active: "dev"
+2024-06-05T20:51:01.326-03:00  INFO 9604 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-06-05T20:51:02.368-03:00  INFO 9604 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-05T20:51:02.457-03:00  INFO 9604 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 81 ms. Found 2 JPA repository interfaces.
+2024-06-05T20:51:03.227-03:00  INFO 9604 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-06-05T20:51:03.239-03:00  INFO 9604 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-05T20:51:03.239-03:00  INFO 9604 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.18]
+2024-06-05T20:51:03.291-03:00  INFO 9604 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-05T20:51:03.291-03:00  INFO 9604 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1965 ms
+2024-06-05T20:51:03.331-03:00  INFO 9604 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-06-05T20:51:03.478-03:00  INFO 9604 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@72e6eb3c
+2024-06-05T20:51:03.480-03:00  INFO 9604 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-06-05T20:51:03.491-03:00  INFO 9604 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/objetivo'
+2024-06-05T20:51:03.507-03:00 DEBUG 9604 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping filters: characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105
+2024-06-05T20:51:03.507-03:00 DEBUG 9604 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping servlets: dispatcherServlet urls=[/], h2Console urls=[/h2-console/*]
+2024-06-05T20:51:03.656-03:00  INFO 9604 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-05T20:51:03.757-03:00  INFO 9604 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.1.Final
+2024-06-05T20:51:03.801-03:00  INFO 9604 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-06-05T20:51:04.055-03:00  INFO 9604 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-05T20:51:04.147-03:00  WARN 9604 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000511: The 9.6.0 version for [org.hibernate.dialect.PostgreSQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 12.0.0. Check the community dialects project for available legacy versions.
+2024-06-05T20:51:04.999-03:00  INFO 9604 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-05T20:51:05.079-03:00  INFO 9604 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-05T20:51:05.388-03:00  INFO 9604 --- [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-06-05T20:51:05.633-03:00  WARN 9604 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-05T20:51:05.744-03:00 DEBUG 9604 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 17 mappings in 'requestMappingHandlerMapping'
+2024-06-05T20:51:05.836-03:00 DEBUG 9604 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-06-05T20:51:05.892-03:00 DEBUG 9604 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-06-05T20:51:05.937-03:00 DEBUG 9604 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-06-05T20:51:06.097-03:00  INFO 9604 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-06-05T20:51:06.135-03:00  INFO 9604 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-06-05T20:51:06.145-03:00  INFO 9604 --- [restartedMain] com.objetivo.ObjetivoApplication         : Started ObjetivoApplication in 5.322 seconds (process running for 5.949)
+2024-06-05T20:51:06.150-03:00  INFO 9604 --- [restartedMain] com.objetivo.profiles.ConfigDev          : Profile active is DEV!!!
+2024-06-05T20:58:20.969-03:00  INFO 9604 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-05T20:58:20.974-03:00  INFO 9604 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-06-05T20:58:20.981-03:00  INFO 9604 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

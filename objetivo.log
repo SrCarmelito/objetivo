@@ -1,204 +1,180 @@
-2024-06-05T07:19:47.716-03:00  INFO 6508 --- [main] c.o.RepositoryTest.RepositoryTest        : Starting RepositoryTest using Java 21.0.2 with PID 6508 (started by carmelito.benali in C:\eclipse-workspace\objetivo)
-2024-06-05T07:19:47.731-03:00  INFO 6508 --- [main] c.o.RepositoryTest.RepositoryTest        : The following 1 profile is active: "test"
-2024-06-05T07:19:48.260-03:00  INFO 6508 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-06-05T07:19:48.334-03:00  INFO 6508 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 64 ms. Found 2 JPA repository interfaces.
-2024-06-05T07:19:48.401-03:00  INFO 6508 --- [main] beddedDataSourceBeanFactoryPostProcessor : Replacing 'dataSource' DataSource bean with embedded version
-2024-06-05T07:19:48.596-03:00  INFO 6508 --- [main] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:64e2772b-4742-4688-9c73-65684173d648;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
-2024-06-05T07:19:49.315-03:00  INFO 6508 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-06-05T07:19:49.399-03:00  INFO 6508 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.1.Final
-2024-06-05T07:19:49.451-03:00  INFO 6508 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-06-05T07:19:49.801-03:00  INFO 6508 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-06-05T07:19:50.931-03:00  INFO 6508 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-06-05T07:19:51.051-03:00  INFO 6508 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-06-05T07:19:51.494-03:00  INFO 6508 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2024-06-05T07:19:51.754-03:00  INFO 6508 --- [main] c.o.RepositoryTest.RepositoryTest        : Started RepositoryTest in 4.523 seconds (process running for 5.847)
-2024-06-05T07:19:52.598-03:00  INFO 6508 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-06-05T07:20:14.445-03:00  INFO 11748 --- [main] c.o.RepositoryTest.RepositoryTest        : Starting RepositoryTest using Java 21.0.2 with PID 11748 (started by carmelito.benali in C:\eclipse-workspace\objetivo)
-2024-06-05T07:20:14.447-03:00  INFO 11748 --- [main] c.o.RepositoryTest.RepositoryTest        : The following 1 profile is active: "test"
-2024-06-05T07:20:14.881-03:00  INFO 11748 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-06-05T07:20:14.960-03:00  INFO 11748 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 66 ms. Found 2 JPA repository interfaces.
-2024-06-05T07:20:15.020-03:00  INFO 11748 --- [main] beddedDataSourceBeanFactoryPostProcessor : Replacing 'dataSource' DataSource bean with embedded version
-2024-06-05T07:20:15.215-03:00  INFO 11748 --- [main] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:42d63b1b-70b5-4139-a5be-1ec45ae8f90f;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
-2024-06-05T07:20:15.904-03:00  INFO 11748 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-06-05T07:20:15.960-03:00  INFO 11748 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.1.Final
-2024-06-05T07:20:16.004-03:00  INFO 11748 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-06-05T07:20:16.284-03:00  INFO 11748 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-06-05T07:20:17.369-03:00  INFO 11748 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-06-05T07:20:17.474-03:00  INFO 11748 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-06-05T07:20:17.955-03:00  INFO 11748 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2024-06-05T07:20:18.047-03:00  INFO 11748 --- [main] c.o.RepositoryTest.RepositoryTest        : Started RepositoryTest in 4.043 seconds (process running for 5.345)
-2024-06-05T07:20:18.696-03:00  INFO 11748 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-06-05T07:22:33.095-03:00  INFO 28288 --- [main] c.o.RepositoryTest.RepositoryTest        : Starting RepositoryTest using Java 21.0.2 with PID 28288 (started by carmelito.benali in C:\eclipse-workspace\objetivo)
-2024-06-05T07:22:33.096-03:00  INFO 28288 --- [main] c.o.RepositoryTest.RepositoryTest        : The following 1 profile is active: "test"
-2024-06-05T07:22:33.543-03:00  INFO 28288 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-06-05T07:22:33.625-03:00  INFO 28288 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 70 ms. Found 2 JPA repository interfaces.
-2024-06-05T07:22:33.690-03:00  INFO 28288 --- [main] beddedDataSourceBeanFactoryPostProcessor : Replacing 'dataSource' DataSource bean with embedded version
-2024-06-05T07:22:33.897-03:00  INFO 28288 --- [main] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:271a772c-c06e-4db9-acdb-0e5d339b58b4;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
-2024-06-05T07:22:34.521-03:00  INFO 28288 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-06-05T07:22:34.590-03:00  INFO 28288 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.1.Final
-2024-06-05T07:22:34.633-03:00  INFO 28288 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-06-05T07:22:34.912-03:00  INFO 28288 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-06-05T07:22:35.923-03:00  INFO 28288 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-06-05T07:22:36.040-03:00  INFO 28288 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-06-05T07:22:36.452-03:00  INFO 28288 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2024-06-05T07:22:36.641-03:00  INFO 28288 --- [main] c.o.RepositoryTest.RepositoryTest        : Started RepositoryTest in 3.953 seconds (process running for 5.052)
-2024-06-05T07:22:37.276-03:00  INFO 28288 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-06-05T07:23:30.939-03:00  INFO 25068 --- [main] c.o.RepositoryTest.RepositoryTest        : Starting RepositoryTest using Java 21.0.2 with PID 25068 (started by carmelito.benali in C:\eclipse-workspace\objetivo)
-2024-06-05T07:23:30.941-03:00  INFO 25068 --- [main] c.o.RepositoryTest.RepositoryTest        : The following 1 profile is active: "prod"
-2024-06-05T07:23:31.379-03:00  INFO 25068 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-06-05T07:23:31.445-03:00  INFO 25068 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 56 ms. Found 2 JPA repository interfaces.
-2024-06-05T07:23:31.510-03:00  INFO 25068 --- [main] beddedDataSourceBeanFactoryPostProcessor : Replacing 'dataSource' DataSource bean with embedded version
-2024-06-05T07:23:31.722-03:00  INFO 25068 --- [main] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:5b95dc7e-50a4-4a2f-9c43-d6b020e8a29b;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
-2024-06-05T07:23:32.354-03:00  INFO 25068 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-06-05T07:23:32.416-03:00  INFO 25068 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.1.Final
-2024-06-05T07:23:32.464-03:00  INFO 25068 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-06-05T07:23:32.718-03:00  INFO 25068 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-06-05T07:23:33.799-03:00  INFO 25068 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-06-05T07:23:33.938-03:00  INFO 25068 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-06-05T07:23:34.333-03:00  INFO 25068 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2024-06-05T07:23:34.534-03:00  INFO 25068 --- [main] c.o.RepositoryTest.RepositoryTest        : Started RepositoryTest in 3.969 seconds (process running for 5.104)
-2024-06-05T07:23:35.166-03:00  INFO 25068 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-06-05T07:24:55.302-03:00  INFO 12636 --- [restartedMain] com.objetivo.ObjetivoApplication         : Starting ObjetivoApplication using Java 21.0.2 with PID 12636 (C:\eclipse-workspace\objetivo\target\classes started by carmelito.benali in C:\eclipse-workspace\objetivo)
-2024-06-05T07:24:55.304-03:00  INFO 12636 --- [restartedMain] com.objetivo.ObjetivoApplication         : The following 1 profile is active: "dev"
-2024-06-05T07:24:55.367-03:00  INFO 12636 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2024-06-05T07:24:56.235-03:00  INFO 12636 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-06-05T07:24:56.311-03:00  INFO 12636 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 66 ms. Found 2 JPA repository interfaces.
-2024-06-05T07:24:57.073-03:00  INFO 12636 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-06-05T07:24:57.090-03:00  INFO 12636 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-06-05T07:24:57.091-03:00  INFO 12636 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.18]
-2024-06-05T07:24:57.161-03:00  INFO 12636 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-06-05T07:24:57.162-03:00  INFO 12636 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1795 ms
-2024-06-05T07:24:57.203-03:00  INFO 12636 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-06-05T07:24:57.394-03:00  INFO 12636 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@420bb0c0
-2024-06-05T07:24:57.396-03:00  INFO 12636 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-06-05T07:24:57.408-03:00  INFO 12636 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/objetivo'
-2024-06-05T07:24:57.427-03:00 DEBUG 12636 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping filters: characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105
-2024-06-05T07:24:57.427-03:00 DEBUG 12636 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping servlets: dispatcherServlet urls=[/], h2Console urls=[/h2-console/*]
-2024-06-05T07:24:57.586-03:00  INFO 12636 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-06-05T07:24:57.694-03:00  INFO 12636 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.1.Final
-2024-06-05T07:24:57.748-03:00  INFO 12636 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-06-05T07:24:58.036-03:00  INFO 12636 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-06-05T07:24:58.143-03:00  WARN 12636 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000511: The 9.6.0 version for [org.hibernate.dialect.PostgreSQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 12.0.0. Check the community dialects project for available legacy versions.
-2024-06-05T07:24:59.137-03:00  INFO 12636 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-06-05T07:24:59.227-03:00  INFO 12636 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-06-05T07:24:59.580-03:00  INFO 12636 --- [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2024-06-05T07:24:59.864-03:00  WARN 12636 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-06-05T07:24:59.990-03:00 DEBUG 12636 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 17 mappings in 'requestMappingHandlerMapping'
-2024-06-05T07:25:00.101-03:00 DEBUG 12636 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2024-06-05T07:25:00.140-03:00 DEBUG 12636 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2024-06-05T07:25:00.178-03:00 DEBUG 12636 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-2024-06-05T07:25:00.350-03:00  INFO 12636 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2024-06-05T07:25:00.388-03:00  INFO 12636 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
-2024-06-05T07:25:00.397-03:00  INFO 12636 --- [restartedMain] com.objetivo.ObjetivoApplication         : Started ObjetivoApplication in 5.631 seconds (process running for 6.302)
-2024-06-05T07:25:00.401-03:00  INFO 12636 --- [restartedMain] com.objetivo.profiles.ConfigDev          : Profile active is DEV!!!
-2024-06-05T07:46:23.254-03:00  INFO 12636 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-06-05T07:46:23.258-03:00  INFO 12636 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-06-05T07:46:23.264-03:00  INFO 12636 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-06-05T20:51:01.274-03:00  INFO 9604 --- [restartedMain] com.objetivo.ObjetivoApplication         : Starting ObjetivoApplication using Java 21.0.2 with PID 9604 (C:\eclipse-workspace\objetivo\target\classes started by carmelito.benali in C:\eclipse-workspace\objetivo)
-2024-06-05T20:51:01.276-03:00  INFO 9604 --- [restartedMain] com.objetivo.ObjetivoApplication         : The following 1 profile is active: "dev"
-2024-06-05T20:51:01.326-03:00  INFO 9604 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2024-06-05T20:51:02.368-03:00  INFO 9604 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-06-05T20:51:02.457-03:00  INFO 9604 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 81 ms. Found 2 JPA repository interfaces.
-2024-06-05T20:51:03.227-03:00  INFO 9604 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-06-05T20:51:03.239-03:00  INFO 9604 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-06-05T20:51:03.239-03:00  INFO 9604 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.18]
-2024-06-05T20:51:03.291-03:00  INFO 9604 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-06-05T20:51:03.291-03:00  INFO 9604 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1965 ms
-2024-06-05T20:51:03.331-03:00  INFO 9604 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-06-05T20:51:03.478-03:00  INFO 9604 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@72e6eb3c
-2024-06-05T20:51:03.480-03:00  INFO 9604 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-06-05T20:51:03.491-03:00  INFO 9604 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/objetivo'
-2024-06-05T20:51:03.507-03:00 DEBUG 9604 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping filters: characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105
-2024-06-05T20:51:03.507-03:00 DEBUG 9604 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping servlets: dispatcherServlet urls=[/], h2Console urls=[/h2-console/*]
-2024-06-05T20:51:03.656-03:00  INFO 9604 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-06-05T20:51:03.757-03:00  INFO 9604 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.1.Final
-2024-06-05T20:51:03.801-03:00  INFO 9604 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-06-05T20:51:04.055-03:00  INFO 9604 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-06-05T20:51:04.147-03:00  WARN 9604 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000511: The 9.6.0 version for [org.hibernate.dialect.PostgreSQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 12.0.0. Check the community dialects project for available legacy versions.
-2024-06-05T20:51:04.999-03:00  INFO 9604 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-06-05T20:51:05.079-03:00  INFO 9604 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-06-05T20:51:05.388-03:00  INFO 9604 --- [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2024-06-05T20:51:05.633-03:00  WARN 9604 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-06-05T20:51:05.744-03:00 DEBUG 9604 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 17 mappings in 'requestMappingHandlerMapping'
-2024-06-05T20:51:05.836-03:00 DEBUG 9604 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2024-06-05T20:51:05.892-03:00 DEBUG 9604 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2024-06-05T20:51:05.937-03:00 DEBUG 9604 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-2024-06-05T20:51:06.097-03:00  INFO 9604 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2024-06-05T20:51:06.135-03:00  INFO 9604 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
-2024-06-05T20:51:06.145-03:00  INFO 9604 --- [restartedMain] com.objetivo.ObjetivoApplication         : Started ObjetivoApplication in 5.322 seconds (process running for 5.949)
-2024-06-05T20:51:06.150-03:00  INFO 9604 --- [restartedMain] com.objetivo.profiles.ConfigDev          : Profile active is DEV!!!
-2024-06-05T20:58:20.969-03:00  INFO 9604 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-06-05T20:58:20.974-03:00  INFO 9604 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-06-05T20:58:20.981-03:00  INFO 9604 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-06-05T21:42:05.353-03:00  INFO 36352 --- [restartedMain] com.objetivo.ObjetivoApplication         : Starting ObjetivoApplication using Java 21.0.2 with PID 36352 (C:\eclipse-workspace\objetivo\target\classes started by carmelito.benali in C:\eclipse-workspace\objetivo)
-2024-06-05T21:42:05.354-03:00  INFO 36352 --- [restartedMain] com.objetivo.ObjetivoApplication         : The following 1 profile is active: "dev"
-2024-06-05T21:42:05.403-03:00  INFO 36352 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2024-06-05T21:42:06.179-03:00  INFO 36352 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-06-05T21:42:06.252-03:00  INFO 36352 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 63 ms. Found 2 JPA repository interfaces.
-2024-06-05T21:42:06.952-03:00  INFO 36352 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-06-05T21:42:06.962-03:00  INFO 36352 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-06-05T21:42:06.964-03:00  INFO 36352 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.18]
-2024-06-05T21:42:07.022-03:00  INFO 36352 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-06-05T21:42:07.022-03:00  INFO 36352 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1618 ms
-2024-06-05T21:42:07.066-03:00  INFO 36352 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-06-05T21:42:07.209-03:00  INFO 36352 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@42a9048
-2024-06-05T21:42:07.211-03:00  INFO 36352 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-06-05T21:42:07.224-03:00  INFO 36352 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/objetivo'
-2024-06-05T21:42:07.242-03:00 DEBUG 36352 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping filters: characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105
-2024-06-05T21:42:07.242-03:00 DEBUG 36352 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping servlets: dispatcherServlet urls=[/], h2Console urls=[/h2-console/*]
-2024-06-05T21:42:07.396-03:00  INFO 36352 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-06-05T21:42:07.491-03:00  INFO 36352 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.1.Final
-2024-06-05T21:42:07.526-03:00  INFO 36352 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-06-05T21:42:07.787-03:00  INFO 36352 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-06-05T21:42:07.867-03:00  WARN 36352 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000511: The 9.6.0 version for [org.hibernate.dialect.PostgreSQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 12.0.0. Check the community dialects project for available legacy versions.
-2024-06-05T21:42:08.754-03:00  INFO 36352 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-06-05T21:42:08.816-03:00  INFO 36352 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-06-05T21:42:09.161-03:00  INFO 36352 --- [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2024-06-05T21:42:09.368-03:00  WARN 36352 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-06-05T21:42:09.476-03:00 DEBUG 36352 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 14 mappings in 'requestMappingHandlerMapping'
-2024-06-05T21:42:09.582-03:00 DEBUG 36352 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2024-06-05T21:42:09.624-03:00 DEBUG 36352 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2024-06-05T21:42:09.657-03:00 DEBUG 36352 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-2024-06-05T21:42:09.828-03:00  INFO 36352 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2024-06-05T21:42:09.868-03:00  INFO 36352 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
-2024-06-05T21:42:09.878-03:00  INFO 36352 --- [restartedMain] com.objetivo.ObjetivoApplication         : Started ObjetivoApplication in 5.029 seconds (process running for 5.587)
-2024-06-05T21:42:09.882-03:00  INFO 36352 --- [restartedMain] com.objetivo.profiles.ConfigDev          : Profile active is DEV!!!
-2024-06-05T21:42:24.119-03:00  INFO 36352 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-06-05T21:42:24.122-03:00  INFO 36352 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-06-05T21:42:24.127-03:00  INFO 36352 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-06-05T22:01:16.028-03:00  INFO 10048 --- [restartedMain] com.objetivo.ObjetivoApplication         : Starting ObjetivoApplication using Java 21.0.2 with PID 10048 (C:\eclipse-workspace\objetivo\target\classes started by carmelito.benali in C:\eclipse-workspace\objetivo)
-2024-06-05T22:01:16.030-03:00  INFO 10048 --- [restartedMain] com.objetivo.ObjetivoApplication         : The following 1 profile is active: "dev"
-2024-06-05T22:01:16.079-03:00  INFO 10048 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2024-06-05T22:01:16.825-03:00  INFO 10048 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-06-05T22:01:16.884-03:00  INFO 10048 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 52 ms. Found 2 JPA repository interfaces.
-2024-06-05T22:01:17.576-03:00  INFO 10048 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-06-05T22:01:17.588-03:00  INFO 10048 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-06-05T22:01:17.588-03:00  INFO 10048 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.18]
-2024-06-05T22:01:17.641-03:00  INFO 10048 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-06-05T22:01:17.643-03:00  INFO 10048 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1564 ms
-2024-06-05T22:01:17.677-03:00  INFO 10048 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-06-05T22:01:17.833-03:00  INFO 10048 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6cd131f3
-2024-06-05T22:01:17.835-03:00  INFO 10048 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-06-05T22:01:17.844-03:00  INFO 10048 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/objetivo'
-2024-06-05T22:01:17.862-03:00 DEBUG 10048 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping filters: characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105
-2024-06-05T22:01:17.863-03:00 DEBUG 10048 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping servlets: dispatcherServlet urls=[/], h2Console urls=[/h2-console/*]
-2024-06-05T22:01:18.025-03:00  INFO 10048 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-06-05T22:01:18.119-03:00  INFO 10048 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.1.Final
-2024-06-05T22:01:18.175-03:00  INFO 10048 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-06-05T22:01:18.457-03:00  INFO 10048 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-06-05T22:01:18.541-03:00  WARN 10048 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000511: The 9.6.0 version for [org.hibernate.dialect.PostgreSQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 12.0.0. Check the community dialects project for available legacy versions.
-2024-06-05T22:01:19.389-03:00  INFO 10048 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-06-05T22:01:19.453-03:00  INFO 10048 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-06-05T22:01:19.794-03:00  INFO 10048 --- [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2024-06-05T22:01:20.028-03:00  WARN 10048 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-06-05T22:01:20.122-03:00 DEBUG 10048 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 14 mappings in 'requestMappingHandlerMapping'
-2024-06-05T22:01:20.200-03:00 DEBUG 10048 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2024-06-05T22:01:20.232-03:00 DEBUG 10048 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2024-06-05T22:01:20.270-03:00 DEBUG 10048 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-2024-06-05T22:01:20.410-03:00  INFO 10048 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2024-06-05T22:01:20.442-03:00  INFO 10048 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
-2024-06-05T22:01:20.459-03:00  INFO 10048 --- [restartedMain] com.objetivo.ObjetivoApplication         : Started ObjetivoApplication in 4.923 seconds (process running for 5.549)
-2024-06-05T22:01:20.463-03:00  INFO 10048 --- [restartedMain] com.objetivo.profiles.ConfigDev          : Profile active is DEV!!!
-2024-06-05T22:10:33.415-03:00  INFO 10048 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-06-05T22:10:33.419-03:00  INFO 10048 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-06-05T22:10:33.423-03:00  INFO 10048 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-06-06T07:14:09.013-03:00  INFO 27092 --- [restartedMain] com.objetivo.ObjetivoApplication         : Starting ObjetivoApplication using Java 21.0.2 with PID 27092 (C:\eclipse-workspace\objetivo\target\classes started by carmelito.benali in C:\eclipse-workspace\objetivo)
+2024-06-06T07:14:09.028-03:00  INFO 27092 --- [restartedMain] com.objetivo.ObjetivoApplication         : The following 1 profile is active: "dev"
+2024-06-06T07:14:09.085-03:00  INFO 27092 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-06-06T07:14:09.880-03:00  INFO 27092 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-06T07:14:09.946-03:00  INFO 27092 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 57 ms. Found 2 JPA repository interfaces.
+2024-06-06T07:14:10.660-03:00  INFO 27092 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-06-06T07:14:10.675-03:00  INFO 27092 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-06T07:14:10.675-03:00  INFO 27092 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.18]
+2024-06-06T07:14:10.750-03:00  INFO 27092 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-06T07:14:10.750-03:00  INFO 27092 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1664 ms
+2024-06-06T07:14:10.786-03:00  INFO 27092 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-06-06T07:14:10.925-03:00  INFO 27092 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5bf852cf
+2024-06-06T07:14:10.926-03:00  INFO 27092 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-06-06T07:14:10.939-03:00  INFO 27092 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/objetivo'
+2024-06-06T07:14:10.954-03:00 DEBUG 27092 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping filters: characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105
+2024-06-06T07:14:10.954-03:00 DEBUG 27092 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping servlets: dispatcherServlet urls=[/], h2Console urls=[/h2-console/*]
+2024-06-06T07:14:11.108-03:00  INFO 27092 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-06T07:14:11.207-03:00  INFO 27092 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.1.Final
+2024-06-06T07:14:11.256-03:00  INFO 27092 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-06-06T07:14:11.549-03:00  INFO 27092 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-06T07:14:11.637-03:00  WARN 27092 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000511: The 9.6.0 version for [org.hibernate.dialect.PostgreSQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 12.0.0. Check the community dialects project for available legacy versions.
+2024-06-06T07:14:12.509-03:00  INFO 27092 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-06T07:14:12.585-03:00  INFO 27092 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-06T07:14:12.927-03:00  INFO 27092 --- [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-06-06T07:14:13.141-03:00  WARN 27092 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-06T07:14:13.253-03:00 DEBUG 27092 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 14 mappings in 'requestMappingHandlerMapping'
+2024-06-06T07:14:13.342-03:00 DEBUG 27092 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-06-06T07:14:13.379-03:00 DEBUG 27092 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-06-06T07:14:13.426-03:00 DEBUG 27092 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-06-06T07:14:13.570-03:00  INFO 27092 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-06-06T07:14:13.603-03:00  INFO 27092 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-06-06T07:14:13.612-03:00  INFO 27092 --- [restartedMain] com.objetivo.ObjetivoApplication         : Started ObjetivoApplication in 5.081 seconds (process running for 5.72)
+2024-06-06T07:14:13.616-03:00  INFO 27092 --- [restartedMain] com.objetivo.profiles.ConfigDev          : Profile active is DEV!!!
+2024-06-06T07:14:18.919-03:00  INFO 27092 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-06T07:14:18.919-03:00  INFO 27092 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-06-06T07:14:18.919-03:00 DEBUG 27092 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2024-06-06T07:14:18.920-03:00 DEBUG 27092 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2024-06-06T07:14:18.920-03:00 DEBUG 27092 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2024-06-06T07:14:18.921-03:00 DEBUG 27092 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@6c9f5ddc
+2024-06-06T07:14:18.922-03:00 DEBUG 27092 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@4967a462
+2024-06-06T07:14:18.922-03:00 DEBUG 27092 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2024-06-06T07:14:18.923-03:00  INFO 27092 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2024-06-06T07:14:18.933-03:00 DEBUG 27092 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/h2", parameters={}
+2024-06-06T07:14:18.942-03:00 DEBUG 27092 --- [http-nio-8080-exec-1] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2024-06-06T07:14:18.956-03:00 DEBUG 27092 --- [http-nio-8080-exec-1] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2024-06-06T07:14:18.961-03:00 DEBUG 27092 --- [http-nio-8080-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource h2.]
+2024-06-06T07:14:18.962-03:00 DEBUG 27092 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2024-06-06T07:14:18.969-03:00 DEBUG 27092 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+2024-06-06T07:14:18.972-03:00 DEBUG 27092 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#errorHtml(HttpServletRequest, HttpServletResponse)
+2024-06-06T07:14:19.007-03:00 DEBUG 27092 --- [http-nio-8080-exec-1] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, text/html;q=0.8]
+2024-06-06T07:14:19.014-03:00 DEBUG 27092 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
+2024-06-06T07:14:19.117-03:00 DEBUG 27092 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/favicon.ico", parameters={}
+2024-06-06T07:14:19.117-03:00 DEBUG 27092 --- [http-nio-8080-exec-2] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2024-06-06T07:14:19.119-03:00 DEBUG 27092 --- [http-nio-8080-exec-2] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2024-06-06T07:14:19.119-03:00 DEBUG 27092 --- [http-nio-8080-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
+2024-06-06T07:14:19.119-03:00 DEBUG 27092 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2024-06-06T07:14:19.120-03:00 DEBUG 27092 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+2024-06-06T07:14:19.120-03:00 DEBUG 27092 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2024-06-06T07:14:19.143-03:00 DEBUG 27092 --- [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json;q=0.8', given [image/avif, image/webp, image/apng, image/svg+xml, image/*, */*;q=0.8] and supported [application/json, application/*+json]
+2024-06-06T07:14:19.145-03:00 DEBUG 27092 --- [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Thu Jun 06 07:14:19 BRT 2024, status=404, error=Not Found, trace=org.springframework.web. (truncated)...]
+2024-06-06T07:14:19.184-03:00 DEBUG 27092 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
+2024-06-06T07:14:26.136-03:00 DEBUG 27092 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/pessoas", parameters={}
+2024-06-06T07:14:26.136-03:00 DEBUG 27092 --- [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.PessoaController#findAllPaginada(String, String, String, Pageable)
+2024-06-06T07:14:26.310-03:00 DEBUG 27092 --- [http-nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json;q=0.8', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7] and supported [application/json, application/*+json]
+2024-06-06T07:14:26.311-03:00 DEBUG 27092 --- [http-nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [Page 1 of 36 containing com.objetivo.entities.Pessoa instances]
+2024-06-06T07:14:26.382-03:00 DEBUG 27092 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-06-06T07:17:24.229-03:00  INFO 27092 --- [http-nio-8080-exec-7] o.apache.coyote.http11.Http11Processor   : Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+
+java.lang.IllegalArgumentException: Invalid character found in method name [0x160x030x010x020x000x010x000x010xfc0x030x03I0x8d0x100xf1t0xeb{0x140xefW~0xaf00xefR@0xd70xaa0xf88j|ime:0x080x1da0xe5L0xee ]. HTTP method names must be tokens
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:407) ~[tomcat-embed-core-10.1.18.jar:10.1.18]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:264) ~[tomcat-embed-core-10.1.18.jar:10.1.18]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.18.jar:10.1.18]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896) ~[tomcat-embed-core-10.1.18.jar:10.1.18]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744) ~[tomcat-embed-core-10.1.18.jar:10.1.18]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.18.jar:10.1.18]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-10.1.18.jar:10.1.18]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.18.jar:10.1.18]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-10.1.18.jar:10.1.18]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+
+2024-06-06T07:18:30.831-03:00  INFO 27092 --- [http-nio-8080-exec-2] o.apache.coyote.http11.Http11Processor   : Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+
+java.lang.IllegalArgumentException: Invalid character found in method name [0x160x030x010x020x000x010x000x010xfc0x030x030xc10x9f0x9e^0xf8X0x820x8fH0x070xeaos0xd0>g0x020xd20x9f0xb9f0xad0x920x8d~0xe80xb80xc2J0xe00xb70xcf ]. HTTP method names must be tokens
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:407) ~[tomcat-embed-core-10.1.18.jar:10.1.18]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:264) ~[tomcat-embed-core-10.1.18.jar:10.1.18]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.18.jar:10.1.18]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896) ~[tomcat-embed-core-10.1.18.jar:10.1.18]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744) ~[tomcat-embed-core-10.1.18.jar:10.1.18]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.18.jar:10.1.18]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-10.1.18.jar:10.1.18]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.18.jar:10.1.18]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-10.1.18.jar:10.1.18]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+
+2024-06-06T07:18:50.580-03:00 DEBUG 27092 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/pessoas", parameters={}
+2024-06-06T07:18:50.582-03:00 DEBUG 27092 --- [http-nio-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.PessoaController#findAllPaginada(String, String, String, Pageable)
+2024-06-06T07:18:50.595-03:00 DEBUG 27092 --- [http-nio-8080-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json;q=0.8', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7] and supported [application/json, application/*+json]
+2024-06-06T07:18:50.595-03:00 DEBUG 27092 --- [http-nio-8080-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [Page 1 of 36 containing com.objetivo.entities.Pessoa instances]
+2024-06-06T07:18:50.617-03:00 DEBUG 27092 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-06-06T07:18:50.730-03:00 DEBUG 27092 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/favicon.ico", parameters={}
+2024-06-06T07:18:50.730-03:00 DEBUG 27092 --- [http-nio-8080-exec-9] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2024-06-06T07:18:50.735-03:00 DEBUG 27092 --- [http-nio-8080-exec-9] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2024-06-06T07:18:50.736-03:00 DEBUG 27092 --- [http-nio-8080-exec-9] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
+2024-06-06T07:18:50.736-03:00 DEBUG 27092 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2024-06-06T07:18:50.736-03:00 DEBUG 27092 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+2024-06-06T07:18:50.737-03:00 DEBUG 27092 --- [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2024-06-06T07:18:50.738-03:00 DEBUG 27092 --- [http-nio-8080-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json;q=0.8', given [image/avif, image/webp, image/apng, image/svg+xml, image/*, */*;q=0.8] and supported [application/json, application/*+json]
+2024-06-06T07:18:50.738-03:00 DEBUG 27092 --- [http-nio-8080-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Thu Jun 06 07:18:50 BRT 2024, status=404, error=Not Found, trace=org.springframework.web. (truncated)...]
+2024-06-06T07:18:50.739-03:00 DEBUG 27092 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
+2024-06-06T07:19:30.630-03:00 DEBUG 27092 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/pessoas?id=&cpf=&nome=&page=0&size=20&sort=nome,asc", parameters={masked}
+2024-06-06T07:19:30.630-03:00 DEBUG 27092 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.PessoaController#findAllPaginada(String, String, String, Pageable)
+2024-06-06T07:19:30.648-03:00 DEBUG 27092 --- [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-06-06T07:19:30.649-03:00 DEBUG 27092 --- [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [Page 1 of 36 containing com.objetivo.entities.Pessoa instances]
+2024-06-06T07:19:30.669-03:00 DEBUG 27092 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-06-06T07:19:30.675-03:00 DEBUG 27092 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/pessoas/count", parameters={}
+2024-06-06T07:19:30.675-03:00 DEBUG 27092 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.PessoaController#quantidadePessoas()
+2024-06-06T07:19:31.002-03:00 DEBUG 27092 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-06-06T07:19:31.003-03:00 DEBUG 27092 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [707]
+2024-06-06T07:19:31.004-03:00 DEBUG 27092 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-06-06T07:19:39.850-03:00 DEBUG 27092 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : OPTIONS "/pessoas", parameters={}
+2024-06-06T07:19:39.850-03:00 DEBUG 27092 --- [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.PessoaController#novaPessoa(Pessoa)
+2024-06-06T07:19:39.851-03:00 DEBUG 27092 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-06-06T07:19:39.859-03:00 DEBUG 27092 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : POST "/pessoas", parameters={}
+2024-06-06T07:19:39.859-03:00 DEBUG 27092 --- [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.PessoaController#novaPessoa(Pessoa)
+2024-06-06T07:19:39.890-03:00 DEBUG 27092 --- [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.objetivo.entities.Pessoa@3552f6cc]
+2024-06-06T07:19:39.919-03:00  WARN 27092 --- [http-nio-8080-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public com.objetivo.entities.Pessoa com.objetivo.controller.PessoaController.novaPessoa(com.objetivo.entities.Pessoa) with 5 errors: [Field error in object 'pessoa' on field 'nome': rejected value []; codes [NotBlank.pessoa.nome,NotBlank.nome,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [pessoa.nome,nome]; arguments []; default message [nome]]; default message [É Necessário informar o Nome!]] [Field error in object 'pessoa' on field 'cpf': rejected value []; codes [CPF.pessoa.cpf,CPF.cpf,CPF.java.lang.String,CPF]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [pessoa.cpf,cpf]; arguments []; default message [cpf]]; default message [CPF Inválido! Verifique!]] [Field error in object 'pessoa' on field 'cpf': rejected value []; codes [NotBlank.pessoa.cpf,NotBlank.cpf,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [pessoa.cpf,cpf]; arguments []; default message [cpf]]; default message [É necessário informar o CPF]] [Field error in object 'pessoa' on field 'telefone': rejected value []; codes [NotBlank.pessoa.telefone,NotBlank.telefone,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [pessoa.telefone,telefone]; arguments []; default message [telefone]]; default message [É Necessário Informar o Telefone!]] [Field error in object 'pessoa' on field 'dataNascimento': rejected value [null]; codes [NotNull.pessoa.dataNascimento,NotNull.dataNascimento,NotNull.java.time.LocalDate,NotNull]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [pessoa.dataNascimento,dataNascimento]; arguments []; default message [dataNascimento]]; default message [Não é permitido Data de Nascimento Vazia!]] ]
+2024-06-06T07:19:39.919-03:00 DEBUG 27092 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 400 BAD_REQUEST
+2024-06-06T07:19:39.919-03:00 DEBUG 27092 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for POST "/error", parameters={}
+2024-06-06T07:19:39.920-03:00 DEBUG 27092 --- [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2024-06-06T07:19:39.920-03:00 DEBUG 27092 --- [http-nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-06-06T07:19:39.921-03:00 DEBUG 27092 --- [http-nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Thu Jun 06 07:19:39 BRT 2024, status=400, error=Bad Request, trace=org.springframework.we (truncated)...]
+2024-06-06T07:19:39.928-03:00 DEBUG 27092 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 400
+2024-06-06T07:20:02.233-03:00 DEBUG 27092 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : POST "/pessoas", parameters={}
+2024-06-06T07:20:02.234-03:00 DEBUG 27092 --- [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.PessoaController#novaPessoa(Pessoa)
+2024-06-06T07:20:02.236-03:00 DEBUG 27092 --- [http-nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.objetivo.entities.Pessoa@2f0a0141]
+2024-06-06T07:20:02.237-03:00  WARN 27092 --- [http-nio-8080-exec-8] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public com.objetivo.entities.Pessoa com.objetivo.controller.PessoaController.novaPessoa(com.objetivo.entities.Pessoa) with 5 errors: [Field error in object 'pessoa' on field 'telefone': rejected value []; codes [NotBlank.pessoa.telefone,NotBlank.telefone,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [pessoa.telefone,telefone]; arguments []; default message [telefone]]; default message [É Necessário Informar o Telefone!]] [Field error in object 'pessoa' on field 'nome': rejected value []; codes [NotBlank.pessoa.nome,NotBlank.nome,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [pessoa.nome,nome]; arguments []; default message [nome]]; default message [É Necessário informar o Nome!]] [Field error in object 'pessoa' on field 'dataNascimento': rejected value [null]; codes [NotNull.pessoa.dataNascimento,NotNull.dataNascimento,NotNull.java.time.LocalDate,NotNull]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [pessoa.dataNascimento,dataNascimento]; arguments []; default message [dataNascimento]]; default message [Não é permitido Data de Nascimento Vazia!]] [Field error in object 'pessoa' on field 'cpf': rejected value []; codes [NotBlank.pessoa.cpf,NotBlank.cpf,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [pessoa.cpf,cpf]; arguments []; default message [cpf]]; default message [É necessário informar o CPF]] [Field error in object 'pessoa' on field 'cpf': rejected value []; codes [CPF.pessoa.cpf,CPF.cpf,CPF.java.lang.String,CPF]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [pessoa.cpf,cpf]; arguments []; default message [cpf]]; default message [CPF Inválido! Verifique!]] ]
+2024-06-06T07:20:02.238-03:00 DEBUG 27092 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 400 BAD_REQUEST
+2024-06-06T07:20:02.238-03:00 DEBUG 27092 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for POST "/error", parameters={}
+2024-06-06T07:20:02.239-03:00 DEBUG 27092 --- [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2024-06-06T07:20:02.241-03:00 DEBUG 27092 --- [http-nio-8080-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-06-06T07:20:02.242-03:00 DEBUG 27092 --- [http-nio-8080-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Thu Jun 06 07:20:02 BRT 2024, status=400, error=Bad Request, trace=org.springframework.we (truncated)...]
+2024-06-06T07:20:02.244-03:00 DEBUG 27092 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 400
+2024-06-06T07:20:08.410-03:00 DEBUG 27092 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : POST "/pessoas", parameters={}
+2024-06-06T07:20:08.410-03:00 DEBUG 27092 --- [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.PessoaController#novaPessoa(Pessoa)
+2024-06-06T07:20:08.412-03:00 DEBUG 27092 --- [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.objetivo.entities.Pessoa@5219a7a1]
+2024-06-06T07:20:08.413-03:00  WARN 27092 --- [http-nio-8080-exec-7] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public com.objetivo.entities.Pessoa com.objetivo.controller.PessoaController.novaPessoa(com.objetivo.entities.Pessoa) with 4 errors: [Field error in object 'pessoa' on field 'cpf': rejected value []; codes [NotBlank.pessoa.cpf,NotBlank.cpf,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [pessoa.cpf,cpf]; arguments []; default message [cpf]]; default message [É necessário informar o CPF]] [Field error in object 'pessoa' on field 'dataNascimento': rejected value [null]; codes [NotNull.pessoa.dataNascimento,NotNull.dataNascimento,NotNull.java.time.LocalDate,NotNull]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [pessoa.dataNascimento,dataNascimento]; arguments []; default message [dataNascimento]]; default message [Não é permitido Data de Nascimento Vazia!]] [Field error in object 'pessoa' on field 'cpf': rejected value []; codes [CPF.pessoa.cpf,CPF.cpf,CPF.java.lang.String,CPF]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [pessoa.cpf,cpf]; arguments []; default message [cpf]]; default message [CPF Inválido! Verifique!]] [Field error in object 'pessoa' on field 'nome': rejected value []; codes [NotBlank.pessoa.nome,NotBlank.nome,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [pessoa.nome,nome]; arguments []; default message [nome]]; default message [É Necessário informar o Nome!]] ]
+2024-06-06T07:20:08.413-03:00 DEBUG 27092 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 400 BAD_REQUEST
+2024-06-06T07:20:08.414-03:00 DEBUG 27092 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for POST "/error", parameters={}
+2024-06-06T07:20:08.414-03:00 DEBUG 27092 --- [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2024-06-06T07:20:08.414-03:00 DEBUG 27092 --- [http-nio-8080-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-06-06T07:20:08.415-03:00 DEBUG 27092 --- [http-nio-8080-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Thu Jun 06 07:20:08 BRT 2024, status=400, error=Bad Request, trace=org.springframework.we (truncated)...]
+2024-06-06T07:20:08.415-03:00 DEBUG 27092 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 400
+2024-06-06T07:20:13.188-03:00 DEBUG 27092 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : POST "/pessoas", parameters={}
+2024-06-06T07:20:13.188-03:00 DEBUG 27092 --- [http-nio-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.PessoaController#novaPessoa(Pessoa)
+2024-06-06T07:20:13.189-03:00 DEBUG 27092 --- [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.objetivo.entities.Pessoa@455f66e8]
+2024-06-06T07:20:13.190-03:00  WARN 27092 --- [http-nio-8080-exec-10] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public com.objetivo.entities.Pessoa com.objetivo.controller.PessoaController.novaPessoa(com.objetivo.entities.Pessoa) with 3 errors: [Field error in object 'pessoa' on field 'cpf': rejected value []; codes [CPF.pessoa.cpf,CPF.cpf,CPF.java.lang.String,CPF]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [pessoa.cpf,cpf]; arguments []; default message [cpf]]; default message [CPF Inválido! Verifique!]] [Field error in object 'pessoa' on field 'dataNascimento': rejected value [null]; codes [NotNull.pessoa.dataNascimento,NotNull.dataNascimento,NotNull.java.time.LocalDate,NotNull]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [pessoa.dataNascimento,dataNascimento]; arguments []; default message [dataNascimento]]; default message [Não é permitido Data de Nascimento Vazia!]] [Field error in object 'pessoa' on field 'cpf': rejected value []; codes [NotBlank.pessoa.cpf,NotBlank.cpf,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [pessoa.cpf,cpf]; arguments []; default message [cpf]]; default message [É necessário informar o CPF]] ]
+2024-06-06T07:20:13.191-03:00 DEBUG 27092 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 400 BAD_REQUEST
+2024-06-06T07:20:13.191-03:00 DEBUG 27092 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for POST "/error", parameters={}
+2024-06-06T07:20:13.191-03:00 DEBUG 27092 --- [http-nio-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2024-06-06T07:20:13.192-03:00 DEBUG 27092 --- [http-nio-8080-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-06-06T07:20:13.192-03:00 DEBUG 27092 --- [http-nio-8080-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Thu Jun 06 07:20:13 BRT 2024, status=400, error=Bad Request, trace=org.springframework.we (truncated)...]
+2024-06-06T07:20:13.193-03:00 DEBUG 27092 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 400
+2024-06-06T07:20:26.523-03:00 DEBUG 27092 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : POST "/pessoas", parameters={}
+2024-06-06T07:20:26.523-03:00 DEBUG 27092 --- [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.PessoaController#novaPessoa(Pessoa)
+2024-06-06T07:20:26.525-03:00 DEBUG 27092 --- [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.objetivo.entities.Pessoa@63f22469]
+2024-06-06T07:20:26.594-03:00 DEBUG 27092 --- [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-06-06T07:20:26.595-03:00 DEBUG 27092 --- [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Writing [com.objetivo.entities.Pessoa@63f22469]
+2024-06-06T07:20:26.595-03:00 DEBUG 27092 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-06-06T07:20:29.693-03:00 DEBUG 27092 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/pessoas?id=820", parameters={masked}
+2024-06-06T07:20:29.693-03:00 DEBUG 27092 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.PessoaController#findAllPaginada(String, String, String, Pageable)
+2024-06-06T07:20:29.699-03:00 DEBUG 27092 --- [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-06-06T07:20:29.699-03:00 DEBUG 27092 --- [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [Page 1 of 1 containing com.objetivo.entities.Pessoa instances]
+2024-06-06T07:20:29.700-03:00 DEBUG 27092 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-06-06T07:20:29.872-03:00 DEBUG 27092 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/pessoas/820", parameters={}
+2024-06-06T07:20:29.874-03:00 DEBUG 27092 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.PessoaController#obterPessoaPorId(Long)
+2024-06-06T07:20:29.892-03:00 DEBUG 27092 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-06-06T07:20:29.892-03:00 DEBUG 27092 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [com.objetivo.entities.Pessoa@1ae1d2b5]
+2024-06-06T07:20:29.893-03:00 DEBUG 27092 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK

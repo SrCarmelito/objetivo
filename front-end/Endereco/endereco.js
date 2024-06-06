@@ -1,4 +1,4 @@
-const url = "https://objetivo.onrender.com/enderecos";
+const url = "http://localhost:8080/enderecos";
 
 const urlSearchParams = new URLSearchParams(window.location.search);
 const enderecoId = urlSearchParams.get("id");

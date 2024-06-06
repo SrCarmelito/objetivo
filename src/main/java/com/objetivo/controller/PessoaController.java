@@ -2,6 +2,7 @@ package com.objetivo.controller;
 
 import com.objetivo.entities.Pessoa;
 import com.objetivo.service.PessoaService;
+import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -56,7 +57,7 @@ public class PessoaController {
 	@Transactional()
 	@CrossOrigin(allowedHeaders = "*")
 	@PostMapping
-	public @ResponseBody Pessoa novaPessoa(@RequestBody @Validated Pessoa pessoa)  {
+	public @ResponseBody Pessoa novaPessoa(@RequestBody @Valid Pessoa pessoa)  {
     	return pessoaService.createPessoa(pessoa);
 	}
 

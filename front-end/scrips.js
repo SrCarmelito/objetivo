@@ -37,9 +37,9 @@ getAll();
 
 async function getAll() {
         
-    url = `objetivo.onrender.com/pessoas?id=${filtroValorId}&cpf=${filtroValorCpf}&nome=${filtroValorNome}&page=${page}&size=${size}&sort=nome,asc`;
+    let urlGEt = `objetivo.onrender.com/pessoas?id=${filtroValorId}&cpf=${filtroValorCpf}&nome=${filtroValorNome}&page=${page}&size=${size}&sort=nome,asc`;
 
-    const response = await fetch(url);
+    const response = await fetch(urlGEt);
     const data = await response.json();
 
     const responseCount = await fetch("objetivo.onrender.com/pessoas/count");

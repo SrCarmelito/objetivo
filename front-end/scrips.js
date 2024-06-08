@@ -1,6 +1,6 @@
 const pessoaContainer = document.querySelector("#pessoas-container");
 
-let url = `objetivo.onrender.com/pessoas?sort=nome,asc`;
+let url = `https://objetivo.onrender.com/pessoas?sort=nome,asc`;
 
 const urlSearchParams = new URLSearchParams(window.location.search);
 const pessoaId = urlSearchParams.get("id");
@@ -124,7 +124,7 @@ async function getAll() {
 
 async function deletePessoa(pessoaExcluida) {
 
-    url = "objetivo.onrender.com/pessoas";
+    url = "https://objetivo.onrender.com/pessoas";
 
     const response = await fetch(`${url}/${pessoaExcluida}`,
     {
@@ -276,7 +276,7 @@ window.onclick = function(event) {
 // função para atualizar a pessoa
 async function postPessoa(novaPessoa) {
 
-    await fetch("objetivo.onrender.com/pessoas",
+    await fetch("https://objetivo.onrender.com/pessoas",
     {
         body: JSON.stringify(novaPessoa),
         method: 'POST',
@@ -311,7 +311,7 @@ async function postPessoa(novaPessoa) {
 
 async function redirectPessoa(novaPessoa) {
     console.log(novaPessoa);
-    const response = await fetch(`objetivo.onrender.com/pessoas?id=${novaPessoa}`);
+    const response = await fetch(`https://objetivo.onrender.com/pessoas?id=${novaPessoa}`);
     const pessoa = await response.json();
     window.location.href = `/EditPessoa/edit.html?id=${novaPessoa}`;
 };

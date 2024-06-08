@@ -57,8 +57,8 @@ public class PessoaController {
 	@Transactional()
 	@CrossOrigin(allowedHeaders = "*")
 	@PostMapping
-	public Pessoa novaPessoa(@RequestBody @Valid Pessoa pessoa)  {
-    	return pessoaService.createPessoa(pessoa);
+	public ResponseEntity<Pessoa> novaPessoa(@RequestBody @Valid Pessoa pessoa)  {
+    	return ResponseEntity.ok(pessoaService.createPessoa(pessoa));
 	}
 
 	@Transactional()

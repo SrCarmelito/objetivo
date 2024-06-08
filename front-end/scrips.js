@@ -277,36 +277,37 @@ window.onclick = function(event) {
 async function postPessoa(novaPessoa) {
 
     await fetch("https://objetivo.onrender.com/pessoas",
-    {
-        body: JSON.stringify(novaPessoa),
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-    })
-    .then((e) => {
-        if (e.status != 200) {
-            e.json().then((e) => {
-                const erros = e.errors;
-                let mensagens = "";
+    //await fetch("http://localhost:8080/pessoas",
+        {
+            body: JSON.stringify(novaPessoa),
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+        })
+        .then((e) => {
+            if (e.status != 200) {
+                e.json().then((e) => {
+                    const erros = e.errors;
+                    let mensagens = "";
 
-                erros.map((e) => {
-                    mensagens = mensagens + "\n" + e.defaultMessage;
-                })
+                    erros.map((e) => {
+                        mensagens = mensagens + "\n" + e.defaultMessage;
+                    })
 
-                confirm(mensagens);
-            }) 
-        }
-        else {
-            e.json().then((e) => {
-                console.log(e.id);
-                alert("Pessoa Cadastrada corretamente!");
-                const modal = document.querySelector('.modal');
-                modal.style.display = 'none';
-                redirectPessoa(e.id);
-            });
-        };     
-    });
+                    confirm(mensagens);
+                }) 
+            }
+            else {
+                e.json().then((e) => {
+                    console.log(e.id);
+                    alert("Pessoa Cadastrada corretamente!");
+                    const modal = document.querySelector('.modal');
+                    modal.style.display = 'none';
+                    redirectPessoa(e.id);
+                });
+            };     
+        });
 };
 
 async function redirectPessoa(novaPessoa) {

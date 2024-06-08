@@ -276,8 +276,8 @@ window.onclick = function(event) {
 // função para atualizar a pessoa
 async function postPessoa(novaPessoa) {
 
-    await fetch("https://objetivo.onrender.com/pessoas",
-    //await fetch("http://localhost:8080/pessoas",
+    //await fetch("https://objetivo.onrender.com/pessoas",
+    await fetch("http://localhost:8080/pessoas",
         {
             body: JSON.stringify(novaPessoa),
             method: 'POST',

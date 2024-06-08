@@ -57,7 +57,7 @@ public class PessoaController {
 	@Transactional()
 	@CrossOrigin(allowedHeaders = "*")
 	@PostMapping
-	public @ResponseBody Pessoa novaPessoa(@RequestBody @Valid Pessoa pessoa)  {
+	public Pessoa novaPessoa(@RequestBody @Valid Pessoa pessoa)  {
     	return pessoaService.createPessoa(pessoa);
 	}
 
@@ -68,7 +68,6 @@ public class PessoaController {
 			@PathVariable("id") Long id,
 			@RequestBody @Validated Pessoa pessoa) {
 		return ResponseEntity.ok(this.pessoaService.editPessoa(id, pessoa));
-
 	}
 
 	@Transactional()

@@ -56,6 +56,19 @@ async function getAll() {
 
     criaBotoes(page, totalPages);
 
+    if(data.content <= 0) {
+        const semResultados = document.createElement("p");
+        semResultados.innerText = "No Data to Show, Try Again!";
+        pessoaContainerDados.appendChild(semResultados);
+        semResultados.style.textAlign = "center";
+        semResultados.style.fontSize = "40px";
+        if(confirm("No Data to Show, Try Again!")){
+            document.querySelector("#input-filter-cpf").value = '';
+            document.querySelector("#input-filter-nome").value = '';
+            document.querySelector("#input-filter-id").value = '';
+        } 
+    }
+
     data.content.map((pessoa) => {
 
         const div = document.createElement("div");
@@ -99,7 +112,7 @@ async function getAll() {
         });
       
         pessoaContainerDados.appendChild(div);
-        
+       
         const enderecos = pessoa.enderecos;
 
         enderecos.map((e) => {
@@ -146,7 +159,7 @@ async function deletePessoa(pessoaExcluida) {
 
 };
 
-// Parte do Modal
+////////// Parte do Modal //////////////
 
 const btnNovo = document.querySelector("#btn-novo");
 
@@ -318,8 +331,8 @@ async function redirectPessoa(novaPessoa) {
 };
 
 ///////////////////////Paginação /////////////////////////
-document.querySelector("#cbPageSize").addEventListener("click", (e => {
-    page = totalPages -1;
+document.querySelector("#cbPageSize").addEventListener("change", (e => {
+    console.log("Peguei o log ein doido")
     size = cbPageSize.value
     document.querySelector("#pessoas-container-dados").remove();
     document.querySelector("#paginas").remove();

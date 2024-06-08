@@ -46,7 +46,7 @@ public class Endereco {
 	private String logradouro;
 	
 	@NotBlank(message = "É Necessário informar o Número!")
-	@Column(name = "numero")
+	@Column(name = "numero", length = 10)
 	private String numero;
 	
 	@NotBlank(message = "É Necessário informar a Cidade!")

@@ -30,6 +30,7 @@ async function getEndereco(enderecoId) {
     iId.readOnly = true;
     iLogradouro.setAttribute("id", "iLogradouro");
     iNumero.setAttribute("id", "iNumero");
+    iNumero.setAttribute("maxlength", "10");
     iCep.setAttribute("id", "iCep");
     iCidade.setAttribute("id", "iCidade");
     iUf.setAttribute("id", "iUf");

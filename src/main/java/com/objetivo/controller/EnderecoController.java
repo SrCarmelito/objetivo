@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import com.objetivo.service.EnderecoService;
 import com.objetivo.service.PessoaService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -54,7 +55,7 @@ public class EnderecoController {
 	@PutMapping(path = "/{id}")
 	public ResponseEntity<Endereco> enderecoAlterado(
 			@PathVariable("id") Long id,
-			@RequestBody  Endereco endereco
+			@RequestBody @Valid Endereco endereco
 			) {
 		return ResponseEntity.ok(this.enderecoService.save(id, endereco));
 	}

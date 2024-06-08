@@ -15,20 +15,20 @@
         <div id="filter">
            
             <label id="lb-filter-cpf">Filtre por CPF:</label>
-            <input type="text" id="input-filter-cpf">
+            <input type="number" id="input-filter-cpf">
             <label id="lb-filter-nome">Filtre por Nome:</label>
             <input type="text" id="input-filter-nome">
             <label id="lb-filter-id">Filtre por ID:</label>
-            <input type="text" id="input-filter-id">
+            <input type="number" id="input-filter-id">
             <button id="executa-pesquisa">Pesquisar</button>
 
             <div id="paginate">
                 <label for="" id="lb-page-size">Quantidade por página: </label>
                 <select id="cbPageSize">
-                    <option value="20">20</option>
-                    <option value="30">30</option>
-                    <option value="50">50</option>
-                    <option value="100">100</option>
+                    <option id="opt" value="20">20</option>
+                    <option id="opt" value="30">30</option>
+                    <option id="opt" value="50">50</option>
+                    <option id="opt" value="100">100</option>
                 </select>
                 <label id="pageNumber">Página Nº</label>
                 <button class="bt-paginacao" id="first-page"><i class="fa-solid fa-backward-step"></i></button>

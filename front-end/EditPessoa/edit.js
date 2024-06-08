@@ -1,5 +1,5 @@
-const url = "objetivo.onrender.com/pessoas";
-const urlEndereco = "objetivo.onrender.com/enderecos";
+const url = "https://objetivo.onrender.com/pessoas";
+const urlEndereco = "https://objetivo.onrender.com/enderecos";
 
 const urlSearchParams = new URLSearchParams(window.location.search);
 const pessoaId = urlSearchParams.get("id");
@@ -282,7 +282,7 @@ async function getPessoa(id) {
 getPessoa(pessoaId);
 
 async function getDadosPorCep(cepBusca) {
-    const response = await fetch(`objetivo.onrender.com/enderecos/cep/${cepBusca}`);
+    const response = await fetch(`https://objetivo.onrender.com/enderecos/cep/${cepBusca}`);
     const cep = await response.json();
 
     document.querySelector("#iCidadeNew").value = cep.localidade;
@@ -355,7 +355,7 @@ async function putPessoa(pessoaAtualizada) {
 
 async function postEndereco(novoEndereco) {
 
-    const url = "objetivo.onrender.com/enderecos";
+    const url = "https://objetivo.onrender.com/enderecos";
 
     console.log(pessoaId);
 

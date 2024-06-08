@@ -1,5 +1,6 @@
 package com.objetivo.exceptions;
 
+import jakarta.persistence.EntityNotFoundException;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -30,5 +31,13 @@ public class ExcempionHandler {
         return ResponseEntity.status(status).body(err);
     }
 
+    @ExceptionHandler(EntityNotFoundException.class)
+    public ResponseEntity<StandardError> illegalArgument(EntityNotFoundException e, HttpServletRequest request) {
+        Set<String> errors = new HashSet<>();
+        errors.add(e.getLocalizedMessage());
+        HttpStatus status = HttpStatus.NOT_FOUND;
+        StandardError err = new StandardError(Instant.now(), status.value(), e.getMessage(), request.getRequestURI(), errors);
+        return ResponseEntity.status(status).body(err);
+    }
 
 }

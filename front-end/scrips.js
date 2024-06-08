@@ -305,7 +305,6 @@ async function postPessoa(novaPessoa) {
                     let mensagens = "";
 
                     erros.map((e) => {
-                        console.log("To aqui doido");
                         mensagens = mensagens + "\n" + e;
                     })
 

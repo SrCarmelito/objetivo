@@ -45,11 +45,11 @@ public class PessoaService {
 
     public Pessoa obterPessoaPorId(Long id) {
         return this.pessoaRepository.findById(id).orElseThrow(() ->
-                new EntityNotFoundException("CPF informado já existe no cadastro"));
+                new EntityNotFoundException("Id Informado não existe na base de dados!"));
     }
 
-    public Page<Pessoa> findByIdCpfNomeContaining(String id, String cpf, String nome, Pageable pageable) {
-        return this.pessoaRepository.findByIdCpfNomeContaining(id, cpf, nome, pageable);
+    public Page<Pessoa> findByIdCpfNomeContaining(Long id, String cpf, String nome, Pageable pageable) {
+        return this.pessoaRepository.findByIdOrCpfOrNome(id, cpf, nome, pageable);
     }
 
     public List<Pessoa> findByCpfContaining(String cpf) {

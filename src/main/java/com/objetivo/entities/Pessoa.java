@@ -17,9 +17,9 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.hibernate.annotations.Formula;
 import org.hibernate.validator.constraints.br.CPF;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -55,12 +55,14 @@ public class Pessoa {
 	@Column(name = "telefone", length = 11)
 	private String telefone;
 
-	//@Formula("(select (current_date - dataNascimento) / 365)")
-	@Formula("(select replace(replace(replace(replace(replace(replace(cast(age(datanascimento) as varchar), 'years', 'Anos'), 'year', 'Ano'), 'mons', 'Meses'), 'mon', 'Mês'), 'days', 'Dias'), 'day', 'Dia'))")
 	@Transient
-	private String idade;
+	private BigDecimal idade;
 
 	@OneToMany(cascade = {CascadeType.ALL}, orphanRemoval = true, mappedBy = "pessoa")
 	private List<Endereco> enderecos = new ArrayList<>();
+
+	public BigDecimal getIdade() {
+		return BigDecimal.valueOf(LocalDate.now().getYear()).subtract(new BigDecimal(getDataNascimento().getYear()));
+	}
 
 }

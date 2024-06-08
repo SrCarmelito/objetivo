@@ -37,12 +37,12 @@ getAll();
 
 async function getAll() {
         
-    let urlGEt = new URL(`/pessoas?id=${filtroValorId}&cpf=${filtroValorCpf}&nome=${filtroValorNome}&page=${page}&size=${size}&sort=nome,asc`);
+    url = `https://objetivo.onrender.com/pessoas?id=${filtroValorId}&cpf=${filtroValorCpf}&nome=${filtroValorNome}&page=${page}&size=${size}&sort=nome,asc`;
 
-    const response = await fetch(urlGEt);
+    const response = await fetch(url);
     const data = await response.json();
 
-    const responseCount = await fetch("/pessoas/count");
+    const responseCount = await fetch("https://objetivo.onrender.com/pessoas/count");
     const dataCount = await responseCount.json();
     const lbCount = document.querySelector("#lb-count");
     lbCount.textContent = `${dataCount} Pessoas Cadastradas`;

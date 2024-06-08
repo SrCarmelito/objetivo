@@ -37,7 +37,7 @@ getAll();
 
 async function getAll() {
         
-    let urlGEt = `/pessoas?id=${filtroValorId}&cpf=${filtroValorCpf}&nome=${filtroValorNome}&page=${page}&size=${size}&sort=nome,asc`;
+    let urlGEt = new URL(`/pessoas?id=${filtroValorId}&cpf=${filtroValorCpf}&nome=${filtroValorNome}&page=${page}&size=${size}&sort=nome,asc`);
 
     const response = await fetch(urlGEt);
     const data = await response.json();

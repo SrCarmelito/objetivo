@@ -61,6 +61,6 @@ public class Pessoa {
 	private String idade;
 
 	@OneToMany(cascade = {CascadeType.ALL}, orphanRemoval = true, mappedBy = "pessoa")
-	private List<Endereco> enderecos = new ArrayList<Endereco>();
+	private List<Endereco> enderecos = new ArrayList<>();
 
 }

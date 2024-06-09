@@ -1,4 +1,5 @@
-const url = "https://objetivo.onrender.com/enderecos";
+//const url = "https://objetivo.onrender.com/enderecos";
+const url = "http://localhost:8080/enderecos";
 
 const urlSearchParams = new URLSearchParams(window.location.search);
 const enderecoId = urlSearchParams.get("id");
@@ -31,7 +32,9 @@ async function getEndereco(enderecoId) {
     iLogradouro.setAttribute("id", "iLogradouro");
     iNumero.setAttribute("id", "iNumero");
     iNumero.setAttribute("maxlength", "10");
+    iNumero.setAttribute("type", "number");
     iCep.setAttribute("id", "iCep");
+    iCep.setAttribute("type", "number");
     iCidade.setAttribute("id", "iCidade");
     iUf.setAttribute("id", "iUf");
     iId.setAttribute("id", "iId");
@@ -128,7 +131,7 @@ async function putEndereco(enderecoAtualizado) {
                 let mensagens = "";
 
                 erros.map((e) => {
-                    mensagens = mensagens + "\n" + e.defaultMessage;
+                    mensagens = mensagens + "\n" + e;
                 })
 
                 confirm(mensagens);

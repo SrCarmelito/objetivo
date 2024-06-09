@@ -4,10 +4,12 @@ import com.objetivo.entities.Endereco;
 import com.objetivo.entities.Pessoa;
 import com.objetivo.repository.EnderecoRepository;
 import jakarta.persistence.EntityNotFoundException;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
+@Slf4j
 public class EnderecoService {
 
     @Autowired
@@ -33,6 +35,8 @@ public class EnderecoService {
                 new EntityNotFoundException("Endereço não Encontrado"));
 
         Pessoa pessoaEndereco = pessoaService.obterPessoaPorId(enderecoRepository.findPessoaByEndereco(id));
+
+        log.info("Aqui ta a pessoa " + pessoaEndereco.getId());
 
         enderecoAlterado.setCep(endereco.getCep());
         enderecoAlterado.setLogradouro(endereco.getLogradouro());

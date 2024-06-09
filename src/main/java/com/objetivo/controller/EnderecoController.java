@@ -55,7 +55,7 @@ public class EnderecoController {
 	@PutMapping(path = "/{id}")
 	public ResponseEntity<Endereco> enderecoAlterado(
 			@PathVariable("id") Long id,
-			@RequestBody @Valid Endereco endereco
+			@RequestBody Endereco endereco
 			) {
 		return ResponseEntity.ok(this.enderecoService.save(id, endereco));
 	}

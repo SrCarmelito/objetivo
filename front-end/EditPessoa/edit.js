@@ -284,6 +284,7 @@ getPessoa(pessoaId);
 
 async function getDadosPorCep(cepBusca) {
     const response = await fetch(`https://objetivo.onrender.com/enderecos/cep/${cepBusca}`);
+    //const response = await fetch(`http://localhost:8080/enderecos/cep/${cepBusca}`);
     const cep = await response.json();
 
     document.querySelector("#iCidadeNew").value = cep.localidade;

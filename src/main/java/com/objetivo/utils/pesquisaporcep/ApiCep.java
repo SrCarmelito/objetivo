@@ -40,9 +40,9 @@ public class ApiCep {
 //		}
 //	}
 
-	public static ResponseEntity<EnderecoJson> buscaCepRest(String cep) {
+	public static EnderecoJson buscaCepRest(String cep) {
 		String params = web + cep + "/json";
 		RestTemplate restTemplate = new RestTemplate();
-        return restTemplate.getForEntity(params, EnderecoJson.class);
+        return restTemplate.getForEntity(params, EnderecoJson.class).getBody();
 	}
 }

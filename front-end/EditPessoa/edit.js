@@ -42,6 +42,7 @@ async function getPessoa(id) {
     lbidade.textContent = "Idade:";
 
     idPessoa.readOnly = true;
+    birthDate.readOnly = true;
     birthDate.setAttribute("name", "dataNascimento");
     birthDate.setAttribute("type", "date");
     cpf.setAttribute("name", "cpf");
@@ -340,7 +341,7 @@ async function putPessoa(pessoaAtualizada) {
                 let mensagens = "";
 
                 erros.map((e) => {
-                    mensagens = mensagens + "\n" + e.defaultMessage;
+                    mensagens = mensagens + "\n" + e;
                 })
 
                 confirm(mensagens);

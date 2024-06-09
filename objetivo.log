@@ -3436,3 +3436,323 @@ List of constraint violations:[
 2024-06-09T15:13:47.863-03:00 DEBUG 55044 --- [http-nio-8080-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.objetivo.exceptions.StandardError@2b57ff25]
 2024-06-09T15:13:47.864-03:00  WARN 55044 --- [http-nio-8080-exec-9] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [jakarta.persistence.EntityNotFoundException: Endereco não Encontrado]
 2024-06-09T15:13:47.864-03:00 DEBUG 55044 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2024-06-09T15:45:47.070-03:00 DEBUG 55044 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : OPTIONS "/enderecos/1013", parameters={}
+2024-06-09T15:45:47.072-03:00 DEBUG 55044 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.EnderecoController#obterPessoaPorId(Long)
+2024-06-09T15:45:47.074-03:00 DEBUG 55044 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-06-09T15:45:47.083-03:00 DEBUG 55044 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/enderecos/1013", parameters={}
+2024-06-09T15:45:47.084-03:00 DEBUG 55044 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.EnderecoController#obterPessoaPorId(Long)
+2024-06-09T15:45:47.086-03:00 DEBUG 55044 --- [http-nio-8080-exec-2] org.hibernate.SQL                        : select e1_0.id,e1_0.bairro,e1_0.cep,e1_0.cidade,e1_0.logradouro,e1_0.numero,e1_0.pessoa_id,p1_0.id,p1_0.cpf,p1_0.datanascimento,p1_0.nome,p1_0.telefone,e1_0.uf from elo.endereco e1_0 join elo.pessoa p1_0 on p1_0.id=e1_0.pessoa_id where e1_0.id=?
+2024-06-09T15:45:47.087-03:00 TRACE 55044 --- [http-nio-8080-exec-2] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [1013]
+2024-06-09T15:45:47.091-03:00 DEBUG 55044 --- [http-nio-8080-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.objetivo.exceptions.ExceptionHandlerCustom#illegalArgument(EntityNotFoundException, HttpServletRequest)
+2024-06-09T15:45:47.092-03:00 DEBUG 55044 --- [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-06-09T15:45:47.092-03:00 DEBUG 55044 --- [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.objetivo.exceptions.StandardError@f70e475]
+2024-06-09T15:45:47.092-03:00  WARN 55044 --- [http-nio-8080-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [jakarta.persistence.EntityNotFoundException: Endereco não Encontrado]
+2024-06-09T15:45:47.093-03:00 DEBUG 55044 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2024-06-09T15:46:58.395-03:00 DEBUG 55044 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : OPTIONS "/enderecos/1013", parameters={}
+2024-06-09T15:46:58.396-03:00 DEBUG 55044 --- [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.EnderecoController#obterPessoaPorId(Long)
+2024-06-09T15:46:58.396-03:00 DEBUG 55044 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-06-09T15:46:58.403-03:00 DEBUG 55044 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/enderecos/1013", parameters={}
+2024-06-09T15:46:58.403-03:00 DEBUG 55044 --- [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.EnderecoController#obterPessoaPorId(Long)
+2024-06-09T15:46:58.405-03:00 DEBUG 55044 --- [http-nio-8080-exec-5] org.hibernate.SQL                        : select e1_0.id,e1_0.bairro,e1_0.cep,e1_0.cidade,e1_0.logradouro,e1_0.numero,e1_0.pessoa_id,p1_0.id,p1_0.cpf,p1_0.datanascimento,p1_0.nome,p1_0.telefone,e1_0.uf from elo.endereco e1_0 join elo.pessoa p1_0 on p1_0.id=e1_0.pessoa_id where e1_0.id=?
+2024-06-09T15:46:58.405-03:00 TRACE 55044 --- [http-nio-8080-exec-5] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [1013]
+2024-06-09T15:46:58.406-03:00 DEBUG 55044 --- [http-nio-8080-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.objetivo.exceptions.ExceptionHandlerCustom#illegalArgument(EntityNotFoundException, HttpServletRequest)
+2024-06-09T15:46:58.407-03:00 DEBUG 55044 --- [http-nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-06-09T15:46:58.407-03:00 DEBUG 55044 --- [http-nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.objetivo.exceptions.StandardError@2814a8d8]
+2024-06-09T15:46:58.407-03:00  WARN 55044 --- [http-nio-8080-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [jakarta.persistence.EntityNotFoundException: Endereco não Encontrado]
+2024-06-09T15:46:58.408-03:00 DEBUG 55044 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2024-06-09T15:47:04.178-03:00 DEBUG 55044 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/enderecos/1013", parameters={}
+2024-06-09T15:47:04.179-03:00 DEBUG 55044 --- [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.EnderecoController#obterPessoaPorId(Long)
+2024-06-09T15:47:04.180-03:00 DEBUG 55044 --- [http-nio-8080-exec-6] org.hibernate.SQL                        : select e1_0.id,e1_0.bairro,e1_0.cep,e1_0.cidade,e1_0.logradouro,e1_0.numero,e1_0.pessoa_id,p1_0.id,p1_0.cpf,p1_0.datanascimento,p1_0.nome,p1_0.telefone,e1_0.uf from elo.endereco e1_0 join elo.pessoa p1_0 on p1_0.id=e1_0.pessoa_id where e1_0.id=?
+2024-06-09T15:47:04.181-03:00 TRACE 55044 --- [http-nio-8080-exec-6] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [1013]
+2024-06-09T15:47:04.183-03:00 DEBUG 55044 --- [http-nio-8080-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.objetivo.exceptions.ExceptionHandlerCustom#illegalArgument(EntityNotFoundException, HttpServletRequest)
+2024-06-09T15:47:04.184-03:00 DEBUG 55044 --- [http-nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-06-09T15:47:04.184-03:00 DEBUG 55044 --- [http-nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.objetivo.exceptions.StandardError@eb9bfa]
+2024-06-09T15:47:04.185-03:00  WARN 55044 --- [http-nio-8080-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [jakarta.persistence.EntityNotFoundException: Endereco não Encontrado]
+2024-06-09T15:47:04.187-03:00 DEBUG 55044 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2024-06-09T15:47:05.441-03:00 DEBUG 55044 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/enderecos/1013", parameters={}
+2024-06-09T15:47:05.442-03:00 DEBUG 55044 --- [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.EnderecoController#obterPessoaPorId(Long)
+2024-06-09T15:47:05.444-03:00 DEBUG 55044 --- [http-nio-8080-exec-7] org.hibernate.SQL                        : select e1_0.id,e1_0.bairro,e1_0.cep,e1_0.cidade,e1_0.logradouro,e1_0.numero,e1_0.pessoa_id,p1_0.id,p1_0.cpf,p1_0.datanascimento,p1_0.nome,p1_0.telefone,e1_0.uf from elo.endereco e1_0 join elo.pessoa p1_0 on p1_0.id=e1_0.pessoa_id where e1_0.id=?
+2024-06-09T15:47:05.444-03:00 TRACE 55044 --- [http-nio-8080-exec-7] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [1013]
+2024-06-09T15:47:05.448-03:00 DEBUG 55044 --- [http-nio-8080-exec-7] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.objetivo.exceptions.ExceptionHandlerCustom#illegalArgument(EntityNotFoundException, HttpServletRequest)
+2024-06-09T15:47:05.448-03:00 DEBUG 55044 --- [http-nio-8080-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-06-09T15:47:05.448-03:00 DEBUG 55044 --- [http-nio-8080-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.objetivo.exceptions.StandardError@1845c10a]
+2024-06-09T15:47:05.449-03:00  WARN 55044 --- [http-nio-8080-exec-7] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [jakarta.persistence.EntityNotFoundException: Endereco não Encontrado]
+2024-06-09T15:47:05.450-03:00 DEBUG 55044 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2024-06-09T15:47:05.705-03:00 DEBUG 55044 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/enderecos/1013", parameters={}
+2024-06-09T15:47:05.705-03:00 DEBUG 55044 --- [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.EnderecoController#obterPessoaPorId(Long)
+2024-06-09T15:47:05.707-03:00 DEBUG 55044 --- [http-nio-8080-exec-8] org.hibernate.SQL                        : select e1_0.id,e1_0.bairro,e1_0.cep,e1_0.cidade,e1_0.logradouro,e1_0.numero,e1_0.pessoa_id,p1_0.id,p1_0.cpf,p1_0.datanascimento,p1_0.nome,p1_0.telefone,e1_0.uf from elo.endereco e1_0 join elo.pessoa p1_0 on p1_0.id=e1_0.pessoa_id where e1_0.id=?
+2024-06-09T15:47:05.707-03:00 TRACE 55044 --- [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [1013]
+2024-06-09T15:47:05.709-03:00 DEBUG 55044 --- [http-nio-8080-exec-8] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.objetivo.exceptions.ExceptionHandlerCustom#illegalArgument(EntityNotFoundException, HttpServletRequest)
+2024-06-09T15:47:05.709-03:00 DEBUG 55044 --- [http-nio-8080-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-06-09T15:47:05.710-03:00 DEBUG 55044 --- [http-nio-8080-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.objetivo.exceptions.StandardError@7af71653]
+2024-06-09T15:47:05.711-03:00  WARN 55044 --- [http-nio-8080-exec-8] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [jakarta.persistence.EntityNotFoundException: Endereco não Encontrado]
+2024-06-09T15:47:05.711-03:00 DEBUG 55044 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2024-06-09T15:47:05.884-03:00 DEBUG 55044 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/enderecos/1013", parameters={}
+2024-06-09T15:47:05.885-03:00 DEBUG 55044 --- [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.EnderecoController#obterPessoaPorId(Long)
+2024-06-09T15:47:05.886-03:00 DEBUG 55044 --- [http-nio-8080-exec-9] org.hibernate.SQL                        : select e1_0.id,e1_0.bairro,e1_0.cep,e1_0.cidade,e1_0.logradouro,e1_0.numero,e1_0.pessoa_id,p1_0.id,p1_0.cpf,p1_0.datanascimento,p1_0.nome,p1_0.telefone,e1_0.uf from elo.endereco e1_0 join elo.pessoa p1_0 on p1_0.id=e1_0.pessoa_id where e1_0.id=?
+2024-06-09T15:47:05.886-03:00 TRACE 55044 --- [http-nio-8080-exec-9] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [1013]
+2024-06-09T15:47:05.887-03:00 DEBUG 55044 --- [http-nio-8080-exec-9] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.objetivo.exceptions.ExceptionHandlerCustom#illegalArgument(EntityNotFoundException, HttpServletRequest)
+2024-06-09T15:47:05.889-03:00 DEBUG 55044 --- [http-nio-8080-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-06-09T15:47:05.889-03:00 DEBUG 55044 --- [http-nio-8080-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.objetivo.exceptions.StandardError@3b23de5d]
+2024-06-09T15:47:05.889-03:00  WARN 55044 --- [http-nio-8080-exec-9] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [jakarta.persistence.EntityNotFoundException: Endereco não Encontrado]
+2024-06-09T15:47:05.890-03:00 DEBUG 55044 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2024-06-09T15:47:06.118-03:00 DEBUG 55044 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/enderecos/1013", parameters={}
+2024-06-09T15:47:06.119-03:00 DEBUG 55044 --- [http-nio-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.EnderecoController#obterPessoaPorId(Long)
+2024-06-09T15:47:06.121-03:00 DEBUG 55044 --- [http-nio-8080-exec-10] org.hibernate.SQL                        : select e1_0.id,e1_0.bairro,e1_0.cep,e1_0.cidade,e1_0.logradouro,e1_0.numero,e1_0.pessoa_id,p1_0.id,p1_0.cpf,p1_0.datanascimento,p1_0.nome,p1_0.telefone,e1_0.uf from elo.endereco e1_0 join elo.pessoa p1_0 on p1_0.id=e1_0.pessoa_id where e1_0.id=?
+2024-06-09T15:47:06.121-03:00 TRACE 55044 --- [http-nio-8080-exec-10] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [1013]
+2024-06-09T15:47:06.122-03:00 DEBUG 55044 --- [http-nio-8080-exec-10] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.objetivo.exceptions.ExceptionHandlerCustom#illegalArgument(EntityNotFoundException, HttpServletRequest)
+2024-06-09T15:47:06.123-03:00 DEBUG 55044 --- [http-nio-8080-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-06-09T15:47:06.123-03:00 DEBUG 55044 --- [http-nio-8080-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.objetivo.exceptions.StandardError@1fc5d86]
+2024-06-09T15:47:06.123-03:00  WARN 55044 --- [http-nio-8080-exec-10] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [jakarta.persistence.EntityNotFoundException: Endereco não Encontrado]
+2024-06-09T15:47:06.124-03:00 DEBUG 55044 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2024-06-09T15:47:08.105-03:00 DEBUG 55044 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : OPTIONS "/enderecos/1013", parameters={}
+2024-06-09T15:47:08.105-03:00 DEBUG 55044 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.EnderecoController#obterPessoaPorId(Long)
+2024-06-09T15:47:08.106-03:00 DEBUG 55044 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-06-09T15:47:08.113-03:00 DEBUG 55044 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/enderecos/1013", parameters={}
+2024-06-09T15:47:08.114-03:00 DEBUG 55044 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.EnderecoController#obterPessoaPorId(Long)
+2024-06-09T15:47:08.116-03:00 DEBUG 55044 --- [http-nio-8080-exec-2] org.hibernate.SQL                        : select e1_0.id,e1_0.bairro,e1_0.cep,e1_0.cidade,e1_0.logradouro,e1_0.numero,e1_0.pessoa_id,p1_0.id,p1_0.cpf,p1_0.datanascimento,p1_0.nome,p1_0.telefone,e1_0.uf from elo.endereco e1_0 join elo.pessoa p1_0 on p1_0.id=e1_0.pessoa_id where e1_0.id=?
+2024-06-09T15:47:08.116-03:00 TRACE 55044 --- [http-nio-8080-exec-2] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [1013]
+2024-06-09T15:47:08.117-03:00 DEBUG 55044 --- [http-nio-8080-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.objetivo.exceptions.ExceptionHandlerCustom#illegalArgument(EntityNotFoundException, HttpServletRequest)
+2024-06-09T15:47:08.119-03:00 DEBUG 55044 --- [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-06-09T15:47:08.119-03:00 DEBUG 55044 --- [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.objetivo.exceptions.StandardError@721ec53a]
+2024-06-09T15:47:08.120-03:00  WARN 55044 --- [http-nio-8080-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [jakarta.persistence.EntityNotFoundException: Endereco não Encontrado]
+2024-06-09T15:47:08.120-03:00 DEBUG 55044 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2024-06-09T15:47:11.139-03:00 DEBUG 55044 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/enderecos/1013", parameters={}
+2024-06-09T15:47:11.140-03:00 DEBUG 55044 --- [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.EnderecoController#obterPessoaPorId(Long)
+2024-06-09T15:47:11.141-03:00 DEBUG 55044 --- [http-nio-8080-exec-3] org.hibernate.SQL                        : select e1_0.id,e1_0.bairro,e1_0.cep,e1_0.cidade,e1_0.logradouro,e1_0.numero,e1_0.pessoa_id,p1_0.id,p1_0.cpf,p1_0.datanascimento,p1_0.nome,p1_0.telefone,e1_0.uf from elo.endereco e1_0 join elo.pessoa p1_0 on p1_0.id=e1_0.pessoa_id where e1_0.id=?
+2024-06-09T15:47:11.142-03:00 TRACE 55044 --- [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:BIGINT) <- [1013]
+2024-06-09T15:47:11.143-03:00 DEBUG 55044 --- [http-nio-8080-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.objetivo.exceptions.ExceptionHandlerCustom#illegalArgument(EntityNotFoundException, HttpServletRequest)
+2024-06-09T15:47:11.143-03:00 DEBUG 55044 --- [http-nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-06-09T15:47:11.143-03:00 DEBUG 55044 --- [http-nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.objetivo.exceptions.StandardError@db09e79]
+2024-06-09T15:47:11.144-03:00  WARN 55044 --- [http-nio-8080-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [jakarta.persistence.EntityNotFoundException: Endereco não Encontrado]
+2024-06-09T15:47:11.144-03:00 DEBUG 55044 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2024-06-09T16:30:41.679-03:00  INFO 55044 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-09T16:30:41.684-03:00  INFO 55044 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-06-09T16:30:41.690-03:00  INFO 55044 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-06-09T17:05:48.425-03:00  INFO 59528 --- [restartedMain] com.objetivo.ObjetivoApplication         : Starting ObjetivoApplication using Java 21.0.2 with PID 59528 (C:\eclipse-workspace\objetivo\target\classes started by carmelito.benali in C:\eclipse-workspace\objetivo)
+2024-06-09T17:05:48.427-03:00  INFO 59528 --- [restartedMain] com.objetivo.ObjetivoApplication         : The following 1 profile is active: "dev"
+2024-06-09T17:05:48.480-03:00  INFO 59528 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-06-09T17:05:49.247-03:00  INFO 59528 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-09T17:05:49.316-03:00  INFO 59528 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 61 ms. Found 2 JPA repository interfaces.
+2024-06-09T17:05:49.950-03:00  INFO 59528 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-06-09T17:05:49.963-03:00  INFO 59528 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-09T17:05:49.964-03:00  INFO 59528 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.18]
+2024-06-09T17:05:50.015-03:00  INFO 59528 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-09T17:05:50.015-03:00  INFO 59528 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1534 ms
+2024-06-09T17:05:50.057-03:00  INFO 59528 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-06-09T17:05:50.172-03:00  INFO 59528 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2b30224d
+2024-06-09T17:05:50.174-03:00  INFO 59528 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-06-09T17:05:50.186-03:00  INFO 59528 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/objetivo'
+2024-06-09T17:05:50.210-03:00 DEBUG 59528 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping filters: characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105
+2024-06-09T17:05:50.211-03:00 DEBUG 59528 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping servlets: dispatcherServlet urls=[/], h2Console urls=[/h2-console/*]
+2024-06-09T17:05:50.391-03:00  INFO 59528 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-09T17:05:50.492-03:00  INFO 59528 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.1.Final
+2024-06-09T17:05:50.534-03:00 DEBUG 59528 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : Cannot default RegionFactory based on registered strategies as `[]` RegionFactory strategies were registered
+2024-06-09T17:05:50.535-03:00  INFO 59528 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-06-09T17:05:50.757-03:00  INFO 59528 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-09T17:05:50.823-03:00  WARN 59528 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000511: The 9.6.0 version for [org.hibernate.dialect.PostgreSQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 12.0.0. Check the community dialects project for available legacy versions.
+2024-06-09T17:05:51.654-03:00  INFO 59528 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-09T17:05:51.709-03:00  INFO 59528 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-09T17:05:51.845-03:00 DEBUG 59528 --- [restartedMain] o.h.stat.internal.StatisticsInitiator    : Statistics initialized [enabled=false]
+2024-06-09T17:05:52.021-03:00  INFO 59528 --- [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-06-09T17:05:52.214-03:00  WARN 59528 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-09T17:05:52.314-03:00 DEBUG 59528 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 14 mappings in 'requestMappingHandlerMapping'
+2024-06-09T17:05:52.390-03:00 DEBUG 59528 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-06-09T17:05:52.419-03:00 DEBUG 59528 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-06-09T17:05:52.451-03:00 DEBUG 59528 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-06-09T17:05:52.610-03:00  INFO 59528 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-06-09T17:05:52.646-03:00  INFO 59528 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-06-09T17:05:52.655-03:00  INFO 59528 --- [restartedMain] com.objetivo.ObjetivoApplication         : Started ObjetivoApplication in 4.698 seconds (process running for 5.211)
+2024-06-09T17:05:52.659-03:00  INFO 59528 --- [restartedMain] com.objetivo.profiles.ConfigDev          : Profile active is DEV!!!
+2024-06-09T17:06:24.669-03:00  INFO 59528 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-09T17:06:24.669-03:00  INFO 59528 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-06-09T17:06:24.669-03:00 DEBUG 59528 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2024-06-09T17:06:24.670-03:00 DEBUG 59528 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2024-06-09T17:06:24.670-03:00 DEBUG 59528 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2024-06-09T17:06:24.672-03:00 DEBUG 59528 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@593485f1
+2024-06-09T17:06:24.673-03:00 DEBUG 59528 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@4400f9f4
+2024-06-09T17:06:24.674-03:00 DEBUG 59528 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2024-06-09T17:06:24.674-03:00  INFO 59528 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2024-06-09T17:06:24.682-03:00 DEBUG 59528 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/enderecos", parameters={}
+2024-06-09T17:06:24.693-03:00 DEBUG 59528 --- [http-nio-8080-exec-2] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2024-06-09T17:06:24.711-03:00 DEBUG 59528 --- [http-nio-8080-exec-2] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2024-06-09T17:06:24.717-03:00 DEBUG 59528 --- [http-nio-8080-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource enderecos.]
+2024-06-09T17:06:24.719-03:00 DEBUG 59528 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2024-06-09T17:06:24.741-03:00 DEBUG 59528 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+2024-06-09T17:06:24.748-03:00 DEBUG 59528 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2024-06-09T17:06:24.791-03:00 DEBUG 59528 --- [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-06-09T17:06:24.794-03:00 DEBUG 59528 --- [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Sun Jun 09 17:06:24 BRT 2024, status=404, error=Not Found, trace=org.springframework.web. (truncated)...]
+2024-06-09T17:06:24.881-03:00 DEBUG 59528 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
+2024-06-09T17:06:39.365-03:00 DEBUG 59528 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/enderecos/cep/87005002", parameters={}
+2024-06-09T17:06:39.366-03:00 DEBUG 59528 --- [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.EnderecoController#buscaPorCep(String)
+2024-06-09T17:06:39.687-03:00 DEBUG 59528 --- [http-nio-8080-exec-3] o.s.web.client.RestTemplate              : HTTP GET https://viacep.com.br/ws/87005002/json
+2024-06-09T17:06:39.738-03:00 DEBUG 59528 --- [http-nio-8080-exec-3] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2024-06-09T17:06:40.594-03:00 DEBUG 59528 --- [http-nio-8080-exec-3] o.s.web.client.RestTemplate              : Response 200 OK
+2024-06-09T17:06:40.597-03:00 DEBUG 59528 --- [http-nio-8080-exec-3] o.s.web.client.RestTemplate              : Reading to [com.objetivo.utils.pesquisaporcep.EnderecoJson]
+2024-06-09T17:06:40.614-03:00 DEBUG 59528 --- [http-nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Found 'Content-Type:application/json;charset=utf-8' in response
+2024-06-09T17:06:40.624-03:00 DEBUG 59528 --- [http-nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.objetivo.utils.pesquisaporcep.EnderecoJson@195ef5e5]
+2024-06-09T17:06:40.625-03:00 DEBUG 59528 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-06-09T17:10:09.422-03:00  INFO 59528 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-09T17:10:09.426-03:00  INFO 59528 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-06-09T17:10:09.433-03:00  INFO 59528 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-06-09T17:10:13.283-03:00  INFO 13100 --- [restartedMain] com.objetivo.ObjetivoApplication         : Starting ObjetivoApplication using Java 21.0.2 with PID 13100 (C:\eclipse-workspace\objetivo\target\classes started by carmelito.benali in C:\eclipse-workspace\objetivo)
+2024-06-09T17:10:13.285-03:00  INFO 13100 --- [restartedMain] com.objetivo.ObjetivoApplication         : The following 1 profile is active: "dev"
+2024-06-09T17:10:13.346-03:00  INFO 13100 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-06-09T17:10:14.114-03:00  INFO 13100 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-09T17:10:14.187-03:00  INFO 13100 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 66 ms. Found 2 JPA repository interfaces.
+2024-06-09T17:10:14.970-03:00  INFO 13100 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-06-09T17:10:14.983-03:00  INFO 13100 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-09T17:10:14.983-03:00  INFO 13100 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.18]
+2024-06-09T17:10:15.033-03:00  INFO 13100 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-09T17:10:15.033-03:00  INFO 13100 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1686 ms
+2024-06-09T17:10:15.070-03:00  INFO 13100 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-06-09T17:10:15.201-03:00  INFO 13100 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4be0ac7e
+2024-06-09T17:10:15.203-03:00  INFO 13100 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-06-09T17:10:15.216-03:00  INFO 13100 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/objetivo'
+2024-06-09T17:10:15.234-03:00 DEBUG 13100 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping filters: characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105
+2024-06-09T17:10:15.234-03:00 DEBUG 13100 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping servlets: dispatcherServlet urls=[/], h2Console urls=[/h2-console/*]
+2024-06-09T17:10:15.373-03:00  INFO 13100 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-09T17:10:15.451-03:00  INFO 13100 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.1.Final
+2024-06-09T17:10:15.491-03:00 DEBUG 13100 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : Cannot default RegionFactory based on registered strategies as `[]` RegionFactory strategies were registered
+2024-06-09T17:10:15.492-03:00  INFO 13100 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-06-09T17:10:15.781-03:00  INFO 13100 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-09T17:10:15.852-03:00  WARN 13100 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000511: The 9.6.0 version for [org.hibernate.dialect.PostgreSQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 12.0.0. Check the community dialects project for available legacy versions.
+2024-06-09T17:10:16.671-03:00  INFO 13100 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-09T17:10:16.723-03:00  INFO 13100 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-09T17:10:16.916-03:00 DEBUG 13100 --- [restartedMain] o.h.stat.internal.StatisticsInitiator    : Statistics initialized [enabled=false]
+2024-06-09T17:10:17.116-03:00  INFO 13100 --- [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-06-09T17:10:17.329-03:00  WARN 13100 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-09T17:10:17.442-03:00 DEBUG 13100 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 14 mappings in 'requestMappingHandlerMapping'
+2024-06-09T17:10:17.524-03:00 DEBUG 13100 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-06-09T17:10:17.568-03:00 DEBUG 13100 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-06-09T17:10:17.608-03:00 DEBUG 13100 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-06-09T17:10:17.750-03:00  INFO 13100 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-06-09T17:10:17.782-03:00  INFO 13100 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-06-09T17:10:17.791-03:00  INFO 13100 --- [restartedMain] com.objetivo.ObjetivoApplication         : Started ObjetivoApplication in 4.982 seconds (process running for 5.595)
+2024-06-09T17:10:17.795-03:00  INFO 13100 --- [restartedMain] com.objetivo.profiles.ConfigDev          : Profile active is DEV!!!
+2024-06-09T17:10:19.533-03:00  INFO 13100 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-09T17:10:19.534-03:00  INFO 13100 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-06-09T17:10:19.534-03:00 DEBUG 13100 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2024-06-09T17:10:19.534-03:00 DEBUG 13100 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2024-06-09T17:10:19.534-03:00 DEBUG 13100 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2024-06-09T17:10:19.535-03:00 DEBUG 13100 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@37458dd1
+2024-06-09T17:10:19.535-03:00 DEBUG 13100 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@bffb7b4
+2024-06-09T17:10:19.535-03:00 DEBUG 13100 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2024-06-09T17:10:19.536-03:00  INFO 13100 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2024-06-09T17:10:19.544-03:00 DEBUG 13100 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/enderecos/cep/87005002", parameters={}
+2024-06-09T17:10:19.561-03:00 DEBUG 13100 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.EnderecoController#buscaPorCep(String)
+2024-06-09T17:10:19.700-03:00 DEBUG 13100 --- [http-nio-8080-exec-2] o.s.web.client.RestTemplate              : HTTP GET https://viacep.com.br/ws/87005002/json
+2024-06-09T17:10:19.751-03:00 DEBUG 13100 --- [http-nio-8080-exec-2] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2024-06-09T17:10:20.382-03:00 DEBUG 13100 --- [http-nio-8080-exec-2] o.s.web.client.RestTemplate              : Response 200 OK
+2024-06-09T17:10:20.384-03:00 DEBUG 13100 --- [http-nio-8080-exec-2] o.s.web.client.RestTemplate              : Reading to [com.objetivo.utils.pesquisaporcep.EnderecoJson]
+2024-06-09T17:10:20.401-03:00 DEBUG 13100 --- [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Found 'Content-Type:application/json;charset=utf-8' in response
+2024-06-09T17:10:20.411-03:00 DEBUG 13100 --- [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.objetivo.utils.pesquisaporcep.EnderecoJson@6379e1d4]
+2024-06-09T17:10:20.419-03:00 DEBUG 13100 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-06-09T17:10:23.938-03:00 DEBUG 13100 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/enderecos/cep/87005009", parameters={}
+2024-06-09T17:10:23.939-03:00 DEBUG 13100 --- [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.EnderecoController#buscaPorCep(String)
+2024-06-09T17:10:23.944-03:00 DEBUG 13100 --- [http-nio-8080-exec-3] o.s.web.client.RestTemplate              : HTTP GET https://viacep.com.br/ws/87005009/json
+2024-06-09T17:10:23.946-03:00 DEBUG 13100 --- [http-nio-8080-exec-3] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2024-06-09T17:10:24.081-03:00 DEBUG 13100 --- [http-nio-8080-exec-3] o.s.web.client.RestTemplate              : Response 200 OK
+2024-06-09T17:10:24.082-03:00 DEBUG 13100 --- [http-nio-8080-exec-3] o.s.web.client.RestTemplate              : Reading to [com.objetivo.utils.pesquisaporcep.EnderecoJson]
+2024-06-09T17:10:24.082-03:00 DEBUG 13100 --- [http-nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Found 'Content-Type:application/json;charset=utf-8' in response
+2024-06-09T17:10:24.083-03:00 DEBUG 13100 --- [http-nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.objetivo.utils.pesquisaporcep.EnderecoJson@73da7448]
+2024-06-09T17:10:24.084-03:00 DEBUG 13100 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-06-09T17:10:30.318-03:00 DEBUG 13100 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/enderecos/cep/87005", parameters={}
+2024-06-09T17:10:30.319-03:00 DEBUG 13100 --- [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.EnderecoController#buscaPorCep(String)
+2024-06-09T17:10:30.321-03:00 DEBUG 13100 --- [http-nio-8080-exec-4] o.s.web.client.RestTemplate              : HTTP GET https://viacep.com.br/ws/87005/json
+2024-06-09T17:10:30.324-03:00 DEBUG 13100 --- [http-nio-8080-exec-4] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2024-06-09T17:10:30.724-03:00 DEBUG 13100 --- [http-nio-8080-exec-4] o.s.web.client.RestTemplate              : Response 400 BAD_REQUEST
+2024-06-09T17:10:30.736-03:00 DEBUG 13100 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Failed to complete request: org.springframework.web.client.HttpClientErrorException$BadRequest: 400 Bad Request: "<!DOCTYPE HTML><EOL><html lang="pt-br"><EOL><EOL><head><EOL>  <title>ViaCEP 400</title><EOL>  <meta charset="utf-8" /><EOL>  <style type="text/css"><EOL>      h1 {<EOL>          color: #555;<EOL>          text-align: center;<EOL>          font-size: 4em;<EOL>      }<EOL>      h2, h3 {<EOL>          color: #666;<EOL>          text-align: center;<EOL>          font-size: 3em;<EOL>      }<EOL>      h3 {<EOL>          font-size: 1.5em;<EOL>      }<EOL>  </style><EOL></head><EOL><EOL><body><EOL>    <h1>Http 400</h1><EOL>    <h3>Verifique a URL</h3><EOL>    <h3>{Bad Request}</h3><EOL></body><EOL><EOL></html><EOL>"
+2024-06-09T17:10:30.737-03:00 ERROR 13100 --- [http-nio-8080-exec-4] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.web.client.HttpClientErrorException$BadRequest: 400 Bad Request: "<!DOCTYPE HTML><EOL><html lang="pt-br"><EOL><EOL><head><EOL>  <title>ViaCEP 400</title><EOL>  <meta charset="utf-8" /><EOL>  <style type="text/css"><EOL>      h1 {<EOL>          color: #555;<EOL>          text-align: center;<EOL>          font-size: 4em;<EOL>      }<EOL>      h2, h3 {<EOL>          color: #666;<EOL>          text-align: center;<EOL>          font-size: 3em;<EOL>      }<EOL>      h3 {<EOL>          font-size: 1.5em;<EOL>      }<EOL>  </style><EOL></head><EOL><EOL><body><EOL>    <h1>Http 400</h1><EOL>    <h3>Verifique a URL</h3><EOL>    <h3>{Bad Request}</h3><EOL></body><EOL><EOL></html><EOL>"] with root cause
+
+org.springframework.web.client.HttpClientErrorException$BadRequest: 400 Bad Request: "<!DOCTYPE HTML><EOL><html lang="pt-br"><EOL><EOL><head><EOL>  <title>ViaCEP 400</title><EOL>  <meta charset="utf-8" /><EOL>  <style type="text/css"><EOL>      h1 {<EOL>          color: #555;<EOL>          text-align: center;<EOL>          font-size: 4em;<EOL>      }<EOL>      h2, h3 {<EOL>          color: #666;<EOL>          text-align: center;<EOL>          font-size: 3em;<EOL>      }<EOL>      h3 {<EOL>          font-size: 1.5em;<EOL>      }<EOL>  </style><EOL></head><EOL><EOL><body><EOL>    <h1>Http 400</h1><EOL>    <h3>Verifique a URL</h3><EOL>    <h3>{Bad Request}</h3><EOL></body><EOL><EOL></html><EOL>"
+	at org.springframework.web.client.HttpClientErrorException.create(HttpClientErrorException.java:103) ~[spring-web-6.1.3.jar:6.1.3]
+	at org.springframework.web.client.DefaultResponseErrorHandler.handleError(DefaultResponseErrorHandler.java:183) ~[spring-web-6.1.3.jar:6.1.3]
+	at org.springframework.web.client.DefaultResponseErrorHandler.handleError(DefaultResponseErrorHandler.java:137) ~[spring-web-6.1.3.jar:6.1.3]
+	at org.springframework.web.client.ResponseErrorHandler.handleError(ResponseErrorHandler.java:63) ~[spring-web-6.1.3.jar:6.1.3]
+	at org.springframework.web.client.RestTemplate.handleResponse(RestTemplate.java:932) ~[spring-web-6.1.3.jar:6.1.3]
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:881) ~[spring-web-6.1.3.jar:6.1.3]
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:781) ~[spring-web-6.1.3.jar:6.1.3]
+	at org.springframework.web.client.RestTemplate.getForEntity(RestTemplate.java:422) ~[spring-web-6.1.3.jar:6.1.3]
+	at com.objetivo.utils.pesquisaporcep.ApiCep.buscaCepRest(ApiCep.java:46) ~[classes/:na]
+	at com.objetivo.controller.EnderecoController.buscaPorCep(EnderecoController.java:74) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:351) ~[spring-aop-6.1.3.jar:6.1.3]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:713) ~[spring-aop-6.1.3.jar:6.1.3]
+	at com.objetivo.controller.EnderecoController$$SpringCGLIB$$0.buscaPorCep(<generated>) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:261) ~[spring-web-6.1.3.jar:6.1.3]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:189) ~[spring-web-6.1.3.jar:6.1.3]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.1.3.jar:6.1.3]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:917) ~[spring-webmvc-6.1.3.jar:6.1.3]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:829) ~[spring-webmvc-6.1.3.jar:6.1.3]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.1.3.jar:6.1.3]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.1.3.jar:6.1.3]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.3.jar:6.1.3]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.3.jar:6.1.3]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.1.3.jar:6.1.3]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[tomcat-embed-core-10.1.18.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.3.jar:6.1.3]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.18.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205) ~[tomcat-embed-core-10.1.18.jar:10.1.18]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.18.jar:10.1.18]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.18.jar:10.1.18]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.18.jar:10.1.18]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.18.jar:10.1.18]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.3.jar:6.1.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.3.jar:6.1.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.18.jar:10.1.18]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.18.jar:10.1.18]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.3.jar:6.1.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.3.jar:6.1.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.18.jar:10.1.18]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.18.jar:10.1.18]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.3.jar:6.1.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.3.jar:6.1.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.18.jar:10.1.18]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.18.jar:10.1.18]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.18.jar:10.1.18]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.18.jar:10.1.18]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) ~[tomcat-embed-core-10.1.18.jar:10.1.18]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.18.jar:10.1.18]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.18.jar:10.1.18]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.18.jar:10.1.18]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:340) ~[tomcat-embed-core-10.1.18.jar:10.1.18]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391) ~[tomcat-embed-core-10.1.18.jar:10.1.18]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.18.jar:10.1.18]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896) ~[tomcat-embed-core-10.1.18.jar:10.1.18]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744) ~[tomcat-embed-core-10.1.18.jar:10.1.18]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.18.jar:10.1.18]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-10.1.18.jar:10.1.18]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.18.jar:10.1.18]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-10.1.18.jar:10.1.18]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+
+2024-06-09T17:10:30.761-03:00 DEBUG 13100 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+2024-06-09T17:10:30.762-03:00 DEBUG 13100 --- [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2024-06-09T17:10:30.775-03:00 DEBUG 13100 --- [http-nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-06-09T17:10:30.775-03:00 DEBUG 13100 --- [http-nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Sun Jun 09 17:10:30 BRT 2024, status=500, error=Internal Server Error, trace=org.springfr (truncated)...]
+2024-06-09T17:10:30.802-03:00 DEBUG 13100 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 500
+2024-06-09T17:11:16.585-03:00 DEBUG 13100 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/enderecos/cep/87103000", parameters={}
+2024-06-09T17:11:16.586-03:00 DEBUG 13100 --- [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.EnderecoController#buscaPorCep(String)
+2024-06-09T17:11:16.589-03:00 DEBUG 13100 --- [http-nio-8080-exec-6] o.s.web.client.RestTemplate              : HTTP GET https://viacep.com.br/ws/87103000/json
+2024-06-09T17:11:16.590-03:00 DEBUG 13100 --- [http-nio-8080-exec-6] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2024-06-09T17:11:17.036-03:00 DEBUG 13100 --- [http-nio-8080-exec-6] o.s.web.client.RestTemplate              : Response 200 OK
+2024-06-09T17:11:17.037-03:00 DEBUG 13100 --- [http-nio-8080-exec-6] o.s.web.client.RestTemplate              : Reading to [com.objetivo.utils.pesquisaporcep.EnderecoJson]
+2024-06-09T17:11:17.039-03:00 DEBUG 13100 --- [http-nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Found 'Content-Type:application/json;charset=utf-8' in response
+2024-06-09T17:11:17.040-03:00 DEBUG 13100 --- [http-nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.objetivo.utils.pesquisaporcep.EnderecoJson@1ff07437]
+2024-06-09T17:11:17.041-03:00 DEBUG 13100 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-06-09T17:11:25.676-03:00 DEBUG 13100 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/enderecos/cep/87005004", parameters={}
+2024-06-09T17:11:25.677-03:00 DEBUG 13100 --- [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.objetivo.controller.EnderecoController#buscaPorCep(String)
+2024-06-09T17:11:25.680-03:00 DEBUG 13100 --- [http-nio-8080-exec-7] o.s.web.client.RestTemplate              : HTTP GET https://viacep.com.br/ws/87005004/json
+2024-06-09T17:11:25.681-03:00 DEBUG 13100 --- [http-nio-8080-exec-7] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2024-06-09T17:11:26.072-03:00 DEBUG 13100 --- [http-nio-8080-exec-7] o.s.web.client.RestTemplate              : Response 200 OK
+2024-06-09T17:11:26.073-03:00 DEBUG 13100 --- [http-nio-8080-exec-7] o.s.web.client.RestTemplate              : Reading to [com.objetivo.utils.pesquisaporcep.EnderecoJson]
+2024-06-09T17:11:26.076-03:00 DEBUG 13100 --- [http-nio-8080-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Found 'Content-Type:application/json;charset=utf-8' in response
+2024-06-09T17:11:26.076-03:00 DEBUG 13100 --- [http-nio-8080-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.objetivo.utils.pesquisaporcep.EnderecoJson@53d338c2]
+2024-06-09T17:11:26.076-03:00 DEBUG 13100 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-06-09T17:11:38.855-03:00  INFO 13100 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-09T17:11:38.861-03:00  INFO 13100 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-06-09T17:11:38.870-03:00  INFO 13100 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

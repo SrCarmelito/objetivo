@@ -11,10 +11,8 @@ public class ObjetivoApplication {
 		SpringApplication.run(ObjetivoApplication.class, args);
 	}
 
-	//TODO: criar camada service
 	//TODO: refazer rotina da api viacep
 	//tODO: implementar testes
 	//TODO: REVISAR REQUISITOS DO OBJETIVO
-	//TODO: indade retornando null
 
 }

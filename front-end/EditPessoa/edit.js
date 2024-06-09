@@ -358,10 +358,6 @@ async function postEndereco(novoEndereco) {
 
     const url = "https://objetivo.onrender.com/enderecos";
 
-    console.log(pessoaId);
-
-    console.log(JSON.stringify(novoEndereco));
-
     await fetch(`${url}/${pessoaId}`,
     {
         body: JSON.stringify(novoEndereco),

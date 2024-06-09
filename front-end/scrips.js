@@ -15,10 +15,6 @@ let size = 20;
 document.querySelector("#executa-pesquisa").addEventListener("click", (e) => {
     e.preventDefault();
 
-    console.log(url);
-
-    console.log(window.location.origin);
-
     filtroValorCpf = document.querySelector("#input-filter-cpf").value;
     filtroValorNome = document.querySelector("#input-filter-nome").value;
     filtroValorId = document.querySelector("#input-filter-id").value;
@@ -312,7 +308,6 @@ async function postPessoa(novaPessoa) {
             }
             else {
                 e.json().then((e) => {
-                    console.log(e.id);
                     alert("Pessoa Cadastrada corretamente!");
                     const modal = document.querySelector('.modal');
                     modal.style.display = 'none';
@@ -323,7 +318,6 @@ async function postPessoa(novaPessoa) {
 };
 
 async function redirectPessoa(novaPessoa) {
-    console.log(novaPessoa);
     const response = await fetch(`https://objetivo.onrender.com/pessoas?id=${novaPessoa}`);
     const pessoa = await response.json();
     window.location.href = `/EditPessoa/edit.html?id=${novaPessoa}`;
@@ -331,10 +325,10 @@ async function redirectPessoa(novaPessoa) {
 
 ///////////////////////Paginação /////////////////////////
 document.querySelector("#cbPageSize").addEventListener("change", (e => {
-    console.log("Peguei o log ein doido")
     size = cbPageSize.value
     document.querySelector("#pessoas-container-dados").remove();
     document.querySelector("#paginas").remove();
+
     getAll(page, size);
     criaBotoes(page, totalPages);
 }));
@@ -399,18 +393,20 @@ function criaBotoes(page, totalPages) {
             bt.setAttribute("id", `page-${i}`);
             bt.setAttribute("class", "bt-paginacao");
             bt.innerText = page + i;
+
             divPages.append(bt);
             if (bt.innerText == page + 1) {
                 bt.style.backgroundColor = "limegreen";
             }
         }
     } else if(totalPages > 4) {
+        
         for (let i = 3; i > -2; i--) {
             let bt = document.createElement("button");
             bt.setAttribute("id", `page-${i}`);
             bt.setAttribute("class", "bt-paginacao");
             bt.innerText = page - i;
-            
+                        
             divPages.append(bt);
             if (bt.innerText == page + 1) {
                 bt.style.backgroundColor = "limegreen";

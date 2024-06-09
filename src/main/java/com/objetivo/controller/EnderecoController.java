@@ -70,8 +70,8 @@ public class EnderecoController {
 
 	@CrossOrigin(allowedHeaders = "*")
 	@GetMapping(path = "/cep/{cep}")
-	public @ResponseBody EnderecoJson buscaPorCep(@PathVariable String cep) throws Exception {
-		return ApiCep.buscaCep(cep);
+	public ResponseEntity<EnderecoJson> buscaPorCep(@PathVariable String cep) throws Exception {
+		return ApiCep.buscaCepRest(cep);
 	}
 	
 	@CrossOrigin(allowedHeaders = "*")

@@ -56,5 +56,6 @@ public class ExceptionHandlerCustom {
     }
 
     //TODO TRATAR ESTE ERRO: MethodArgumentTypeMismatchException
+    //TODO TRATAR ESTE ERRO: HttpClientErrorException
 
 }

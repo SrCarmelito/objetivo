@@ -1,4 +1,5 @@
 const url = "https://objetivo.onrender.com/pessoas";
+//const url = "http://localhost:8080/pessoas";
 const urlEndereco = "https://objetivo.onrender.com/enderecos";
 
 const urlSearchParams = new URLSearchParams(window.location.search);
@@ -42,13 +43,12 @@ async function getPessoa(id) {
     lbidade.textContent = "Idade:";
 
     idPessoa.readOnly = true;
-    birthDate.readOnly = true;
     birthDate.setAttribute("name", "dataNascimento");
     birthDate.setAttribute("type", "date");
     cpf.setAttribute("name", "cpf");
     phone.setAttribute("name", "telefone");
     age.setAttribute("name", "idade");
-    age.setAttribute("name", "idade");
+    age.readOnly = true;
     idPessoa.setAttribute("name", "id");
     name.setAttribute("name", "nome");
     birthDate.setAttribute("id", "birth");
@@ -377,7 +377,7 @@ async function postEndereco(novoEndereco) {
                 let mensagens = "";
 
                 erros.map((e) => {
-                    mensagens = mensagens + "\n" + e.defaultMessage;
+                    mensagens = mensagens + "\n" + e;
                 })
 
                 confirm(mensagens);

@@ -32,15 +32,11 @@ public class PessoaService {
         Pessoa pessoaAlterada = this.pessoaRepository.findById(id).orElseThrow(() ->
                 new EntityNotFoundException("Pessoa não encontrada"));
 
-        if (!pessoaRepository.findByCpfContaining(pessoa.getCpf()).isEmpty()){
-            throw new IllegalArgumentException("CPF informado já existe no cadastro");
-        } else {
-            pessoaAlterada.setNome(pessoa.getNome());
-            pessoaAlterada.setCpf(pessoa.getCpf());
-            pessoaAlterada.setTelefone(pessoa.getTelefone());
-            pessoaAlterada.setDataNascimento(pessoa.getDataNascimento());
-            return pessoaRepository.save(pessoaAlterada);
-        }
+        pessoaAlterada.setNome(pessoa.getNome());
+        pessoaAlterada.setCpf(pessoa.getCpf());
+        pessoaAlterada.setTelefone(pessoa.getTelefone());
+        pessoaAlterada.setDataNascimento(pessoa.getDataNascimento());
+        return pessoaRepository.save(pessoaAlterada);
     }
 
     public Pessoa obterPessoaPorId(Long id) {

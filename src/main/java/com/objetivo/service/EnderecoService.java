@@ -3,6 +3,8 @@ package com.objetivo.service;
 import com.objetivo.entities.Endereco;
 import com.objetivo.entities.Pessoa;
 import com.objetivo.repository.EnderecoRepository;
+import com.objetivo.utils.pesquisaporcep.ApiCep;
+import com.objetivo.utils.pesquisaporcep.EnderecoJson;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -60,5 +62,9 @@ public class EnderecoService {
 
     public void deleteById(Long id) {
         this.enderecoRepository.deleteById(id);
+    }
+
+    public EnderecoJson buscaCepRest(String cep) {
+        return ApiCep.buscaCepRest(cep);
     }
 }

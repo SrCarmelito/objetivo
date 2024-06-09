@@ -30,13 +30,7 @@ public class Endereco {
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_endereco")
 	@SequenceGenerator(name = "seq_endereco", schema = "elo", sequenceName = "s_endereco", allocationSize=1)
 	private Long id;
-	
-	@JsonIgnore
-	@NotNull(message = "É Necessário informar ID da Pessoa!")
-	@ManyToOne
-	@JoinColumn(name = "pessoa_id", nullable = false)
-	private Pessoa pessoa;
-		
+
 	@NotBlank(message = "É Necessário informar o CEP!")
 	@Column(name = "cep")
 	private String cep;
@@ -60,5 +54,11 @@ public class Endereco {
 	@NotBlank(message = "É Necessário informar o Bairro!")
 	@Column(name = "bairro")
 	private String bairro;
+
+	@JsonIgnore
+	@NotNull(message = "É Necessário informar ID da Pessoa!")
+	@ManyToOne
+	@JoinColumn(name = "pessoa_id", nullable = false)
+	private Pessoa pessoa;
 
 }

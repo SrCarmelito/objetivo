@@ -9,6 +9,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
+import org.springframework.web.client.HttpClientErrorException;
+import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
+import org.springframework.web.servlet.resource.NoResourceFoundException;
 
 import java.time.Instant;
 import java.util.HashSet;
@@ -55,7 +58,42 @@ public class ExceptionHandlerCustom {
         return ResponseEntity.status(status).body(err);
     }
 
-    //TODO TRATAR ESTE ERRO: MethodArgumentTypeMismatchException
-    //TODO TRATAR ESTE ERRO: HttpClientErrorException
+    @ExceptionHandler(MethodArgumentTypeMismatchException.class)
+    public ResponseEntity<StandardError> argumentNotValid(MethodArgumentTypeMismatchException e, HttpServletRequest request) {
+        Set<String> errors = new HashSet<>();
+        errors.add(e.getLocalizedMessage());
+        HttpStatus status = HttpStatus.BAD_REQUEST;
+        StandardError err = new StandardError(Instant.now(), status.value(), e.getMessage(), request.getRequestURI(), errors);
+        return ResponseEntity.status(status).body(err);
+    }
+
+    @ExceptionHandler(HttpClientErrorException.class)
+    public ResponseEntity<StandardError> argumentNotValid(HttpClientErrorException e, HttpServletRequest request) {
+        Set<String> errors = new HashSet<>();
+        errors.add(e.getLocalizedMessage());
+        HttpStatus status = HttpStatus.BAD_REQUEST;
+        StandardError err = new StandardError(Instant.now(), status.value(), e.getMessage(), request.getRequestURI(), errors);
+        return ResponseEntity.status(status).body(err);
+    }
+
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity<StandardError> general(Exception e, HttpServletRequest request) {
+        Set<String> errors = new HashSet<>();
+        errors.add(e.getLocalizedMessage());
+        String message = "Ops, ocorreu um erro inesperado!";
+        HttpStatus status = HttpStatus.NOT_FOUND;
+        StandardError err = new StandardError(Instant.now(), status.value(), message, request.getRequestURI(), errors);
+        return ResponseEntity.status(status).body(err);
+    }
+
+    @ExceptionHandler(NoResourceFoundException.class)
+    public ResponseEntity<StandardError> noResourceFound(NoResourceFoundException e, HttpServletRequest request) {
+        Set<String> errors = new HashSet<>();
+        errors.add(e.getResourcePath() + " Não corresponde a nenhum End Point!!!");
+        String message = "Método inválido, verifique e tente novamente";
+        HttpStatus status = HttpStatus.NOT_FOUND;
+        StandardError err = new StandardError(Instant.now(), status.value(), message, request.getRequestURI(), errors);
+        return ResponseEntity.status(status).body(err);
+    }
 
 }

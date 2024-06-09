@@ -1,5 +1,6 @@
 package com.objetivo.entities;
 
+import com.objetivo.utils.FormataTelefone;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -65,4 +66,7 @@ public class Pessoa {
 		return BigDecimal.valueOf(LocalDate.now().getYear()).subtract(new BigDecimal(getDataNascimento().getYear()));
 	}
 
+	public String getTelefone() {
+		return FormataTelefone.format(telefone);
+	}
 }

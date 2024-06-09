@@ -36,8 +36,6 @@ public class EnderecoController {
 	@Autowired
 	private EnderecoService enderecoService;
 
-	ApiCep apiCep = new ApiCep();
-
 	@CrossOrigin(allowedHeaders = "*")
 	@GetMapping(path = "/{id}")
 	public Endereco obterPessoaPorId(@PathVariable Long id) {
@@ -71,7 +69,7 @@ public class EnderecoController {
 	@CrossOrigin(allowedHeaders = "*")
 	@GetMapping(path = "/cep/{cep}")
 	public EnderecoJson buscaPorCep(@PathVariable String cep) {
-		return ApiCep.buscaCepRest(cep);
+		return enderecoService.buscaCepRest(cep);
 	}
 	
 	@CrossOrigin(allowedHeaders = "*")

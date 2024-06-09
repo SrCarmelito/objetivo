@@ -11,8 +11,6 @@ public class ObjetivoApplication {
 		SpringApplication.run(ObjetivoApplication.class, args);
 	}
 
-	//TODO: refazer rotina da api viacep
 	//tODO: implementar testes
-	//TODO: REVISAR REQUISITOS DO OBJETIVO
 
 }

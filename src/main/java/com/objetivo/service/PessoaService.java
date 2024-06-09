@@ -48,8 +48,8 @@ public class PessoaService {
                 new EntityNotFoundException("Id Informado não existe na base de dados!"));
     }
 
-    public Page<Pessoa> findByIdCpfNomeContaining(Long id, String cpf, String nome, Pageable pageable) {
-        return this.pessoaRepository.findByIdOrCpfOrNome(id, cpf, nome, pageable);
+    public Page<Pessoa> findByIdCpfNomeContaining(String cpf, String nome, String id, Pageable pageable) {
+        return this.pessoaRepository.findByIdCpfNomeContaining(cpf, nome, id, pageable);
     }
 
     public List<Pessoa> findByCpfContaining(String cpf) {

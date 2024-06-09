@@ -40,4 +40,6 @@ public class ExcempionHandler {
         return ResponseEntity.status(status).body(err);
     }
 
+    //TODO TRATAR ESTE ERRO: MethodArgumentTypeMismatchException
+
 }

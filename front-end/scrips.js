@@ -37,7 +37,7 @@ getAll();
 
 async function getAll() {
         
-    url = `https://objetivo.onrender.com/pessoas?id=${filtroValorId}&cpf=${filtroValorCpf}&nome=${filtroValorNome}&page=${page}&size=${size}&sort=nome,asc`;
+    url = `http://objetivo.onrender.com/pessoas?id=${filtroValorId}&cpf=${filtroValorCpf}&nome=${filtroValorNome}&page=${page}&size=${size}&sort=nome,asc`;
 
     const response = await fetch(url);
     const data = await response.json();
@@ -290,7 +290,6 @@ window.onclick = function(event) {
 async function postPessoa(novaPessoa) {
 
     await fetch("https://objetivo.onrender.com/pessoas",
-    //await fetch("http://localhost:8080/pessoas",
         {
             body: JSON.stringify(novaPessoa),
             method: 'POST',

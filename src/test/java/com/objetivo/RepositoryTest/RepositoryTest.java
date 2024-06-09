@@ -77,7 +77,7 @@ public class RepositoryTest {
 
     @Test
     void teste() {
-        assertFalse(this.repository.ops(36L, "1", "", Pageable.ofSize(1)).isEmpty());
+        assertTrue(this.repository.findByIdCpfNomeContaining("36", "1", "", Pageable.ofSize(1)).isEmpty());
     }
 
 }

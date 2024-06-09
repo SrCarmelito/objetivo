@@ -2669,3 +2669,33 @@ Caused by: java.lang.IllegalArgumentException: Paging query needs to have a Page
 2024-06-09T13:30:38.614-03:00  INFO 22268 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2024-06-09T13:30:38.618-03:00  INFO 22268 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2024-06-09T13:30:38.625-03:00  INFO 22268 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-06-09T13:38:32.408-03:00  INFO 55804 --- [main] c.o.RepositoryTest.RepositoryTest        : Starting RepositoryTest using Java 21.0.2 with PID 55804 (started by carmelito.benali in C:\eclipse-workspace\objetivo)
+2024-06-09T13:38:32.410-03:00  INFO 55804 --- [main] c.o.RepositoryTest.RepositoryTest        : The following 1 profile is active: "test"
+2024-06-09T13:38:32.802-03:00  INFO 55804 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-09T13:38:32.883-03:00  INFO 55804 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 69 ms. Found 2 JPA repository interfaces.
+2024-06-09T13:38:32.940-03:00  INFO 55804 --- [main] beddedDataSourceBeanFactoryPostProcessor : Replacing 'dataSource' DataSource bean with embedded version
+2024-06-09T13:38:33.118-03:00  INFO 55804 --- [main] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:2bc0ddd4-7f30-4a8d-9dd7-1b162e0e4b2f;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2024-06-09T13:38:33.703-03:00  INFO 55804 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-09T13:38:33.757-03:00  INFO 55804 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.1.Final
+2024-06-09T13:38:33.800-03:00  INFO 55804 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-06-09T13:38:34.046-03:00  INFO 55804 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-09T13:38:34.996-03:00  INFO 55804 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-09T13:38:35.104-03:00  INFO 55804 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-09T13:38:35.450-03:00  INFO 55804 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-06-09T13:38:35.634-03:00  INFO 55804 --- [main] c.o.RepositoryTest.RepositoryTest        : Started RepositoryTest in 3.684 seconds (process running for 4.806)
+2024-06-09T13:38:36.322-03:00  INFO 55804 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-09T13:40:14.909-03:00  INFO 8508 --- [main] c.o.RepositoryTest.RepositoryTest        : Starting RepositoryTest using Java 21.0.2 with PID 8508 (started by carmelito.benali in C:\eclipse-workspace\objetivo)
+2024-06-09T13:40:14.910-03:00  INFO 8508 --- [main] c.o.RepositoryTest.RepositoryTest        : The following 1 profile is active: "test"
+2024-06-09T13:40:15.291-03:00  INFO 8508 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-09T13:40:15.358-03:00  INFO 8508 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 57 ms. Found 2 JPA repository interfaces.
+2024-06-09T13:40:15.410-03:00  INFO 8508 --- [main] beddedDataSourceBeanFactoryPostProcessor : Replacing 'dataSource' DataSource bean with embedded version
+2024-06-09T13:40:15.601-03:00  INFO 8508 --- [main] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:fa37c135-9bea-497f-b8b6-180380a37fdd;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2024-06-09T13:40:16.132-03:00  INFO 8508 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-09T13:40:16.187-03:00  INFO 8508 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.1.Final
+2024-06-09T13:40:16.235-03:00  INFO 8508 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-06-09T13:40:16.476-03:00  INFO 8508 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-09T13:40:17.410-03:00  INFO 8508 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-09T13:40:17.508-03:00  INFO 8508 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-09T13:40:17.812-03:00  INFO 8508 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-06-09T13:40:17.967-03:00  INFO 8508 --- [main] c.o.RepositoryTest.RepositoryTest        : Started RepositoryTest in 3.447 seconds (process running for 4.416)
+2024-06-09T13:40:18.555-03:00  INFO 8508 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'

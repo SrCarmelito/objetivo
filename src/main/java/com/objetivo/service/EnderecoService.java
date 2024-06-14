@@ -8,6 +8,7 @@ import com.objetivo.utils.pesquisaporcep.EnderecoJson;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -36,17 +37,13 @@ public class EnderecoService {
         Endereco enderecoAlterado = enderecoRepository.findById(id).orElseThrow(() ->
                 new EntityNotFoundException("Endereço não Encontrado"));
 
-        Pessoa pessoaEndereco = pessoaService.obterPessoaPorId(enderecoRepository.findPessoaByEndereco(id));
-
-        log.info("Aqui ta a pessoa " + pessoaEndereco.getId());
-
         enderecoAlterado.setCep(endereco.getCep());
         enderecoAlterado.setLogradouro(endereco.getLogradouro());
         enderecoAlterado.setNumero(endereco.getNumero());
         enderecoAlterado.setCidade(endereco.getCidade());
         enderecoAlterado.setUf(endereco.getUf());
         enderecoAlterado.setBairro(endereco.getBairro());
-        enderecoAlterado.setPessoa(pessoaEndereco);
+        enderecoAlterado.setPessoa(pessoaService.obterPessoaPorId(enderecoRepository.findPessoaByEndereco(id)));
 
         return enderecoRepository.save(enderecoAlterado);
     }

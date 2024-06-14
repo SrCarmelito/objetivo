@@ -30,15 +30,22 @@ async function getEndereco(enderecoId) {
 
     iId.readOnly = true;
     iLogradouro.setAttribute("id", "iLogradouro");
+    iLogradouro.setAttribute("maxlength", "150");
+    iCep.setAttribute("onkeyup", "onlyNumeric(event)");
+    iNumero.setAttribute("onkeyup", "onlyNumeric(event)");
     iNumero.setAttribute("id", "iNumero");
     iNumero.setAttribute("maxlength", "10");
-    iNumero.setAttribute("type", "number");
+    iNumero.setAttribute("type", "tel");
     iCep.setAttribute("id", "iCep");
-    iCep.setAttribute("type", "number");
+    iCep.setAttribute("maxlength", "10");
+    iCep.setAttribute("type", "tel");
     iCidade.setAttribute("id", "iCidade");
+    iCidade.setAttribute("maxlength", "100");
     iUf.setAttribute("id", "iUf");
+    iUf.setAttribute("maxlength", "2");
     iId.setAttribute("id", "iId");
     iBairro.setAttribute("id", "iBairro");
+    iBairro.setAttribute("maxlength", "10");
 
     lbLogradouro.innerText = "Logradouro";
     lbNumero.innerText = "Nrº";
@@ -151,3 +158,8 @@ async function putEndereco(enderecoAtualizado) {
 };
 
 getEndereco(enderecoId);
+
+const onlyNumeric = (event) => {
+    let input = event.target
+    input.value = input.value.replace(/\D/g,"");
+};

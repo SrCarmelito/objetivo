@@ -12,5 +12,6 @@ public class ObjetivoApplication {
 	}
 
 	//tODO: implementar testes...
+	//TODO: tratar validações no front de edit endereço
 
 }

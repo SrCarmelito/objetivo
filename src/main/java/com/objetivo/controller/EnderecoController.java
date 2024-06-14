@@ -9,6 +9,7 @@ import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -55,7 +56,7 @@ public class EnderecoController {
 			@PathVariable("id") Long id,
 			@RequestBody Endereco endereco
 			) {
-		return ResponseEntity.ok(this.enderecoService.save(id, endereco));
+		return new ResponseEntity<>(this.enderecoService.save(id, endereco), HttpStatus.OK);
 	}
 	
 	@CrossOrigin(allowedHeaders = "*")

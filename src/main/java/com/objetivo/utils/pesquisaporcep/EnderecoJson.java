@@ -1,5 +1,6 @@
 package com.objetivo.utils.pesquisaporcep;
 
+import com.fasterxml.jackson.annotation.JsonAlias;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

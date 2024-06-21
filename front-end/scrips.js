@@ -17,7 +17,7 @@ document.querySelector("#executa-pesquisa").addEventListener("click", (e) => {
 
     filtroValorCpf = document.querySelector("#input-filter-cpf").value;
     filtroValorNome = document.querySelector("#input-filter-nome").value;
-    filtroValorId = document.querySelector("#input-filter-id").value;
+    //filtroValorId = document.querySelector("#input-filter-id").value;
     document.querySelector("#pessoas-container-dados").remove();
 
     getAll(filtroValorCpf, filtroValorNome);
@@ -33,7 +33,7 @@ getAll();
 
 async function getAll() {
         
-    url = `https://objetivo.onrender.com/pessoas?id=${filtroValorId}&cpf=${filtroValorCpf}&nome=${filtroValorNome}&page=${page}&size=${size}&sort=nome,asc`;
+    url = `https://objetivo.onrender.com/pessoas?cpf=${filtroValorCpf}&nome=${filtroValorNome}&page=${page}&size=${size}&sort=nome,asc`;
 
     const response = await fetch(url);
     const data = await response.json();
@@ -61,7 +61,7 @@ async function getAll() {
         if(confirm("No Data to Show, Try Again!")){
             document.querySelector("#input-filter-cpf").value = '';
             document.querySelector("#input-filter-nome").value = '';
-            document.querySelector("#input-filter-id").value = '';
+           // document.querySelector("#input-filter-id").value = '';
         } 
     }
 

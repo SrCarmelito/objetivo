@@ -75,9 +75,9 @@ public class RepositoryTest {
 //        assertTrue(pessoaEncontrada.stream().findFirst().get().getNome().equals("Tigas e os 300"));
 //    }
 
-    @Test
-    void teste() {
-        assertTrue(this.repository.findByIdCpfNomeContaining("36", "1", "", Pageable.ofSize(1)).isEmpty());
-    }
+//    @Test
+//    void teste() {
+//        assertTrue(this.repository.findByIdCpfNomeContaining("36", "1", "", Pageable.ofSize(1)).isEmpty());
+//    }
 
 }

@@ -66,7 +66,4 @@ public class Pessoa {
 		return BigDecimal.valueOf(LocalDate.now().getYear()).subtract(new BigDecimal(getDataNascimento().getYear()));
 	}
 
-	public String getTelefone() {
-		return FormataTelefone.format(telefone);
-	}
 }

@@ -78,15 +78,15 @@ public class ExceptionHandlerCustom {
         return ResponseEntity.status(status).body(err);
     }
 
-    @ExceptionHandler(Exception.class)
-    public ResponseEntity<StandardError> general(Exception e, HttpServletRequest request) {
-        Set<String> errors = new HashSet<>();
-        errors.add(e.getLocalizedMessage());
-        String message = "Ops, ocorreu um erro inesperado!";
-        HttpStatus status = HttpStatus.NOT_FOUND;
-        StandardError err = new StandardError(Instant.now(), status.value(), message, request.getRequestURI(), errors);
-        return ResponseEntity.status(status).body(err);
-    }
+//    @ExceptionHandler(Exception.class)
+//    public ResponseEntity<StandardError> general(Exception e, HttpServletRequest request) {
+//        Set<String> errors = new HashSet<>();
+//        errors.add(e.getLocalizedMessage());
+//        String message = "Ops, ocorreu um erro inesperado!";
+//        HttpStatus status = HttpStatus.NOT_FOUND;
+//        StandardError err = new StandardError(Instant.now(), status.value(), message, request.getRequestURI(), errors);
+//        return ResponseEntity.status(status).body(err);
+//    }
 
     @ExceptionHandler(NoResourceFoundException.class)
     public ResponseEntity<StandardError> noResourceFound(NoResourceFoundException e, HttpServletRequest request) {

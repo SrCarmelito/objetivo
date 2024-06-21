@@ -31,12 +31,11 @@ public class PessoaController {
 	@CrossOrigin(allowedHeaders = "*")
 	@GetMapping
 	public ResponseEntity<Page<Pessoa>> findAllPaginada (
-			@RequestParam(value = "id", required = false, defaultValue = "") String id,
 			@RequestParam(value = "cpf", required = false, defaultValue = "") String cpf,
 			@RequestParam(value = "nome", required = false, defaultValue = "") String nome,			
 			Pageable pageable) {
 		
-		return ResponseEntity.ok(this.pessoaService.findByIdCpfNomeContaining(cpf, nome, id, pageable));
+		return ResponseEntity.ok(this.pessoaService.findByIdCpfNomeContaining(cpf, nome, pageable));
 	}
 
 	@CrossOrigin(allowedHeaders = "*")

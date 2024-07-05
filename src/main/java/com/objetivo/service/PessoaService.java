@@ -21,7 +21,7 @@ public class PessoaService {
     private PessoaRepository pessoaRepository;
 
     public Pessoa createPessoa(Pessoa pessoa) {
-        if (!pessoaRepository.findByCpfContaining(pessoa.getCpf()).isEmpty())
+        if (!pessoaRepository.findByCpfContainingAndNomeIgnoreCaseContaining(pessoa.getCpf(), "", Pageable.ofSize(1)).isEmpty())
             throw new IllegalArgumentException("CPF informado já existe no cadastro");
 
         pessoa.setCpf(pessoa.getCpf());
@@ -29,7 +29,6 @@ public class PessoaService {
         pessoa.setDataNascimento(pessoa.getDataNascimento());
         pessoa.setTelefone(pessoa.getTelefone());
         return this.pessoaRepository.saveAndFlush(pessoa);
-
     }
 
     public Pessoa editPessoa(Long id, Pessoa pessoa) {
@@ -44,22 +43,14 @@ public class PessoaService {
     }
 
     public Pessoa obterPessoaPorId(Long id) {
-        Pessoa pessoa = this.pessoaRepository.findById(id).orElseThrow(() ->
+        return this.pessoaRepository.findById(id).orElseThrow(() ->
                 new EntityNotFoundException("Id Informado não existe na base de dados!"));
-        pessoa.setTelefone(FormataTelefone.format(pessoa.getTelefone()));
-        return pessoa;
     }
 
     public Page<Pessoa> findByIdCpfNomeContaining(String cpf, String nome, Pageable pageable) {
-        Page<Pessoa> pessoaPage = this.pessoaRepository.findByCpfContainingOrNomeContaining(cpf, nome, pageable);
+        Page<Pessoa> pessoaPage = this.pessoaRepository.findByCpfContainingAndNomeIgnoreCaseContaining(cpf, nome, pageable);
         pessoaPage.forEach(p -> p.setTelefone(FormataTelefone.format(p.getTelefone())));
         return pessoaPage;
-    }
-
-    public List<Pessoa> findByCpfContaining(String cpf) {
-        List<Pessoa> pessoaList = this.pessoaRepository.findByCpfContaining(cpf);
-        pessoaList.forEach(p -> p.setTelefone(FormataTelefone.format(p.getTelefone())));
-        return pessoaList;
     }
 
     public Long count() {

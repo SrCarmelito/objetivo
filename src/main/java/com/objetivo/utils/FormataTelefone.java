@@ -8,11 +8,18 @@ public class FormataTelefone {
 	
 	public static String format(Object value) {
 		try {
-			MaskFormatter mask = new MaskFormatter("(##) #####-####");
+			MaskFormatter mask;
+			if(value.toString().length() == 10){
+				mask = new MaskFormatter("(##) ####-####");
+			} else if(value.toString().length() == 11){
+				mask = new MaskFormatter("(##) #####-####");
+			} else {
+				mask = new MaskFormatter("#########");
+			}
 			mask.setValueContainsLiteralCharacters(false);
 			return mask.valueToString(value);
 		} catch (ParseException e) {
-			throw new RuntimeException(e);
+			throw new IllegalArgumentException(String.format("%s possui dados inválidos, verifique", value));
 		}
 	}
 

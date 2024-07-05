@@ -31,28 +31,28 @@ import com.objetivo.utils.pesquisaporcep.ApiCep;
 import com.objetivo.utils.pesquisaporcep.EnderecoJson;
 
 @RestController
-@RequestMapping(value = "/enderecos")
+@RequestMapping("/enderecos")
 public class EnderecoController {
 
 	@Autowired
 	private EnderecoService enderecoService;
 
 	@CrossOrigin(allowedHeaders = "*")
-	@GetMapping(path = "/{id}")
-	public Endereco obterPessoaPorId(@PathVariable Long id) {
+	@GetMapping("/{id}")
+	public Endereco obterEnderecoPorId(@PathVariable Long id) {
 		return enderecoService.findById(id);
 	}
-	
+
 	@CrossOrigin(allowedHeaders = "*")
-	@GetMapping(path = "/end/{id}")
-	public Long pessoa(@PathVariable Long id) {
+	@GetMapping("/end/{id}")
+	public Long pessoaPorEnderecoId(@PathVariable Long id) {
 		return this.enderecoService.findPessoaByEndereco(id);
 	}
-		
+
 	@Transactional()
 	@CrossOrigin(allowedHeaders = "*")
-	@PutMapping(path = "/{id}")
-	public ResponseEntity<Endereco> enderecoAlterado(
+	@PutMapping("/{id}")
+	public ResponseEntity<Endereco> alteraEndereco(
 			@PathVariable("id") Long id,
 			@RequestBody Endereco endereco
 			) {
@@ -60,7 +60,7 @@ public class EnderecoController {
 	}
 	
 	@CrossOrigin(allowedHeaders = "*")
-	@PostMapping(path = "/{pessoa}")
+	@PostMapping("/{pessoa}")
 	public ResponseEntity<Endereco> novoEndereco(
 			@PathVariable("pessoa") Long pessoa,
 			@RequestBody Endereco endereco) {
@@ -68,15 +68,17 @@ public class EnderecoController {
 	}
 
 	@CrossOrigin(allowedHeaders = "*")
-	@GetMapping(path = "/cep/{cep}")
+	@GetMapping("/cep/{cep}")
 	public EnderecoJson buscaPorCep(@PathVariable String cep) {
 		return enderecoService.buscaCepRest(cep);
 	}
-	
+
+	@Transactional
 	@CrossOrigin(allowedHeaders = "*")
-	@DeleteMapping(path = "/{id}")
-	public void deleteAdress(@PathVariable Long id) {
-		enderecoService.deleteById(id);
+	@DeleteMapping("/{id}")
+	public ResponseEntity<Void> deleteEndereco(@PathVariable Long id) {
+		this.enderecoService.deleteById(id);
+		return ResponseEntity.noContent().build();
 	}
 	
 }

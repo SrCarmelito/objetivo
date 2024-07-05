@@ -1,13 +1,13 @@
 package com.objetivo.utils.pesquisaporcep;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import org.springframework.web.client.RestTemplate;
 
 public class ApiCep {
 
-	private static String web = "https://viacep.com.br/ws/";
-
 	public static EnderecoJson buscaCepRest(String cep) {
-		String params = web + cep + "/json";
+		String params = "https://viacep.com.br/ws/" + cep + "/json";
 		RestTemplate restTemplate = new RestTemplate();
         return restTemplate.getForEntity(params, EnderecoJson.class).getBody();
 	}

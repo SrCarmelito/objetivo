@@ -4,10 +4,9 @@ import jakarta.persistence.EntityNotFoundException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.ConstraintViolationException;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.transaction.TransactionException;
-import org.springframework.transaction.TransactionSystemException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
@@ -17,10 +16,31 @@ import org.springframework.web.servlet.resource.NoResourceFoundException;
 
 import java.time.Instant;
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 @RestControllerAdvice
 public class ExceptionHandlerCustom {
+
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity<StandardError> general(Exception e, HttpServletRequest request) {
+        Set<String> errors = new HashSet<>();
+        errors.add(e.getLocalizedMessage());
+        String message = "Ops, ocorreu um erro inesperado!";
+        HttpStatus status = HttpStatus.NOT_FOUND;
+        StandardError err = new StandardError(Instant.now(), status.value(), message, request.getRequestURI(), errors);
+        return ResponseEntity.status(status).body(err);
+    }
+
+    @ExceptionHandler(DataIntegrityViolationException.class)
+    public ResponseEntity<StandardError> dataIntegrity(DataIntegrityViolationException e, HttpServletRequest request) {
+        Set<String> errors = new HashSet<>();
+        errors.add(Objects.requireNonNull(e.getRootCause()).getMessage());
+        String message = "Erro de integridade de Dados!";
+        HttpStatus status = HttpStatus.UNPROCESSABLE_ENTITY;
+        StandardError err = new StandardError(Instant.now(), status.value(), message, request.getRequestURI(), errors);
+        return ResponseEntity.status(status).body(err);
+    }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<StandardError> argumentNotValid(MethodArgumentNotValidException e, HttpServletRequest request) {
@@ -37,7 +57,7 @@ public class ExceptionHandlerCustom {
     }
 
     @ExceptionHandler(EntityNotFoundException.class)
-    public ResponseEntity<StandardError> illegalArgument(EntityNotFoundException e, HttpServletRequest request) {
+    public ResponseEntity<StandardError> entityNotFound(EntityNotFoundException e, HttpServletRequest request) {
         Set<String> errors = new HashSet<>();
         errors.add(e.getLocalizedMessage());
         HttpStatus status = HttpStatus.NOT_FOUND;
@@ -78,16 +98,6 @@ public class ExceptionHandlerCustom {
         return ResponseEntity.status(status).body(err);
     }
 
-//    @ExceptionHandler(Exception.class)
-//    public ResponseEntity<StandardError> general(Exception e, HttpServletRequest request) {
-//        Set<String> errors = new HashSet<>();
-//        errors.add(e.getLocalizedMessage());
-//        String message = "Ops, ocorreu um erro inesperado!";
-//        HttpStatus status = HttpStatus.NOT_FOUND;
-//        StandardError err = new StandardError(Instant.now(), status.value(), message, request.getRequestURI(), errors);
-//        return ResponseEntity.status(status).body(err);
-//    }
-
     @ExceptionHandler(NoResourceFoundException.class)
     public ResponseEntity<StandardError> noResourceFound(NoResourceFoundException e, HttpServletRequest request) {
         Set<String> errors = new HashSet<>();
@@ -95,6 +105,15 @@ public class ExceptionHandlerCustom {
         String message = "Método inválido, verifique e tente novamente";
         HttpStatus status = HttpStatus.NOT_FOUND;
         StandardError err = new StandardError(Instant.now(), status.value(), message, request.getRequestURI(), errors);
+        return ResponseEntity.status(status).body(err);
+    }
+
+    @ExceptionHandler(IllegalArgumentException.class)
+    public ResponseEntity<StandardError> illegalArgument(IllegalArgumentException e, HttpServletRequest request) {
+        Set<String> errors = new HashSet<>();
+        errors.add(e.getLocalizedMessage());
+        HttpStatus status = HttpStatus.UNPROCESSABLE_ENTITY;
+        StandardError err = new StandardError(Instant.now(), status.value(), e.getMessage(), request.getRequestURI(), errors);
         return ResponseEntity.status(status).body(err);
     }
 

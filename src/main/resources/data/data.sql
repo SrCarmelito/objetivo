@@ -1,5 +1,3 @@
-
-
 create or replace schema elo;
 
 CREATE TABLE elo.pessoa (

@@ -1,11 +1,10 @@
 package com.objetivo;
 
-import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.test.context.ActiveProfiles;
 
 @SpringBootTest
-class ObjetivoApplicationTests {
-
+@ActiveProfiles(value = "test")
+public class ObjetivoApplicationTests {
 
 }

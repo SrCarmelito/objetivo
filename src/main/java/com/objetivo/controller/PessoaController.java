@@ -4,6 +4,7 @@ import com.objetivo.entities.Pessoa;
 import com.objetivo.service.PessoaService;
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.catalina.connector.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -21,7 +22,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(value = "/pessoas")
+@RequestMapping("/pessoas")
 @Slf4j
 public class PessoaController {
 	
@@ -39,13 +40,13 @@ public class PessoaController {
 	}
 
 	@CrossOrigin(allowedHeaders = "*")
-	@GetMapping(path = "/count")
+	@GetMapping("/count")
 	public Long quantidadePessoas() {
 		return pessoaService.count();
 	}
 
 	@CrossOrigin(allowedHeaders = "*")
-	@GetMapping(path = "/{id}")
+	@GetMapping("/{id}")
 	public Pessoa obterPessoaPorId(@PathVariable Long id) {
 		return pessoaService.obterPessoaPorId(id);
 	}
@@ -59,7 +60,7 @@ public class PessoaController {
 
 	@Transactional()
 	@CrossOrigin(allowedHeaders = "*")
-	@PutMapping(path = "/{id}")
+	@PutMapping("/{id}")
 	public ResponseEntity<Pessoa> alterarPessoa(
 			@PathVariable("id") Long id,
 			@RequestBody @Valid Pessoa pessoa) {
@@ -68,9 +69,10 @@ public class PessoaController {
 
 	@Transactional()
 	@CrossOrigin(allowedHeaders = "*")
-	@DeleteMapping(path = "/{id}")
-	public void excluirPessoa(@PathVariable Long id) {
-		pessoaService.deleteById(id);
+	@DeleteMapping("/{id}")
+	public ResponseEntity<Void> excluirPessoa(@PathVariable Long id) {
+		this.pessoaService.deleteById(id);
+		return ResponseEntity.noContent().build();
 	}
 
 }

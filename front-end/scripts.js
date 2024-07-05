@@ -1,6 +1,7 @@
 const pessoaContainer = document.querySelector("#pessoas-container");
 
-let url = `https://objetivo.onrender.com/pessoas?sort=nome,asc`;
+//let url = `http://localhost:8080/pessoas?sort=nome,asc`;
+let url = `http://localhost:8080/pessoas?sort=nome,asc`;
 
 const urlSearchParams = new URLSearchParams(window.location.search);
 const pessoaId = urlSearchParams.get("id");
@@ -33,12 +34,14 @@ getAll();
 
 async function getAll() {
         
-    url = `https://objetivo.onrender.com/pessoas?cpf=${filtroValorCpf}&nome=${filtroValorNome}&page=${page}&size=${size}&sort=nome,asc`;
+    //url = `http://localhost:8080/pessoas?cpf=${filtroValorCpf}&nome=${filtroValorNome}&page=${page}&size=${size}&sort=nome,asc`;
+    url = `http://localhost:8080/pessoas?cpf=${filtroValorCpf}&nome=${filtroValorNome}&page=${page}&size=${size}&sort=nome,asc`;
 
     const response = await fetch(url);
     const data = await response.json();
 
-    const responseCount = await fetch("https://objetivo.onrender.com/pessoas/count");
+    //const responseCount = await fetch("http://localhost:8080/pessoas/count");
+    const responseCount = await fetch("http://localhost:8080/pessoas/count");
     const dataCount = await responseCount.json();
     const lbCount = document.querySelector("#lb-count");
     lbCount.textContent = `${dataCount} Pessoas Cadastradas`;
@@ -133,7 +136,8 @@ async function getAll() {
 
 async function deletePessoa(pessoaExcluida) {
 
-    url = "https://objetivo.onrender.com/pessoas";
+    //url = "http://localhost:8080/pessoas";
+    url = "http://localhost:8080/pessoas";
 
     const response = await fetch(`${url}/${pessoaExcluida}`,
     {
@@ -285,7 +289,8 @@ window.onclick = function(event) {
 // função para atualizar a pessoa
 async function postPessoa(novaPessoa) {
 
-    await fetch("https://objetivo.onrender.com/pessoas",
+    //await fetch("http://localhost:8080/pessoas",
+    await fetch("http://localhost:8080/pessoas",
         {
             body: JSON.stringify(novaPessoa),
             method: 'POST',
@@ -318,7 +323,7 @@ async function postPessoa(novaPessoa) {
 };
 
 async function redirectPessoa(novaPessoa) {
-    const response = await fetch(`https://objetivo.onrender.com/pessoas?id=${novaPessoa}`);
+    const response = await fetch(`http://localhost:8080/pessoas?id=${novaPessoa}`);
     const pessoa = await response.json();
     window.location.href = `/EditPessoa/edit.html?id=${novaPessoa}`;
 };

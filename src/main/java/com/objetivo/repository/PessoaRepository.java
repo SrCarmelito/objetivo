@@ -11,17 +11,8 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface PessoaRepository extends JpaRepository<Pessoa, Long>{
+public interface PessoaRepository extends JpaRepository<Pessoa, Long> {
 
-//	@Query(nativeQuery = true, value = "select p.id, p.nome, p.datanascimento, p.cpf, p.telefone, "
-//			+ "(select (current_date - p.dataNascimento) / 365) as idade"
-//			+ " from elo.pessoa p where (p.cpf ilike %:cpf% and p.nome ilike %:nome%"
-//			+ " and cast(p.id as varchar) like %:id%)")
-//	Page<Pessoa> findByIdCpfNomeContaining(String cpf, String nome, String id, Pageable pageable);
-//
-
-	Page<Pessoa> findByCpfContainingOrNomeContaining(@Param("cpf") String cpf, @Param("nome") String nome, Pageable pageable);
-
-	List<Pessoa> findByCpfContaining(@Param("cpf") String cpf);
+	Page<Pessoa> findByCpfContainingAndNomeIgnoreCaseContaining(@Param("cpf") String cpf, @Param("nome") String nome, Pageable pageable);
 
 }

@@ -1,6 +1,5 @@
 package com.objetivo.entities;
 
-import com.objetivo.utils.FormataTelefone;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -14,6 +13,7 @@ import jakarta.persistence.Transient;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Past;
+import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -54,6 +54,7 @@ public class Pessoa {
 	
 	@NotBlank(message = "É Necessário Informar o Telefone!")
 	@Column(name = "telefone", length = 11)
+	@Size(min = 10, max = 11, message = "Deve ser entre 10 e 11 caracteres com DDD")
 	private String telefone;
 
 	@Transient

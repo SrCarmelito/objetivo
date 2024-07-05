@@ -3,6 +3,7 @@ package com.objetivo.service;
 import com.objetivo.entities.Endereco;
 import com.objetivo.entities.Pessoa;
 import com.objetivo.repository.EnderecoRepository;
+import com.objetivo.repository.PessoaRepository;
 import com.objetivo.utils.pesquisaporcep.ApiCep;
 import com.objetivo.utils.pesquisaporcep.EnderecoJson;
 import jakarta.persistence.EntityNotFoundException;
@@ -43,7 +44,7 @@ public class EnderecoService {
         enderecoAlterado.setCidade(endereco.getCidade());
         enderecoAlterado.setUf(endereco.getUf());
         enderecoAlterado.setBairro(endereco.getBairro());
-        enderecoAlterado.setPessoa(pessoaService.obterPessoaPorId(enderecoRepository.findPessoaByEndereco(id)));
+        enderecoAlterado.setPessoa(enderecoRepository.findPessoaByIdEndereco(endereco.getId()));
 
         return enderecoRepository.save(enderecoAlterado);
     }
@@ -54,10 +55,12 @@ public class EnderecoService {
     }
 
     public Long findPessoaByEndereco(Long id) {
-        return this.enderecoRepository.findPessoaByEndereco(id);
+        return this.enderecoRepository.findPessoaByIdEndereco(id).getId();
     }
 
     public void deleteById(Long id) {
+        this.enderecoRepository.findById(id).orElseThrow(() ->
+                new EntityNotFoundException("Endereco não Encontrado"));
         this.enderecoRepository.deleteById(id);
     }
 

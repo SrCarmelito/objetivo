@@ -400,7 +400,7 @@ async function deleteEndereco(enderecoExcluido) {
         },
     });
 
-    if(response.status != 200) {
+    if(response.ok != true) {
         alert("Ops... Não foi possível Excluir o Endereço!");
     } else {
         alert("Cadastro Excluído com Sucesso!");

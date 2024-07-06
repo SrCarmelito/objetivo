@@ -148,7 +148,7 @@ async function deletePessoa(pessoaExcluida) {
         },
     });
 
-    if(response.status != 200) {
+    if(response.ok != true) {
         alert("Ops... Não foi possível Excluir a Pessoa!");
     } else {
         alert("Cadastro Excluído com Sucesso!");

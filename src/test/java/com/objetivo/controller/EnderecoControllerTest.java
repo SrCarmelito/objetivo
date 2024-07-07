@@ -3,8 +3,6 @@ package com.objetivo.controller;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.objetivo.entities.Endereco;
 import com.objetivo.fixtures.EnderecoFixtures;
-import com.objetivo.fixtures.PessoaFixtures;
-import org.hamcrest.Matchers;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -21,7 +19,6 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.context.WebApplicationContext;
 
 import static org.hamcrest.Matchers.equalTo;
-import static org.hamcrest.Matchers.hasSize;
 import static org.hamcrest.Matchers.notNullValue;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;

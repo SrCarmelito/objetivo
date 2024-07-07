@@ -11,7 +11,7 @@ public class EnderecoTest {
     @Test
     public void enderecoCadastrado() {
         Endereco endereco = EnderecoFixtures.endereco();
-        Pessoa pessoa = PessoaFixtures.pessoaLinusSemEndereco();
+        Pessoa pessoa = PessoaFixtures.pessoaLinusTorvalds();
         endereco.setPessoa(pessoa);
         assertEquals(365L, endereco.getPessoa().getId());
         assertEquals(730L, endereco.getId());

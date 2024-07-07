@@ -1,8 +1,7 @@
 package com.objetivo.utils;
 
-import java.text.ParseException;
-
 import javax.swing.text.MaskFormatter;
+import java.text.ParseException;
 
 public class FormataTelefone {
 	

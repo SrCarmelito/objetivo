@@ -7,14 +7,13 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @Slf4j
 public class FormatTelefoneTest {
 
     @Test
     public void formataTelefoneDezDigitos() {
-        Pessoa pessoa = PessoaFixtures.pessoaLinusSemEndereco();
+        Pessoa pessoa = PessoaFixtures.pessoaLinusTorvalds();
         pessoa.setTelefone(FormataTelefone.format(pessoa.getTelefone()));
         assertEquals("(61) 8974-5612", pessoa.getTelefone());
     }

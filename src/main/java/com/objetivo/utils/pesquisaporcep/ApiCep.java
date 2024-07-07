@@ -1,7 +1,5 @@
 package com.objetivo.utils.pesquisaporcep;
 
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 import org.springframework.web.client.RestTemplate;
 
 public class ApiCep {

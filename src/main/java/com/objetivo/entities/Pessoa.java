@@ -15,9 +15,9 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Past;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
-import lombok.Getter;
+import lombok.Builder;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 import org.hibernate.validator.constraints.br.CPF;
 
 import java.math.BigDecimal;
@@ -29,8 +29,8 @@ import java.util.List;
 @Table(schema = "elo", name = "pessoa")
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
-@Setter
+@Data
+@Builder()
 public class Pessoa {
 	
 	@Id	
@@ -39,7 +39,6 @@ public class Pessoa {
 	private Long id;
 		
 	@NotBlank(message = "É Necessário informar o Nome!")
-	@Column(name = "nome")
 	private String nome;
 
 	@NotNull(message = "Não é permitido Data de Nascimento Vazia!")
@@ -49,11 +48,9 @@ public class Pessoa {
 
 	@NotBlank(message = "É necessário informar o CPF")
 	@CPF(message = "CPF Inválido! Verifique!")
-	@Column(name = "cpf", unique = true, nullable = false)
 	private String cpf;
 	
 	@NotBlank(message = "É Necessário Informar o Telefone!")
-	@Column(name = "telefone", length = 11)
 	@Size(min = 10, max = 11, message = "Deve ser entre 10 e 11 caracteres com DDD")
 	private String telefone;
 

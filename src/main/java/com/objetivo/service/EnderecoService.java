@@ -1,52 +1,35 @@
 package com.objetivo.service;
 
+import com.objetivo.converter.EnderecoDTOConverter;
+import com.objetivo.dto.EnderecoDTO;
 import com.objetivo.entities.Endereco;
-import com.objetivo.entities.Pessoa;
 import com.objetivo.repository.EnderecoRepository;
-import com.objetivo.repository.PessoaRepository;
 import com.objetivo.utils.pesquisaporcep.ApiCep;
 import com.objetivo.utils.pesquisaporcep.EnderecoJson;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @Slf4j
+@Transactional(readOnly = true)
 public class EnderecoService {
 
-    @Autowired
-    private EnderecoRepository enderecoRepository;
+    private final EnderecoRepository enderecoRepository;
 
-    @Autowired
-    private PessoaService pessoaService;
+    private final PessoaService pessoaService;
 
-    public Endereco novoEndereco(Long pessoa, Endereco endereco) {
-        Pessoa pessoaEndereco = pessoaService.obterPessoaPorId(pessoa);
-        endereco.setCep(endereco.getCep());
-        endereco.setLogradouro(endereco.getLogradouro());
-        endereco.setNumero(endereco.getNumero());
-        endereco.setCidade(endereco.getCidade());
-        endereco.setUf(endereco.getUf());
-        endereco.setBairro(endereco.getBairro());
-        endereco.setPessoa(pessoaEndereco);
-        return enderecoRepository.saveAndFlush(endereco);
+    private final EnderecoDTOConverter enderecoDTOConverter;
+
+    public EnderecoService(EnderecoRepository enderecoRepository, PessoaService pessoaService, EnderecoDTOConverter enderecoDTOConverter) {
+        this.enderecoRepository = enderecoRepository;
+        this.pessoaService = pessoaService;
+        this.enderecoDTOConverter = enderecoDTOConverter;
     }
 
-    public Endereco save(Long id, Endereco endereco) {
-        Endereco enderecoAlterado = enderecoRepository.findById(id).orElseThrow(() ->
-                new EntityNotFoundException("Endereço não Encontrado"));
-
-        enderecoAlterado.setCep(endereco.getCep());
-        enderecoAlterado.setLogradouro(endereco.getLogradouro());
-        enderecoAlterado.setNumero(endereco.getNumero());
-        enderecoAlterado.setCidade(endereco.getCidade());
-        enderecoAlterado.setUf(endereco.getUf());
-        enderecoAlterado.setBairro(endereco.getBairro());
-        enderecoAlterado.setPessoa(enderecoRepository.findPessoaByIdEndereco(endereco.getId()));
-
-        return enderecoRepository.save(enderecoAlterado);
+    public EnderecoJson buscaCepRest(String cep) {
+        return ApiCep.buscaCepRest(cep);
     }
 
     public Endereco findById(Long id) {
@@ -58,13 +41,26 @@ public class EnderecoService {
         return this.enderecoRepository.findPessoaByIdEndereco(id).getId();
     }
 
+    @Transactional
+    public Endereco novoEndereco(Long pessoa, EnderecoDTO endereco) {
+        endereco.setPessoa(pessoaService.obterPessoaPorId(pessoa));
+        return enderecoRepository.saveAndFlush(enderecoDTOConverter.from(endereco));
+    }
+
+    @Transactional
+    public Endereco save(Long id, Endereco endereco) {
+        enderecoRepository.findById(id).orElseThrow(() ->
+                new EntityNotFoundException("Endereço não Encontrado"));
+
+        endereco.setPessoa(enderecoRepository.findPessoaByIdEndereco(endereco.getId()));
+
+        return enderecoRepository.save(endereco);
+    }
+
+    @Transactional
     public void deleteById(Long id) {
         this.enderecoRepository.findById(id).orElseThrow(() ->
                 new EntityNotFoundException("Endereco não Encontrado"));
         this.enderecoRepository.deleteById(id);
-    }
-
-    public EnderecoJson buscaCepRest(String cep) {
-        return ApiCep.buscaCepRest(cep);
     }
 }

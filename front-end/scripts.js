@@ -34,8 +34,8 @@ getAll();
 
 async function getAll() {
         
-    //url = `http://localhost:8080/pessoas?cpf=${filtroValorCpf}&nome=${filtroValorNome}&page=${page}&size=${size}&sort=nome,asc`;
     url = `http://localhost:8080/pessoas?cpf=${filtroValorCpf}&nome=${filtroValorNome}&page=${page}&size=${size}&sort=nome,asc`;
+  //  url = `${API}/pessoas?cpf=${filtroValorCpf}&nome=${filtroValorNome}&page=${page}&size=${size}&sort=nome,asc`;
 
     const response = await fetch(url);
     const data = await response.json();

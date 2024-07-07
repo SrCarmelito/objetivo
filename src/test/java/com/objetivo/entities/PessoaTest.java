@@ -2,6 +2,7 @@ package com.objetivo.entities;
 
 import com.objetivo.fixtures.EnderecoFixtures;
 import com.objetivo.fixtures.PessoaFixtures;
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
@@ -10,20 +11,19 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertSame;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+
 public class PessoaTest {
 
     @Test
     public void pessoaCadastrada() {
 
         Pessoa pessoa = new Pessoa();
-        pessoa = PessoaFixtures.pessoaLinusSemEndereco();
+        pessoa = PessoaFixtures.pessoaLinusTorvalds();
         assertEquals(365L, pessoa.getId());
         assertSame("Linus Torvalds", pessoa.getNome());
         assertEquals(LocalDate.of(1969, 12, 28), pessoa.getDataNascimento());
         assertSame("06455083903", pessoa.getCpf());
         assertEquals("6189745612", pessoa.getTelefone());
-        assertTrue(pessoa.getEnderecos().isEmpty());
 
         Endereco endereco = EnderecoFixtures.endereco();
         endereco.setPessoa(pessoa);
@@ -31,6 +31,11 @@ public class PessoaTest {
 
         assertEquals(365L, endereco.getPessoa().getId());
         assertEquals("06455083903", pessoa.getEnderecos().stream().findFirst().orElseThrow().getPessoa().getCpf());
+
+        Assertions.assertThat(pessoa.getEnderecos())
+                .extracting(end -> end.getPessoa().getCpf())
+                .containsExactlyInAnyOrder("06455083903");
+
     }
 
     @Test

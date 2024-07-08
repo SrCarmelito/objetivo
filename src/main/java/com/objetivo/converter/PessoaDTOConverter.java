@@ -2,9 +2,7 @@ package com.objetivo.converter;
 
 import com.objetivo.dto.PessoaDTO;
 import com.objetivo.entities.Pessoa;
-import org.springframework.context.annotation.Configuration;
 
-@Configuration
 public class PessoaDTOConverter implements DTOConverter<Pessoa, PessoaDTO> {
 
     @Override

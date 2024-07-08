@@ -22,6 +22,15 @@ public class EnderecoDTOConverter implements DTOConverter<Endereco, EnderecoDTO>
 
     @Override
     public EnderecoDTO to(Endereco entity) {
-        throw new IllegalArgumentException("Not Implemented Yet");
+        EnderecoDTO dto = new EnderecoDTO();
+        dto.setId(entity.getId());
+        dto.setPessoa(entity.getPessoa());
+        dto.setCep(entity.getCep());
+        dto.setCidade(entity.getCidade());
+        dto.setBairro(entity.getBairro());
+        dto.setUf(entity.getUf());
+        dto.setNumero(entity.getNumero());
+        dto.setLogradouro(entity.getLogradouro());
+        return dto;
     }
 }

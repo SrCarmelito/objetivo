@@ -43,8 +43,9 @@ public class EnderecoService {
 
     @Transactional
     public Endereco novoEndereco(Long pessoa, EnderecoDTO endereco) {
-        endereco.setPessoa(pessoaService.obterPessoaPorId(pessoa));
-        return enderecoRepository.saveAndFlush(enderecoDTOConverter.from(endereco));
+        Endereco novoEndereco = new Endereco();
+        novoEndereco.setPessoa(pessoaService.obterPessoaPorId(pessoa));
+        return enderecoRepository.saveAndFlush(enderecoDTOConverter.from(endereco, novoEndereco));
     }
 
     @Transactional

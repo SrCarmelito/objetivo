@@ -15,13 +15,13 @@ public class ModelMapperConfig {
     }
 
     @Bean
-    public PessoaDTOConverter pessoaDTOConverter(ModelMapper modelMapper) {
-        return new PessoaDTOConverter(modelMapper);
+    public PessoaDTOConverter pessoaDTOConverter() {
+        return new PessoaDTOConverter();
     }
 
     @Bean
-    public EnderecoDTOConverter enderecoDTOConverter(ModelMapper modelMapper) {
-        return new EnderecoDTOConverter(modelMapper);
+    public EnderecoDTOConverter enderecoDTOConverter() {
+        return new EnderecoDTOConverter();
     }
 
 }

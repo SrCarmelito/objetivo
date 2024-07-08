@@ -6,19 +6,22 @@ import org.modelmapper.ModelMapper;
 
 public class EnderecoDTOConverter implements DTOConverter<Endereco, EnderecoDTO> {
 
-    private ModelMapper modelMapper;
-
-    public EnderecoDTOConverter(ModelMapper modelMapper) {
-        this.modelMapper = modelMapper;
-    }
-
     @Override
-    public Endereco from(EnderecoDTO dto) {
-        return modelMapper.map(dto, Endereco.class);
+    public Endereco from(EnderecoDTO dto, Endereco entity) {
+        entity.setId(dto.getId());
+        entity.setPessoa(entity.getPessoa());
+        entity.setUf(dto.getUf());
+        entity.setCidade(dto.getCidade());
+        entity.setCep(dto.getCep());
+        entity.setBairro(dto.getBairro());
+        entity.setLogradouro(dto.getLogradouro());
+        entity.setNumero(dto.getNumero());
+
+        return entity;
     }
 
     @Override
     public EnderecoDTO to(Endereco entity) {
-        return modelMapper.map(entity, EnderecoDTO.class);
+        throw new IllegalArgumentException("Not Implemented Yet");
     }
 }

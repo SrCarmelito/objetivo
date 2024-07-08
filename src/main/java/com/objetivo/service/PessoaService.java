@@ -44,14 +44,13 @@ public class PessoaService {
         if (!pessoaRepository.findByCpfContainingAndNomeIgnoreCaseContaining(pessoa.getCpf(), "", Pageable.ofSize(1)).isEmpty())
             throw new IllegalArgumentException("CPF informado já existe no cadastro");
 
-        return pessoaRepository.saveAndFlush(pessoaDTOConverter.from(pessoa));
+        return pessoaRepository.saveAndFlush(pessoaDTOConverter.from(pessoa, new Pessoa()));
     }
 
     @Transactional
     public Pessoa editPessoa(Long id, PessoaDTO pessoa) {
         Pessoa pessoAlterada = pessoaRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Pessoa não encontrada"));
-        pessoa.setEnderecos(pessoAlterada.getEnderecos());
-        return pessoaRepository.save(pessoaDTOConverter.from(pessoa));
+        return pessoaRepository.save(pessoaDTOConverter.from(pessoa, pessoAlterada));
     }
 
     @Transactional

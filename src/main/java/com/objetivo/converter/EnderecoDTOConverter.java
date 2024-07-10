@@ -2,7 +2,6 @@ package com.objetivo.converter;
 
 import com.objetivo.dto.EnderecoDTO;
 import com.objetivo.entities.Endereco;
-import org.modelmapper.ModelMapper;
 
 public class EnderecoDTOConverter implements DTOConverter<Endereco, EnderecoDTO> {
 
@@ -24,7 +23,7 @@ public class EnderecoDTOConverter implements DTOConverter<Endereco, EnderecoDTO>
     public EnderecoDTO to(Endereco entity) {
         EnderecoDTO dto = new EnderecoDTO();
         dto.setId(entity.getId());
-        dto.setPessoa(entity.getPessoa());
+        dto.setPessoaDTO(new PessoaDTOConverter().to(entity.getPessoa()));
         dto.setCep(entity.getCep());
         dto.setCidade(entity.getCidade());
         dto.setBairro(entity.getBairro());
@@ -33,4 +32,5 @@ public class EnderecoDTOConverter implements DTOConverter<Endereco, EnderecoDTO>
         dto.setLogradouro(entity.getLogradouro());
         return dto;
     }
+
 }

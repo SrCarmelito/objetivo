@@ -1,6 +1,7 @@
 package com.objetivo.converter;
 
 import com.objetivo.dto.PessoaDTO;
+import com.objetivo.entities.Endereco;
 import com.objetivo.entities.Pessoa;
 
 public class PessoaDTOConverter implements DTOConverter<Pessoa, PessoaDTO> {
@@ -12,19 +13,31 @@ public class PessoaDTOConverter implements DTOConverter<Pessoa, PessoaDTO> {
         entity.setDataNascimento(dto.getDataNascimento());
         entity.setCpf(dto.getCpf());
         entity.setTelefone(dto.getTelefone());
-        entity.setEnderecos(entity.getEnderecos());
+
+        if(dto.getEnderecos() != null) {
+            dto.getEnderecos().forEach(enderecoDTO ->
+                entity.getEnderecos().add(new EnderecoDTOConverter().from(enderecoDTO, new Endereco()))
+            );
+        }
+
         return entity;
     }
 
     @Override
     public PessoaDTO to(Pessoa entity) {
-        PessoaDTO dto = new PessoaDTO();
+        PessoaDTO dto  = new PessoaDTO();
         dto.setId(entity.getId());
         dto.setNome(entity.getNome());
         dto.setCpf(entity.getCpf());
         dto.setDataNascimento(entity.getDataNascimento());
         dto.setTelefone(entity.getTelefone());
-        dto.setEnderecos(entity.getEnderecos());
+
+        if(entity.getEnderecos() != null) {
+            entity.getEnderecos().forEach(endereco ->
+                dto.getEnderecos().add(new EnderecoDTOConverter().to(endereco))
+            );
+        }
+
         return dto;
     }
 

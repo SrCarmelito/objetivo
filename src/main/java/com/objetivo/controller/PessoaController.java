@@ -3,6 +3,7 @@ package com.objetivo.controller;
 import com.objetivo.dto.PessoaDTO;
 import com.objetivo.entities.Pessoa;
 import com.objetivo.service.PessoaService;
+import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -48,7 +49,7 @@ public class PessoaController {
 	}
 
 	@PostMapping
-	public Pessoa novaPessoa(@RequestBody PessoaDTO pessoa)  {
+	public Pessoa novaPessoa(@RequestBody @Valid PessoaDTO pessoa)  {
     	return pessoaService.createPessoa(pessoa);
 	}
 

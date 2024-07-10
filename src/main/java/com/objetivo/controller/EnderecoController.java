@@ -4,6 +4,7 @@ import com.objetivo.dto.EnderecoDTO;
 import com.objetivo.entities.Endereco;
 import com.objetivo.service.EnderecoService;
 import com.objetivo.utils.pesquisaporcep.EnderecoJson;
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -30,6 +31,13 @@ public class EnderecoController {
 		return enderecoService.findById(id);
 	}
 
+	@PostMapping("/{pessoa}")
+	public ResponseEntity<Endereco> novoEndereco(
+			@PathVariable("pessoa") Long pessoa,
+			@RequestBody @Valid EnderecoDTO endereco) {
+		return ResponseEntity.ok(this.enderecoService.novoEndereco(pessoa, endereco));
+	}
+
 	@GetMapping("/end/{id}")
 	public Long pessoaPorEnderecoId(@PathVariable Long id) {
 		return this.enderecoService.findPessoaByEndereco(id);
@@ -41,13 +49,6 @@ public class EnderecoController {
 			@RequestBody Endereco endereco
 			) {
 		return new ResponseEntity<>(this.enderecoService.save(id, endereco), HttpStatus.OK);
-	}
-
-	@PostMapping("/{pessoa}")
-	public ResponseEntity<Endereco> novoEndereco(
-			@PathVariable("pessoa") Long pessoa,
-			@RequestBody EnderecoDTO endereco) {
-		return ResponseEntity.ok(this.enderecoService.novoEndereco(pessoa, endereco));
 	}
 
 	@GetMapping("/cep/{cep}")

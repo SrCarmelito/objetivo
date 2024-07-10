@@ -19,10 +19,10 @@ import lombok.NoArgsConstructor;
 
 @Entity(name = "endereco")
 @Table(schema = "elo", name = "endereco")
-@NoArgsConstructor
 @AllArgsConstructor
 @Data
 @Builder()
+@NoArgsConstructor
 public class Endereco {
 
 	@Id	

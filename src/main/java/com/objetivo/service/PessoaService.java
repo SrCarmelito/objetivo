@@ -44,7 +44,7 @@ public class PessoaService {
         if (!pessoaRepository.findByCpfContainingAndNomeIgnoreCaseContaining(pessoa.getCpf(), "", Pageable.ofSize(1)).isEmpty())
             throw new IllegalArgumentException("CPF informado já existe no cadastro");
 
-        return pessoaRepository.saveAndFlush(pessoaDTOConverter.from(pessoa, new Pessoa()));
+        return pessoaRepository.saveAndFlush(new PessoaDTOConverter().from(pessoa, new Pessoa()));
     }
 
     @Transactional

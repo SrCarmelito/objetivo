@@ -6,14 +6,12 @@ import com.objetivo.entities.Pessoa;
 import com.objetivo.fixtures.PessoaFixtures;
 import com.objetivo.service.PessoaService;
 import jakarta.persistence.EntityNotFoundException;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.jdbc.Sql;
-import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -21,7 +19,6 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @SpringBootTest
-@RunWith(SpringRunner.class)
 @ActiveProfiles("test")
 @Sql(scripts = {
         "/sql/pessoa.sql"

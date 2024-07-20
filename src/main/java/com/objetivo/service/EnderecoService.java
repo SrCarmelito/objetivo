@@ -2,6 +2,7 @@ package com.objetivo.service;
 
 import com.objetivo.converter.EnderecoDTOConverter;
 import com.objetivo.dto.EnderecoDTO;
+import com.objetivo.dto.PessoaDTO;
 import com.objetivo.entities.Endereco;
 import com.objetivo.repository.EnderecoRepository;
 import com.objetivo.utils.pesquisaporcep.ApiCep;
@@ -49,13 +50,13 @@ public class EnderecoService {
     }
 
     @Transactional
-    public Endereco save(Long id, Endereco endereco) {
-        enderecoRepository.findById(id).orElseThrow(() ->
+    public Endereco save(Long id, EnderecoDTO endereco) {
+        Endereco enderecoAlterado = enderecoRepository.findById(id).orElseThrow(() ->
                 new EntityNotFoundException("Endereço não Encontrado"));
 
-        endereco.setPessoa(enderecoRepository.findPessoaByIdEndereco(endereco.getId()));
+        //endereco.setPessoaDTO(enderecoRepository.findPessoaByIdEndereco(endereco.getId()));
 
-        return enderecoRepository.save(endereco);
+        return enderecoRepository.save(enderecoDTOConverter.from(endereco, enderecoAlterado));
     }
 
     @Transactional

@@ -17,6 +17,10 @@
             <column type="varchar(100)" name="cidade"><constraints nullable="false"/></column>
             <column type="varchar(2)" name="uf"><constraints nullable="false"/></column>
             <column type="varchar(100)" name="bairro"><constraints nullable="false"/></column>
+            <column name="datacriacao" type="datetime"></column>
+            <column name="dataalteracao" type="datetime"></column>
+            <column name="usuariocriacao" type="varchar(60)"></column>
+            <column name="usuarioalteracao" type="varchar(60)"></column>
         </createTable>
         <addPrimaryKey schemaName="elo" tableName="endereco" columnNames="id" constraintName="endereco_pk"/>
         <addForeignKeyConstraint baseTableSchemaName="elo"

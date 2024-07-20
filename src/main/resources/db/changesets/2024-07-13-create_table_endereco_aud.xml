@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet id="create_table_endereco_aud" author="carmelito.benali">
+        <validCheckSum>ANY</validCheckSum>
+        <preConditions onFail="MARK_RAN" onFailMessage="A tabela endereco_aud já existe"/>
+        <createTable tableName="endereco_aud" schemaName="elo">
+            <column type="BIGINT" name="rev"><constraints nullable="false"/></column>
+            <column type="numeric(10)" name="revtype"><constraints nullable="false"/></column>
+            <column type="BIGINT" name="id"><constraints nullable="false"/></column>
+            <column type="BIGINT" name="pessoa_id"></column>
+            <column type="varchar(10)" name="cep"></column>
+            <column type="varchar(150)" name="logradouro"></column>
+            <column type="varchar(10)" name="numero"></column>
+            <column type="varchar(100)" name="cidade"></column>
+            <column type="varchar(2)" name="uf"></column>
+            <column type="varchar(100)" name="bairro"></column>
+            <column name="datacriacao" type="datetime"></column>
+            <column name="dataalteracao" type="datetime"></column>
+            <column name="usuariocriacao" type="varchar(60)"></column>
+            <column name="usuarioalteracao" type="varchar(60)"></column>
+        </createTable>
+        <addPrimaryKey schemaName="elo" tableName="endereco_aud" columnNames="rev, id" constraintName="pk_endereco_aud"/>
+        <addUniqueConstraint schemaName="elo" tableName="endereco_aud" columnNames="rev, id" constraintName="u_endereco_rev_pk"/>
+    </changeSet>
+
+</databaseChangeLog>

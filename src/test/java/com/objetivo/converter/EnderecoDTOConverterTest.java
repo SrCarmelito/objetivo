@@ -4,7 +4,6 @@ import com.objetivo.dto.EnderecoDTO;
 import com.objetivo.entities.Endereco;
 import com.objetivo.fixtures.EnderecoDTOFixtures;
 import com.objetivo.fixtures.EnderecoFixtures;
-import com.objetivo.fixtures.PessoaDTOFixtures;
 import com.objetivo.fixtures.PessoaFixtures;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -13,9 +12,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assertions.assertNull;
 
 @SpringBootTest
 @RunWith(SpringRunner.class)

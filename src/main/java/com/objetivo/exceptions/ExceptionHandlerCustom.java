@@ -22,15 +22,15 @@ import java.util.Set;
 @RestControllerAdvice
 public class ExceptionHandlerCustom {
 
-    @ExceptionHandler(Exception.class)
-    public ResponseEntity<StandardError> general(Exception e, HttpServletRequest request) {
-        Set<String> errors = new HashSet<>();
-        errors.add(e.getLocalizedMessage());
-        String message = "Ops, ocorreu um erro inesperado!";
-        HttpStatus status = HttpStatus.NOT_FOUND;
-        StandardError err = new StandardError(Instant.now(), status.value(), message, request.getRequestURI(), errors);
-        return ResponseEntity.status(status).body(err);
-    }
+//    @ExceptionHandler(Exception.class)
+//    public ResponseEntity<StandardError> general(Exception e, HttpServletRequest request) {
+//        Set<String> errors = new HashSet<>();
+//        errors.add("Ops, ocorreu um erro inesperado!");
+//        String message = "Ops, ocorreu um erro inesperado!";
+//        HttpStatus status = HttpStatus.NOT_FOUND;
+//        StandardError err = new StandardError(Instant.now(), status.value(), message, request.getRequestURI(), errors);
+//        return ResponseEntity.status(status).body(err);
+//    }
 
     @ExceptionHandler(DataIntegrityViolationException.class)
     public ResponseEntity<StandardError> dataIntegrity(DataIntegrityViolationException e, HttpServletRequest request) {
@@ -90,11 +90,12 @@ public class ExceptionHandlerCustom {
     }
 
     @ExceptionHandler(HttpClientErrorException.class)
-    public ResponseEntity<StandardError> argumentNotValid(HttpClientErrorException e, HttpServletRequest request) {
+    public ResponseEntity<StandardError> httpClientError(HttpClientErrorException e, HttpServletRequest request) {
         Set<String> errors = new HashSet<>();
+        String message = "Não encontramos o que você precisava, tente novamente";
         errors.add(e.getLocalizedMessage());
         HttpStatus status = HttpStatus.BAD_REQUEST;
-        StandardError err = new StandardError(Instant.now(), status.value(), e.getMessage(), request.getRequestURI(), errors);
+        StandardError err = new StandardError(Instant.now(), status.value(), message, request.getRequestURI(), errors);
         return ResponseEntity.status(status).body(err);
     }
 

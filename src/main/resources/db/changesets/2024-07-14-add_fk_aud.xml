@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet id="add_fk_aud" author="carmelito.benali">
+
+
+        <addForeignKeyConstraint baseTableSchemaName="elo"
+                                 baseTableName="pessoa_aud"
+                                 baseColumnNames="rev"
+                                 constraintName="fk_pessoa_aud_revision"
+                                 referencedTableSchemaName="elo"
+                                 referencedTableName="revision"
+                                 referencedColumnNames="revisionnumber"/>
+
+        <addForeignKeyConstraint baseTableSchemaName="elo"
+                                 baseTableName="endereco_aud"
+                                 baseColumnNames="rev"
+                                 constraintName="fk_endereco_aud_revision"
+                                 referencedTableSchemaName="elo"
+                                 referencedTableName="revision"
+                                 referencedColumnNames="revisionnumber"/>
+    </changeSet>
+
+
+
+</databaseChangeLog>

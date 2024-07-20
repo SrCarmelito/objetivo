@@ -14,6 +14,10 @@
             <column type="date" name="datanascimento"><constraints nullable="false"/></column>
             <column type="varchar(20)" name="cpf"><constraints nullable="false"/></column>
             <column type="varchar(11)" name="telefone"><constraints nullable="false"/></column>
+            <column name="datacriacao" type="datetime"><constraints nullable="false"/></column>
+            <column name="dataalteracao" type="datetime"><constraints nullable="false"/></column>
+            <column name="usuariocriacao" type="varchar(60)"><constraints nullable="false"/></column>
+            <column name="usuarioalteracao" type="varchar(60)"><constraints nullable="false"/></column>
         </createTable>
         <addPrimaryKey schemaName="elo" tableName="pessoa" columnNames="id" constraintName="pessoa_pk"/>
         <addUniqueConstraint schemaName="elo" tableName="pessoa" columnNames="cpf" constraintName="u_cpf"/>

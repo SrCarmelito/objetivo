@@ -1,7 +1,12 @@
 package com.objetivo.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.objetivo.audit.AuditInfo;
+import com.objetivo.audit.AuditListener;
+import com.objetivo.audit.Auditable;
+import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EntityListeners;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -16,14 +21,17 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.envers.Audited;
 
-@Entity(name = "endereco")
+@Entity
 @Table(schema = "elo", name = "endereco")
 @AllArgsConstructor
 @Data
 @Builder()
 @NoArgsConstructor
-public class Endereco {
+@Audited
+@EntityListeners(AuditListener.class)
+public class Endereco implements Auditable {
 
 	@Id	
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_endereco")
@@ -59,5 +67,9 @@ public class Endereco {
 	@ManyToOne
 	@JoinColumn(name = "pessoa_id", nullable = false)
 	private Pessoa pessoa;
+
+	@Embedded
+	@Audited
+	private AuditInfo audit = AuditInfo.now();
 
 }

@@ -17,4 +17,16 @@ public class EnderecoFixtures {
                 .build();
     }
 
+    public static Endereco enderecoSemPessoa() {
+        return Endereco.builder()
+                .id(421L)
+                .cep("87005000")
+                .logradouro("Rua Estados Unidos")
+                .numero("9874")
+                .cidade("Helsinque")
+                .uf("AC")
+                .bairro("Centro")
+                .build();
+    }
+
 }

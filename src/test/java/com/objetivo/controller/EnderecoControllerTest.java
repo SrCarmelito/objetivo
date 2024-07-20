@@ -55,27 +55,27 @@ public class EnderecoControllerTest {
     @Transactional
     public void obterEnderecoPorId() throws Exception {
         mockMvc.perform(get(SITE + "/{id}", 3)
-            .contentType(MediaType.APPLICATION_JSON))
-            .andDo(print())
-            .andExpect(status().isOk())
-            .andExpect(jsonPath("$.cep", equalTo("65945000")))
-            .andExpect(jsonPath("$.logradouro", equalTo("Av. Santos Dumont")))
-            .andExpect(jsonPath("$.uf", equalTo("PR")))
-            .andExpect(jsonPath("$.bairro", equalTo("Industrial")));
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andDo(print())
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.cep", equalTo("65945000")))
+                .andExpect(jsonPath("$.logradouro", equalTo("Av. Santos Dumont")))
+                .andExpect(jsonPath("$.uf", equalTo("PR")))
+                .andExpect(jsonPath("$.bairro", equalTo("Industrial")));
     }
 
     @Test
     @Transactional
     public void pessoaPorEnderecoId() throws Exception {
         mockMvc.perform(get(SITE + "/end/{id}", 3)
-            .contentType(MediaType.APPLICATION_JSON))
-            .andDo(print())
-            .andExpect(jsonPath("@", equalTo(1)));
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andDo(print())
+                .andExpect(jsonPath("@", equalTo(1)));
 
         mockMvc.perform(get(SITE + "/end/{id}", 1)
-            .contentType(MediaType.APPLICATION_JSON))
-            .andDo(print())
-            .andExpect(jsonPath("@", equalTo(2)));
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andDo(print())
+                .andExpect(jsonPath("@", equalTo(2)));
     }
 
     @Test
@@ -91,65 +91,65 @@ public class EnderecoControllerTest {
         enderecoToUpdate.setCidade("Gramado");
 
         mockMvc.perform(put(SITE + "/{id}", 2)
-            .contentType(MediaType.APPLICATION_JSON)
-            .content(objectMapper.writeValueAsString(enderecoToUpdate)))
-            .andDo(print())
-            .andExpect(status().isOk());
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(enderecoToUpdate)))
+                .andDo(print())
+                .andExpect(status().isOk());
 
         mockMvc.perform(get(SITE + "/{id}", 2)
-            .contentType(MediaType.APPLICATION_JSON))
-            .andDo(print())
-            .andExpect(status().isOk())
-            .andExpect(jsonPath("$.cep", equalTo("315588456")))
-            .andExpect(jsonPath("$.uf", equalTo("RJ")))
-            .andExpect(jsonPath("$.cidade", equalTo("Gramado")));
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andDo(print())
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.cep", equalTo("315588456")))
+                .andExpect(jsonPath("$.uf", equalTo("RJ")))
+                .andExpect(jsonPath("$.cidade", equalTo("Gramado")));
     }
 
     @Test
     @Transactional
     public void novoEndereco() throws Exception {
         mockMvc.perform(post(SITE + "/{pessoa}", 1)
-            .contentType(MediaType.APPLICATION_JSON)
-            .content(objectMapper.writeValueAsString(EnderecoFixtures.endereco())))
-            .andDo(print())
-            .andExpect(status().isOk())
-            .andExpect(jsonPath("$", notNullValue()));
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(EnderecoFixtures.endereco())))
+                .andDo(print())
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$", notNullValue()));
 
         mockMvc.perform(get(SITE + "/{id}", 4)
-            .contentType(MediaType.APPLICATION_JSON))
-            .andDo(print())
-            .andExpect(status().isOk())
-            .andExpect(jsonPath("$.cep", equalTo("75830112")))
-            .andExpect(jsonPath("$.bairro", equalTo("Centro")))
-            .andExpect(jsonPath("$.uf", equalTo("SP")))
-            .andExpect(jsonPath("$.cidade", equalTo("HollyWood")));
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andDo(print())
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.cep", equalTo("75830112")))
+                .andExpect(jsonPath("$.bairro", equalTo("Centro")))
+                .andExpect(jsonPath("$.uf", equalTo("SP")))
+                .andExpect(jsonPath("$.cidade", equalTo("HollyWood")));
     }
 
     @Test
     @Transactional
     public void buscaporCep() throws Exception {
         mockMvc.perform(get(SITE + "/cep/{cep}", "95670024")
-            .contentType(MediaType.APPLICATION_JSON))
-            .andDo(print())
-            .andExpect(status().isOk())
-            .andExpect(jsonPath("$.logradouro", equalTo("Rua Fredolino Birck")))
-            .andExpect(jsonPath("$.bairro", equalTo("Minuano")))
-            .andExpect(jsonPath("$.localidade", equalTo("Gramado")))
-            .andExpect(jsonPath("$.uf", equalTo("RS")));
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andDo(print())
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.logradouro", equalTo("Rua Fredolino Birck")))
+                .andExpect(jsonPath("$.bairro", equalTo("Minuano")))
+                .andExpect(jsonPath("$.localidade", equalTo("Gramado")))
+                .andExpect(jsonPath("$.uf", equalTo("RS")));
     }
 
     @Test
     @Transactional
     public void deleteEndereco() throws Exception {
         mockMvc.perform(delete(SITE + "/{id}", 2)
-            .contentType(MediaType.APPLICATION_JSON))
-            .andDo(print())
-            .andExpect(status().isNoContent());
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andDo(print())
+                .andExpect(status().isNoContent());
 
         mockMvc.perform(delete(SITE + "/{id}", 2)
-            .contentType(MediaType.APPLICATION_JSON))
-            .andDo(print())
-            .andExpect(status().is4xxClientError());
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andDo(print())
+                .andExpect(status().is4xxClientError());
     }
 
 }

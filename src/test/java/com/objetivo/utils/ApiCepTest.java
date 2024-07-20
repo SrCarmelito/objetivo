@@ -2,7 +2,7 @@ package com.objetivo.utils;
 
 import com.objetivo.utils.pesquisaporcep.ApiCep;
 import com.objetivo.utils.pesquisaporcep.EnderecoJson;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.springframework.web.client.HttpClientErrorException;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

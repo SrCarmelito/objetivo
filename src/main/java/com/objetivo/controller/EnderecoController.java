@@ -46,7 +46,7 @@ public class EnderecoController {
 	@PutMapping("/{id}")
 	public ResponseEntity<Endereco> alteraEndereco(
 			@PathVariable("id") Long id,
-			@RequestBody Endereco endereco
+			@RequestBody EnderecoDTO endereco
 			) {
 		return new ResponseEntity<>(this.enderecoService.save(id, endereco), HttpStatus.OK);
 	}

@@ -3,7 +3,9 @@ package com.objetivo.converter;
 import com.objetivo.dto.PessoaDTO;
 import com.objetivo.entities.Endereco;
 import com.objetivo.entities.Pessoa;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 public class PessoaDTOConverter implements DTOConverter<Pessoa, PessoaDTO> {
 
     @Override

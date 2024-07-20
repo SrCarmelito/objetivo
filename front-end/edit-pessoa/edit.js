@@ -4,12 +4,28 @@ const urlEndereco = "http://localhost:8080/enderecos";
 
 const urlSearchParams = new URLSearchParams(window.location.search);
 const pessoaId = urlSearchParams.get("id");
+const token = urlSearchParams.get("auth");
 
 const cadPessoa = document.querySelector("#pessoa");
 
+getPessoa(pessoaId);
+
+const divBack = document.querySelector("#div-back");
+const bBack = document.createElement("button");
+const iBack = document.createElement("i");
+iBack.setAttribute("class", "fa-solid fa-house fa-2x");
+
+bBack.appendChild(iBack);
+divBack.appendChild(bBack);
+
+bBack.addEventListener("click", (e) => {
+    window.location.href = `/home/home.html?auth=${token}`;
+});
+
+
 async function getPessoa(id) {
 
-    const response = await fetch(`${url}/${id}`);
+    const response = await fetch(`${url}/${id}`, {headers: {"Authorization": "Bearer " + `${token}`}});
     const pessoa = await response.json();
 
     const div = document.createElement("div");
@@ -135,7 +151,7 @@ async function getPessoa(id) {
         iconEditEnd.setAttribute("class", "fa-solid fa-pen-to-square fa-1x");
         iconApagaEnd.setAttribute("class", "fa-solid fa-trash-can fa-1x");
         iconEditEnd.setAttribute("id", "ico-edit-end");
-        btnEditEnd.setAttribute("href", `/Endereco/endereco.html?id=${e.id}`);
+        btnEditEnd.setAttribute("href", `/endereco/endereco.html?id=${e.id}&auth=${token}`);
 
         btnApagaEnd.value = e.id;
 
@@ -280,11 +296,9 @@ async function getPessoa(id) {
     });  
 };
 
-getPessoa(pessoaId);
-
 async function getDadosPorCep(cepBusca) {
-    const response = await fetch(`http://localhost:8080/enderecos/cep/${cepBusca}`);
-    //const response = await fetch(`http://localhost:8080/enderecos/cep/${cepBusca}`);
+    const response = await fetch(`http://localhost:8080/enderecos/cep/${cepBusca}`, {headers: {"Authorization": "Bearer " + `${token}`}});
+    //const response = await fetch(`http://localhost:8080/enderecos/cep/${cepBusca}`, {headers: {"Authorization": "Bearer " + `${token}`}});
     const cep = await response.json();
 
     document.querySelector("#iCidadeNew").value = cep.localidade;
@@ -332,11 +346,12 @@ async function putPessoa(pessoaAtualizada) {
         body: minhaPessoa,
         method: 'PUT',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Authorization': "Bearer " + `${token}`
         },
     })
     .then((e) => {
-        if (e.status != 200) {
+        if (e.ok != true) {
             e.json().then((e) => {
                 const erros = e.errors;
                 let mensagens = "";
@@ -364,11 +379,12 @@ async function postEndereco(novoEndereco) {
         body: JSON.stringify(novoEndereco),
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Authorization': "Bearer " + `${token}`
         },
     })
     .then((e) => {
-        if (e.status != 200) {
+        if (e.ok != true) {
             e.json().then((e) => {
                 const erros = e.errors;
                 let mensagens = "";
@@ -396,7 +412,8 @@ async function deleteEndereco(enderecoExcluido) {
         body: JSON.stringify(enderecoExcluido),
         method: 'DELETE',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Authorization': "Bearer " + `${token}`
         },
     });
 

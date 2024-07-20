@@ -3,12 +3,15 @@ const url = "http://localhost:8080/enderecos";
 
 const urlSearchParams = new URLSearchParams(window.location.search);
 const enderecoId = urlSearchParams.get("id");
+const token = urlSearchParams.get("auth");
 
 const enderecoContainer = document.querySelector("#endereco-container");
 
+getEndereco(enderecoId);
+
 async function getEndereco(enderecoId) {
 
-    const response = await fetch(`${url}/${enderecoId}`);
+    const response = await fetch(`${url}/${enderecoId}`, {headers: {"Authorization": "Bearer " + `${token}`}});
 
     const endereco = await response.json();
 
@@ -83,17 +86,13 @@ async function getEndereco(enderecoId) {
 
 };
 
-const btnCancelar = document.querySelector("#btn-cancelar");
-
-btnCancelar.addEventListener("click", (e) => {
+document.querySelector("#btn-cancelar").addEventListener("click", (e) => {
     if (confirm("Deseja relamente Cancelar Esta Edição?") == true) {
         history.back();
     }; 
 });
 
-const btnConfirmar = document.querySelector("#btn-confirmar");
-
-btnConfirmar.addEventListener("click", (e) => {
+document.querySelector("#btn-confirmar").addEventListener("click", (e) => {
     e.preventDefault();
     preparaEnderecoAtualizado(enderecoId);
 });
@@ -128,11 +127,12 @@ async function putEndereco(enderecoAtualizado) {
         body: JSON.stringify(enderecoAtualizado),
         method: 'PUT',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Authorization': "Bearer " + `${token}`
         },
     })
     .then((e) => {
-        if (e.status != 200) {
+        if (e.ok != true) {
             e.json().then((e) => {
                 const erros = e.errors;
                 let mensagens = "";
@@ -149,15 +149,14 @@ async function putEndereco(enderecoAtualizado) {
 
             getPessoaId(enderecoId);
             async function getPessoaId(enderecoId) {
-                const response = await fetch(`${url}/end/${enderecoId}`);
+                console.log(token);
+                const response = await fetch(`${url}/end/${enderecoId}`, {headers: {"Authorization": "Bearer " + `${token}`}});
                 const pessoaId = await response.json();
-                window.location.href = `/EditPessoa/edit.html?id=${pessoaId}`;
+                window.location.href = `/edit-pessoa/edit.html?id=${pessoaId}&auth=${token}`;
             }; 
         }
     });
 };
-
-getEndereco(enderecoId);
 
 const onlyNumeric = (event) => {
     let input = event.target

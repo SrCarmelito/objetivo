@@ -6,11 +6,13 @@ import com.objetivo.entities.Pessoa;
 import com.objetivo.repository.PessoaRepository;
 import com.objetivo.utils.FormataTelefone;
 import jakarta.persistence.EntityNotFoundException;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+@Slf4j
 @Service
 @Transactional(readOnly = true)
 public class PessoaService {
@@ -44,7 +46,9 @@ public class PessoaService {
         if (!pessoaRepository.findByCpfContainingAndNomeIgnoreCaseContaining(pessoa.getCpf(), "", Pageable.ofSize(1)).isEmpty())
             throw new IllegalArgumentException("CPF informado já existe no cadastro");
 
-        return pessoaRepository.saveAndFlush(new PessoaDTOConverter().from(pessoa, new Pessoa()));
+        Pessoa novaPessoa = new PessoaDTOConverter().from(pessoa, new Pessoa());
+
+        return pessoaRepository.saveAndFlush(novaPessoa);
     }
 
     @Transactional
@@ -55,6 +59,7 @@ public class PessoaService {
 
     @Transactional
     public void deleteById(Long id) {
+        obterPessoaPorId(id);
         this.pessoaRepository.deleteById(id);
     }
 }

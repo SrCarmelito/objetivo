@@ -53,67 +53,67 @@ public class PessoaControllerTest {
     @Transactional
     public void findAllPaginada() throws Exception {
         mockMvc.perform(get("/pessoas")
-            .contentType(MediaType.APPLICATION_JSON))
-            .andDo(print())
-            .andExpect(status().isOk())
-            .andExpect(jsonPath("$.pageable", notNullValue()))
-            .andExpect(jsonPath("$.content", hasSize(3)));
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andDo(print())
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.pageable", notNullValue()))
+                .andExpect(jsonPath("$.content", hasSize(3)));
     }
 
     @Test
     @Transactional
     public void quantidadePessoas() throws Exception {
-       mockMvc.perform(get("/pessoas/count")
-           .contentType(MediaType.APPLICATION_JSON))
-           .andDo(print())
-           .andExpect(status().isOk())
-           .andExpect(jsonPath("@", equalTo(3)));
+        mockMvc.perform(get("/pessoas/count")
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andDo(print())
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("@", equalTo(3)));
     }
 
     @Test
     @Transactional
     public void excluirPessoa() throws Exception {
         mockMvc.perform(delete("/pessoas/{id}", 2)
-            .contentType(MediaType.APPLICATION_JSON))
-            .andDo(print())
-            .andExpect(status().isNoContent());
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andDo(print())
+                .andExpect(status().isNoContent());
 
         mockMvc.perform(get("/pessoas/count")
-            .contentType(MediaType.APPLICATION_JSON))
-            .andDo(print())
-            .andExpect(status().isOk())
-            .andExpect(jsonPath("@", equalTo(2)));
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andDo(print())
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("@", equalTo(2)));
     }
 
     @Test
     @Transactional
     public void obterPessoaPorId() throws Exception {
         mockMvc.perform(get("/pessoas/{id}", 3)
-            .contentType(MediaType.APPLICATION_JSON))
-            .andDo(print())
-            .andExpect(status().isOk())
-            .andExpect(jsonPath("$.nome", equalTo("Phill Collins")))
-            .andExpect(jsonPath("$.cpf", equalTo("42166575595")))
-            .andExpect(jsonPath("$.dataNascimento", equalTo("1960-11-28")))
-            .andExpect(jsonPath("$.telefone", equalTo("43965214578")));
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andDo(print())
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.nome", equalTo("Phill Collins")))
+                .andExpect(jsonPath("$.cpf", equalTo("42166575595")))
+                .andExpect(jsonPath("$.dataNascimento", equalTo("1960-11-28")))
+                .andExpect(jsonPath("$.telefone", equalTo("43965214578")));
     }
 
     @Test
     @Transactional
     public void novaPessoa() throws Exception {
         mockMvc.perform(post("/pessoas")
-            .contentType(MediaType.APPLICATION_JSON)
-            .content(objectMapper.writeValueAsString(PessoaFixtures.pessoaJamesGosling())))
-            .andDo(print())
-            .andExpect(status().isOk())
-            .andExpect(jsonPath("$", notNullValue()));
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(PessoaFixtures.pessoaJamesGosling())))
+                .andDo(print())
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$", notNullValue()));
 
         mockMvc.perform(get("/pessoas/{id}", 4)
-            .contentType(MediaType.APPLICATION_JSON))
-            .andDo(print())
-            .andExpect(status().isOk())
-            .andExpect(jsonPath("$.nome", equalTo("James Gosling")))
-            .andExpect(jsonPath("$.cpf", equalTo("62510728490")));
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andDo(print())
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.nome", equalTo("James Gosling")))
+                .andExpect(jsonPath("$.cpf", equalTo("62510728490")));
     }
 
     @Test
@@ -130,17 +130,17 @@ public class PessoaControllerTest {
         pessoa.setNome("Kobe Bryant");
 
         mockMvc.perform(put("/pessoas/{id}", 3)
-            .contentType(MediaType.APPLICATION_JSON)
-            .content(objectMapper.writeValueAsString(pessoa)))
-            .andDo(print())
-            .andExpect(status().isOk())
-            .andExpect(jsonPath("$", notNullValue()));
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(pessoa)))
+                .andDo(print())
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$", notNullValue()));
 
         mockMvc.perform(get("/pessoas/{id}", 3)
-            .contentType(MediaType.APPLICATION_JSON))
-            .andDo(print())
-            .andExpect(status().isOk())
-            .andExpect(jsonPath("$.nome", equalTo("Kobe Bryant")))
-            .andExpect(jsonPath("$.cpf", equalTo("62756443204")));
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andDo(print())
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.nome", equalTo("Kobe Bryant")))
+                .andExpect(jsonPath("$.cpf", equalTo("62756443204")));
     }
 }

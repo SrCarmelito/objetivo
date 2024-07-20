@@ -1,8 +1,13 @@
 package com.objetivo.entities;
 
+import com.objetivo.audit.AuditInfo;
+import com.objetivo.audit.AuditListener;
+import com.objetivo.audit.Auditable;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
+import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EntityListeners;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -18,6 +23,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.envers.Audited;
 import org.hibernate.validator.constraints.br.CPF;
 
 import java.math.BigDecimal;
@@ -25,13 +31,15 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity(name = "pessoa")
+@Entity
 @Table(schema = "elo", name = "pessoa")
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
 @Builder()
-public class Pessoa {
+@Audited
+@EntityListeners(AuditListener.class)
+public class Pessoa implements Auditable {
 	
 	@Id	
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_pessoa")
@@ -59,6 +67,10 @@ public class Pessoa {
 
 	@OneToMany(cascade = {CascadeType.ALL}, orphanRemoval = true, mappedBy = "pessoa")
 	private List<Endereco> enderecos = new ArrayList<>();
+
+	@Embedded
+	@Audited
+	private AuditInfo audit = AuditInfo.now();
 
 	public BigDecimal getIdade() {
 		return BigDecimal.valueOf(LocalDate.now().getYear()).subtract(new BigDecimal(getDataNascimento().getYear()));

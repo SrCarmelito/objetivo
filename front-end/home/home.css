@@ -1,0 +1,249 @@
+a {
+    cursor: pointer;
+    margin-left: 10px;
+    width: 25px;
+  }
+
+#pessoas-container {
+  align-items: center;
+  justify-content: center;
+  margin-left: 20%;
+}
+
+p {
+  margin-bottom: 0;
+  margin-left: 25px;
+  margin-right: 20%;
+  border: 2px solid rgb(48, 41, 41);
+  border-radius: 5px;
+  max-width: 60%;
+}
+
+p:hover {
+  cursor: pointer;
+  background-color: darkgray;
+  transition: 1s; 
+  transform: scale(1.04);
+  transition: all 0.5s;
+}
+
+input {
+  margin-left: 3px;
+  margin-right: 10px;
+  border: 2px solid rgb(48, 41, 41);
+  border-radius: 5px;
+  height: 3ch;
+  width: 35cap;
+}
+
+#log {
+  background-color: rgba(33, 158, 118, 0.281) ;
+  border-radius: 5px;
+}
+
+h2 {
+  border: 2px solid black;
+  background-color: burlywood;
+  border-radius: 5px;
+  padding: 0;
+  display: flex;
+  margin-bottom: 0.2cap;
+  max-width: 70%;
+  align-items: center;
+}
+
+body {
+  background: rgb(179, 198, 223);
+}
+
+#icon-new{
+  color: rgb(21, 139, 21);
+}
+
+#icon-minus{
+  color: red;
+}
+
+p + p {
+  margin-top: 0.2rem;
+  margin-bottom: 0;
+}
+
+h2 + p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+div + div {
+  margin-top: 6px;
+  margin-top: 6px;
+}
+
+/* Botões */
+
+#btn-novo {
+  cursor: pointer;
+  position:fixed;
+  width:70px;
+  height:70px;
+  bottom:30px;
+  right:40px;
+  border-radius:100%;
+  text-align:center;
+  font-size:30px;
+  z-index:1000;
+  background: rgb(179, 198, 223);
+  border: none;
+}
+
+#lb-count{
+  position:fixed;
+  bottom:10px;
+  left: 10px;
+  z-index:2;
+}
+
+/* Estilização do Modal */
+.modal {
+  display: none; 
+  position: fixed;
+  z-index: 1; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
+}
+.modal .content {
+  background-color: #D3D3D3;
+  margin: 15% auto; 
+  padding: 20px;
+  border-radius: 5px;
+  width: 60%; 
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  font-family: 'LexendDeca-Regular';
+  color: var(--title);
+}
+
+#modal-div-end {
+  background-color: burlywood;
+  font-family: Arial, Helvetica, sans-serif;
+  border-radius: 5px;
+  border-color: black;
+  border-style: groove;
+  display: flex;
+}
+
+h3 {
+  margin: 4px;
+  width: 105%; 
+}
+
+#btn-confirmar{
+  cursor: pointer;
+  margin-top: 10px;
+  border-radius: 5px;
+  width: 50%;
+  height: 30px;
+  background-color: green;
+}
+
+#apaga-enderec{
+  display: flex; 
+  background-color: burlywood;
+  border: none;
+  cursor: pointer;
+}
+
+input + div {
+  margin-top: 15px;
+}
+
+#iCep{
+  width: 10%;
+}
+
+#iUf{
+  width: 3%;
+}
+
+#iNumero{
+  width: 3%;
+}
+
+#iLogradouro{
+  width: 25%;
+}
+
+#input-filter-cpf{
+  width: 10%;
+}
+
+#input-filter-nome{
+  width: 10%;
+}
+
+#filter{
+  top: 0%;
+  text-align: center;
+  position: sticky;
+  z-index: 1;
+  background-color: aqua;
+  width: 100%;
+  height: 11%;
+}
+
+#input-filter-id{
+  width: 5%;
+}
+
+#executa-pesquisa{
+  cursor: pointer;
+  margin-top: 10px;
+  border-radius: 5px;
+  width: 15%;
+  height: 30px;
+  background-color: green;
+}
+
+#seta-pagina{
+  cursor: pointer;
+  margin-top: 10px;
+  border-radius: 5px;
+  width: 15%;
+  height: 30px;
+  background-color: green;
+}
+
+#paginate{
+  display: flex;
+  margin: 0;
+  padding: 0;
+  background-color: blanchedalmond;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+#lb-page-size{
+  padding-right: 5px;
+}
+
+#cbPageSize{
+  cursor: pointer;
+  margin-right: 8px;
+  padding-right: 5px;
+}
+
+#pageNumber{
+  margin-right: 4px;
+}
+
+.bt-paginacao{
+  cursor: pointer;
+}

@@ -22,7 +22,7 @@ import java.util.Collection;
 import java.util.List;
 
 @Entity
-@Table
+@Table(schema = "elo", name = "usuario")
 @AllArgsConstructor
 @NoArgsConstructor
 @Data

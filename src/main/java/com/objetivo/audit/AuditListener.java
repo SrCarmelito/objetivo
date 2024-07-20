@@ -16,10 +16,14 @@ public class AuditListener {
     public void setCreatedOn(Auditable auditable) {
 
         final AuditInfo audit = Optional.ofNullable(auditable.getAudit()).orElse(new AuditInfo());
-        Usuario user =  (Usuario) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        Usuario user = new Usuario();
+        if (SecurityContextHolder.getContext().getAuthentication() != null) {
+            user = (Usuario) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        }
+
         audit.setDataCriacao(LocalDateTime.now());
         audit.setDataAlteracao(LocalDateTime.now());
-        if (user == null) {
+        if (user == null || user.getNome() == null) {
             audit.setUsuarioCriacao("System");
             audit.setUsuarioAlteracao("System");
         } else {

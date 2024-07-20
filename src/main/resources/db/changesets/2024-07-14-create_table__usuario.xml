@@ -8,7 +8,7 @@
     <changeSet id="create_table_usuario" author="carmelito.benali">
         <validCheckSum>ANY</validCheckSum>
         <preConditions onFail="MARK_RAN" onFailMessage="A tabela usuario já existe"/>
-        <createTable tableName="usuario" schemaName="elo">
+        <createTable schemaName="elo" tableName="usuario">
             <column type="BIGINT" name="id"><constraints nullable="false"/></column>
             <column type="varchar(150)" name="nome"><constraints nullable="false"/></column>
             <column type="varchar(150)" name="login"><constraints nullable="false"/></column>

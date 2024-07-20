@@ -1,5 +1,5 @@
-const url = "http://localhost:8080/enderecos";
-//const url = "http://localhost:8080/enderecos";
+const url = "https://objetivo-liv5.onrender.com/enderecos";
+//const url = "https://objetivo-liv5.onrender.com/enderecos";
 
 const urlSearchParams = new URLSearchParams(window.location.search);
 const enderecoId = urlSearchParams.get("id");

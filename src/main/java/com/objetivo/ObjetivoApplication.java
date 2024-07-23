@@ -12,5 +12,6 @@ public class ObjetivoApplication {
 
 	//tODO: implementar testes...
 	//TODO: tratar validações no front de edit endereço
+	//TODO: VER FORMA PARA RETIRAR OS DELETES DOS SQL PARA PASSAR OS TESTES NO DEPLOY DE FORMA NÃO FORÇACA
 
 }

@@ -17,6 +17,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.context.WebApplicationContext;
 
 import static org.hamcrest.Matchers.notNullValue;
@@ -63,6 +64,7 @@ class EnversListenerTest {
         assertTrue(revisionRepository.findById(1L).orElseThrow().getLogin().equals("junior"));
     }
 
+    @Transactional
     void meteUmLoko() throws Exception {
         LoginDTO loginDTO = new LoginDTO();
         loginDTO.setLogin("junior");

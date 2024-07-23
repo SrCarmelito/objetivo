@@ -1,60 +1,39 @@
 package com.objetivo.exceptions;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+import com.objetivo.DefaultTest;
+import com.objetivo.dto.PessoaDTO;
+import com.objetivo.entities.Endereco;
 import com.objetivo.entities.Pessoa;
+import com.objetivo.fixtures.PessoaDTOFixtures;
 import com.objetivo.fixtures.PessoaFixtures;
-import com.objetivo.service.EnderecoService;
+import com.objetivo.repository.EnderecoRepository;
+import jakarta.persistence.EntityNotFoundException;
 import org.hamcrest.Matchers;
-import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
-import org.springframework.test.context.ActiveProfiles;
-import org.springframework.test.context.junit4.SpringRunner;
-import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-import org.springframework.web.context.WebApplicationContext;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.MethodArgumentNotValidException;
+import org.springframework.web.client.HttpClientErrorException;
+import org.springframework.web.servlet.resource.NoResourceFoundException;
+
+import java.time.LocalDate;
 
 import static org.hamcrest.Matchers.notNullValue;
+import static org.junit.jupiter.api.Assertions.assertInstanceOf;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-@RunWith(SpringRunner.class)
-@SpringBootTest
-@ActiveProfiles(value = "test")
-public class ExceptionHandlerCustomTest {
+public class ExceptionHandlerCustomTest extends DefaultTest {
 
     @Autowired
-    private WebApplicationContext webApplicationContext;
-
-    private MockMvc mockMvc;
-
-    @Autowired
-    private ObjectMapper objectMapper;
-
-    @Before
-    public void setUp() {
-        mockMvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
-    }
-
-    @Autowired
-    private EnderecoService enderecoService;
+    EnderecoRepository enderecoRepository;
 
     @Test
-    public void general() {  //TODO
-    }
-
-    @Test
-    public void dataIntegrity() {  //TODO
-    }
-
-    @Test
-    public void argumentNotValid() throws Exception {
+    public void methodArgumentNotValid() throws Exception {
         Pessoa pessoaComErro =  PessoaFixtures.pessoaJamesGosling();
         pessoaComErro.setNome(null);
         pessoaComErro.setTelefone(null);
@@ -65,21 +44,54 @@ public class ExceptionHandlerCustomTest {
                 .andDo(print())
                 .andExpect(status().is4xxClientError())
                 .andExpect(status().isBadRequest())
+                .andExpect(result -> assertInstanceOf(MethodArgumentNotValidException.class, result.getResolvedException()))
                 .andExpect(jsonPath("$.errors", notNullValue()))
                 .andExpect(jsonPath("$.errors", Matchers.hasItem("Campo telefone É Necessário Informar o Telefone! ")))
                 .andExpect(jsonPath("$.errors", Matchers.hasItem("Campo nome É Necessário informar o Nome! ")));
     }
 
     @Test
-    public void entityNotFound() {  //TODO
+    public void entityNotFound() throws Exception {
+        mockMvc.perform(get("/pessoas/88")
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andDo(print())
+                .andExpect(status().is4xxClientError())
+                .andExpect(status().isNotFound())
+                .andExpect(result -> assertInstanceOf(EntityNotFoundException.class, result.getResolvedException()))
+                .andExpect(jsonPath("$.errors", Matchers.contains("Id Informado não existe na base de dados!")));
+
+        mockMvc.perform(get("/enderecos/70")
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andDo(print())
+                .andExpect(status().is4xxClientError())
+                .andExpect(status().isNotFound())
+                .andExpect(result -> assertInstanceOf(EntityNotFoundException.class, result.getResolvedException()))
+                .andExpect(jsonPath("$.errors", Matchers.contains("Endereco não Encontrado")));
     }
 
     @Test
-    public void constraintValidation() {  //TODO
+    @Transactional
+    public void constraintValidation() throws Exception {
+        Endereco endereco = enderecoRepository.findById(3L).orElseThrow();
+        endereco.setPessoa(null);
+        enderecoRepository.save(endereco);
     }
 
     @Test
-    public void testArgumentNotValid() {  //TODO
+    public void testMethodArgumentNotValidException() throws Exception{
+        PessoaDTO pessoaDTO = PessoaDTOFixtures.pessoaJimiHendrix();
+        pessoaDTO.setCpf("123456");
+        pessoaDTO.setTelefone("1234");
+
+        mockMvc.perform(post("/pessoas")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(pessoaDTO)))
+                .andDo(print())
+                .andExpect(status().is4xxClientError())
+                .andExpect(status().isBadRequest())
+                .andExpect(result -> assertInstanceOf(MethodArgumentNotValidException.class, result.getResolvedException()))
+                .andExpect(jsonPath("$.errors", Matchers.hasItem("Campo telefone Deve ser entre 10 e 11 caracteres com DDD ")))
+                .andExpect(jsonPath("$.errors", Matchers.hasItem("Campo cpf CPF Inválido! Verifique! ")));
     }
 
     @Test
@@ -89,6 +101,7 @@ public class ExceptionHandlerCustomTest {
                 .andDo(print())
                 .andExpect(status().is4xxClientError())
                 .andExpect(status().isBadRequest())
+                .andExpect(result -> assertInstanceOf(HttpClientErrorException.class, result.getResolvedException()))
                 .andExpect(jsonPath("$.errors", notNullValue()))
                 .andExpect(jsonPath("$.message", Matchers.containsStringIgnoringCase("Não encontramos o que você precisava, tente novamente")));
     }
@@ -100,6 +113,7 @@ public class ExceptionHandlerCustomTest {
                 .andDo(print())
                 .andExpect(status().is4xxClientError())
                 .andExpect(status().isNotFound())
+                .andExpect(result -> assertInstanceOf(NoResourceFoundException.class, result.getResolvedException()))
                 .andExpect(jsonPath("$.errors", Matchers.contains("pessoa Não corresponde a nenhum End Point!!!")));
 
         mockMvc.perform(get("/end")
@@ -107,12 +121,26 @@ public class ExceptionHandlerCustomTest {
                 .andDo(print())
                 .andExpect(status().is4xxClientError())
                 .andExpect(status().isNotFound())
+                .andExpect(result -> assertInstanceOf(NoResourceFoundException.class, result.getResolvedException()))
                 .andExpect(jsonPath("$.errors", Matchers.contains("end Não corresponde a nenhum End Point!!!")));
     }
 
     @Test
-    public void illegalArgument() {
-        //TODO
+    public void illegalArgument() throws Exception {
+        PessoaDTO pessoaDTO = new PessoaDTO().builder()
+                .id(15L)
+                .nome("Cpf Repetido")
+                .cpf("45317125871")
+                .telefone("1234567890")
+                .dataNascimento(LocalDate.of(2000, 11, 22)).build();
 
+        mockMvc.perform(post("/pessoas")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(pessoaDTO)))
+                .andDo(print())
+                .andExpect(status().is4xxClientError())
+                .andExpect(status().isUnprocessableEntity())
+                .andExpect(result -> assertInstanceOf(IllegalArgumentException.class, result.getResolvedException()))
+                .andExpect(jsonPath("$.errors", Matchers.contains("CPF informado já existe no cadastro")));
     }
 }

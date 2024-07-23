@@ -1,20 +1,13 @@
 package com.objetivo.repository;
 
+import com.objetivo.DefaultTest;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
-import org.springframework.test.context.ActiveProfiles;
-import org.springframework.test.context.jdbc.Sql;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-@DataJpaTest
-@ActiveProfiles("test")
-@Sql(scripts = {
-        "/sql/pessoa.sql",
-        "/sql/endereco.sql"
-})
-public class EnderecoRepositoryTest {
+
+public class EnderecoRepositoryTest extends DefaultTest {
 
     @Autowired
     public EnderecoRepository enderecoRepository;

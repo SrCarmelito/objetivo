@@ -2,7 +2,6 @@ package com.objetivo.service;
 
 import com.objetivo.converter.EnderecoDTOConverter;
 import com.objetivo.dto.EnderecoDTO;
-import com.objetivo.dto.PessoaDTO;
 import com.objetivo.entities.Endereco;
 import com.objetivo.repository.EnderecoRepository;
 import com.objetivo.utils.pesquisaporcep.ApiCep;

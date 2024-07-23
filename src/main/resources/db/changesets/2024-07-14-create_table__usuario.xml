@@ -12,7 +12,7 @@
             <column type="BIGINT" name="id"><constraints nullable="false"/></column>
             <column type="varchar(150)" name="nome"><constraints nullable="false"/></column>
             <column type="varchar(150)" name="login"><constraints nullable="false"/></column>
-            <column type="varchar(150)" name="password"><constraints nullable="false"/></column>
+            <column type="varchar(150)" name="senha"><constraints nullable="false"/></column>
             <column name="datacriacao" type="datetime"/>
             <column name="dataalteracao" type="datetime"/>
             <column name="usuariocriacao" type="varchar(60)"/>

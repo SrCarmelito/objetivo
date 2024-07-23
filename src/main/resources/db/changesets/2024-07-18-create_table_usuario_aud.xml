@@ -14,7 +14,7 @@
             <column type="BIGINT" name="id"><constraints nullable="false"/></column>
             <column type="varchar(150)" name="nome"/>
             <column type="varchar(150)" name="login"/>
-            <column type="varchar(150)" name="password"/>
+            <column type="varchar(150)" name="senha"/>
             <column name="datacriacao" type="datetime"/>
             <column name="dataalteracao" type="datetime"/>
             <column name="usuariocriacao" type="varchar(60)"/>

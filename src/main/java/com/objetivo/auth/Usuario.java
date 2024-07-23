@@ -35,7 +35,7 @@ public class Usuario implements UserDetails, Auditable {
     private Long id;
     private String nome;
     private String login;
-    private String password;
+    private String senha;
 
     @Embedded
     @Audited
@@ -48,7 +48,7 @@ public class Usuario implements UserDetails, Auditable {
 
     @Override
     public String getPassword() {
-        return password;
+        return senha;
     }
 
     @Override

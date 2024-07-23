@@ -1,7 +1,6 @@
 package com.objetivo.Service;
 
 import com.objetivo.converter.EnderecoDTOConverter;
-import com.objetivo.converter.PessoaDTOConverter;
 import com.objetivo.dto.EnderecoDTO;
 import com.objetivo.entities.Endereco;
 import com.objetivo.fixtures.EnderecoDTOFixtures;
@@ -13,7 +12,6 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
-import org.springframework.test.context.jdbc.Sql;
 import org.springframework.transaction.annotation.Transactional;
 
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -21,12 +19,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @SpringBootTest
 @ActiveProfiles("test")
-@Sql(scripts = {
-        "/sql/pessoa.sql",
-        "/sql/endereco.sql"
-})
 @Transactional
-public class EnderecoServiceTest {
+public class EnderecoServiceTest  {
 
     @Autowired
     private EnderecoService enderecoService;

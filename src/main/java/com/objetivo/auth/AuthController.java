@@ -22,7 +22,7 @@ public class AuthController {
     @PostMapping("/login")
     public String login(@RequestBody LoginDTO login) {
         UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken =
-                new UsernamePasswordAuthenticationToken(login.getLogin(), login.getPassword());
+                new UsernamePasswordAuthenticationToken(login.getLogin(), login.getSenha());
 
         Authentication authentication = this.authenticationManager
                 .authenticate(usernamePasswordAuthenticationToken);

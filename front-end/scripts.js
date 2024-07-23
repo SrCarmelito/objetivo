@@ -5,7 +5,7 @@ document.querySelector("#submit").addEventListener("click", (e) => {
 
     let user = {
         login: document.querySelector("#login").value,
-        password: document.querySelector("#password").value
+        senha: document.querySelector("#password").value
     };
 
     //imaginar possíveis erros nesse ponto

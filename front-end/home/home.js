@@ -210,6 +210,7 @@ const switchModal = (token) => {
         modalTitle.innerText = "Insira os dados da Nova Pessoa";
         modalContent.setAttribute("class", "content");
         iNome.setAttribute("id", "nome-modal");
+        iNome.setAttribute("maxlength", "150");
         iDatanascimento.setAttribute("id", "data-nascimento-modal");
         iDatanascimento.setAttribute("type", "date");
         iCpf.setAttribute("id", "cpf-modal");

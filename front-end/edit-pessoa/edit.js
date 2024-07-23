@@ -110,7 +110,6 @@ async function getPessoa(id) {
     icoConfirmar.setAttribute("class", "fa-solid fa-circle-plus fa-2x");
     btnNovoEndereco.setAttribute("id", "new-enderec");
 
-    btnNovoEndereco
     divEnderec.appendChild(textDivEnderec);
     btnNovoEndereco.append(icoConfirmar);
     textDivEnderec.append(btnNovoEndereco);

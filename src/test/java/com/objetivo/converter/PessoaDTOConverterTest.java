@@ -1,5 +1,6 @@
 package com.objetivo.converter;
 
+import com.objetivo.DefaultTest;
 import com.objetivo.dto.EnderecoDTO;
 import com.objetivo.dto.PessoaDTO;
 import com.objetivo.entities.Endereco;
@@ -9,14 +10,11 @@ import com.objetivo.fixtures.PessoaFixtures;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.ActiveProfiles;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-@SpringBootTest
-@ActiveProfiles("test")
-public class PessoaDTOConverterTest {
+
+public class PessoaDTOConverterTest extends DefaultTest {
 
     @Autowired
     PessoaDTOConverter pessoaDTOConverter;

@@ -2,13 +2,11 @@ package com.objetivo.utils;
 
 import com.objetivo.entities.Pessoa;
 import com.objetivo.fixtures.PessoaFixtures;
-import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-@Slf4j
 public class FormatTelefoneTest {
 
     @Test

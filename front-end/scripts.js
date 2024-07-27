@@ -29,11 +29,8 @@ async function login(user) {
         alert("Usuário ou senha Inválidos, tente novamente!");
     } else {
         const token = await response.text();
-        redirectUser(token);
+        window.sessionStorage.setItem("token", token);
+        window.location.href = "/home/home.html";
     };
 
 }
-
-async function redirectUser(token) {
-    window.location.href = `/home/home.html?auth=${token}`;
-};

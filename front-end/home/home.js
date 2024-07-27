@@ -5,7 +5,7 @@ let url = `https://objetivo-liv5.onrender.com/pessoas?sort=nome,asc`;
 
 const urlSearchParams = new URLSearchParams(window.location.search);
 const pessoaId = urlSearchParams.get("id");
-const token = urlSearchParams.get("auth");
+const token = window.sessionStorage.getItem("token");
 
 let filtroValorCpf = "";
 let filtroValorNome = "";
@@ -32,6 +32,18 @@ document.querySelector("#filter").addEventListener("keypress", (e) => {
         document.querySelector("#executa-pesquisa").click();
     };
 });
+
+document.querySelector("#logout").addEventListener("click", (e) => {
+    if (confirm("Deseja Sair do Software?") == true) {
+        window.sessionStorage.clear();
+        window.location.href="/index.html";        
+    };
+});
+
+if(!token) {
+    alert("Você precisar fazer login para usar o software!!!");
+    window.location.href="/index.html";    
+};
 
 async function getAll() {
         
@@ -89,7 +101,7 @@ async function getAll() {
         phone.innerText = `Telefone: ${phoneMask(pessoa.telefone)}`;
         age.innerText = `Idade: ${pessoa.idade}`;
         link.setAttribute("class", "fa-solid fa-pen-to-square fa-1x");
-        link.setAttribute("href", `/edit-pessoa/edit.html?id=${pessoa.id}&auth=${token}`);
+        link.setAttribute("href", `/edit-pessoa/edit.html?id=${pessoa.id}`);
         trash.setAttribute("class", "fa-solid fa-trash-can fa 1x");
         div.setAttribute("id", "dados-pessoas");
         
@@ -117,7 +129,7 @@ async function getAll() {
 
         enderecos.map((e) => {
 
-            const tigas = document.createElement("div");
+            const divEnd = document.createElement("div");
             const logradouro = document.createElement("p");
             const numero = document.createElement("p");
 
@@ -125,10 +137,10 @@ async function getAll() {
                 `${e.logradouro}, Nrº ${e.numero}, Bairro: ${e.bairro} - CEP: ${e.cep} - ${e.cidade}/${e.uf}`;
             numero.innerText = e.numero;
 
-            tigas.appendChild(logradouro);
+            divEnd.appendChild(logradouro);
             logradouro.setAttribute("id", "log");
             
-            div.appendChild(tigas);
+            div.appendChild(divEnd);
         });
         
     });

@@ -13,10 +13,13 @@ public class AuthController {
     private AuthenticationManager authenticationManager;
 
     private TokenService tokenService;
+    private final UsuarioRepository usuarioRepository;
 
-    public AuthController(AuthenticationManager authenticationManager, TokenService tokenService) {
+    public AuthController(AuthenticationManager authenticationManager, TokenService tokenService,
+                          UsuarioRepository usuarioRepository) {
         this.authenticationManager = authenticationManager;
         this.tokenService = tokenService;
+        this.usuarioRepository = usuarioRepository;
     }
 
     @PostMapping("/login")

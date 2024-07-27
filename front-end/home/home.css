@@ -247,3 +247,8 @@ input + div {
 .bt-paginacao{
   cursor: pointer;
 }
+
+#logout{
+  width:50px;
+  height:30px;
+}

@@ -60,12 +60,12 @@ class EnversListenerTest {
     @Test
     @WithMockUser(username = "junior")
     public void newRevision() throws Exception {
-        this.meteUmLoko();
+        this.executeRevision();
         assertTrue(revisionRepository.findById(1L).orElseThrow().getLogin().equals("junior"));
     }
 
     @Transactional
-    void meteUmLoko() throws Exception {
+    void executeRevision() throws Exception {
         LoginDTO loginDTO = new LoginDTO();
         loginDTO.setLogin("junior");
         loginDTO.setSenha("123");

@@ -4,9 +4,14 @@ const urlEndereco = "https://objetivo-liv5.onrender.com/enderecos";
 
 const urlSearchParams = new URLSearchParams(window.location.search);
 const pessoaId = urlSearchParams.get("id");
-const token = urlSearchParams.get("auth");
+const token = window.sessionStorage.getItem("token");
 
 const cadPessoa = document.querySelector("#pessoa");
+
+if(!token) {
+    alert("Você precisar fazer login para usar o software!!!");
+    window.location.href="/index.html";    
+}
 
 getPessoa(pessoaId);
 
@@ -19,7 +24,7 @@ bBack.appendChild(iBack);
 divBack.appendChild(bBack);
 
 bBack.addEventListener("click", (e) => {
-    window.location.href = `/home/home.html?auth=${token}`;
+    window.location.href = `/home/home.html`;
 });
 
 
@@ -150,7 +155,7 @@ async function getPessoa(id) {
         iconEditEnd.setAttribute("class", "fa-solid fa-pen-to-square fa-1x");
         iconApagaEnd.setAttribute("class", "fa-solid fa-trash-can fa-1x");
         iconEditEnd.setAttribute("id", "ico-edit-end");
-        btnEditEnd.setAttribute("href", `/endereco/endereco.html?id=${e.id}&auth=${token}`);
+        btnEditEnd.setAttribute("href", `/endereco/endereco.html?id=${e.id}`);
                                                    
         btnApagaEnd.value = e.id;
 

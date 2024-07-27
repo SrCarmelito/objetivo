@@ -3,9 +3,14 @@ const url = "https://objetivo-liv5.onrender.com/enderecos";
 
 const urlSearchParams = new URLSearchParams(window.location.search);
 const enderecoId = urlSearchParams.get("id");
-const token = urlSearchParams.get("auth");
+const token = window.sessionStorage.getItem("token");
 
 const enderecoContainer = document.querySelector("#endereco-container");
+
+if(!token) {
+    alert("Você precisar fazer login para usar o software!!!");
+    window.location.href="/index.html";    
+}
 
 getEndereco(enderecoId);
 
@@ -152,7 +157,7 @@ async function putEndereco(enderecoAtualizado) {
                 console.log(token);
                 const response = await fetch(`${url}/end/${enderecoId}`, {headers: {"Authorization": "Bearer " + `${token}`}});
                 const pessoaId = await response.json();
-                window.location.href = `/edit-pessoa/edit.html?id=${pessoaId}&auth=${token}`;
+                window.location.href = `/edit-pessoa/edit.html?id=${pessoaId}`;
             }; 
         }
     });

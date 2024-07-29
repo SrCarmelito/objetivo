@@ -1,6 +1,6 @@
-const url = "https://objetivo-liv5.onrender.com/pessoas";
-//const url = "https://objetivo-liv5.onrender.com/pessoas";
-const urlEndereco = "https://objetivo-liv5.onrender.com/enderecos";
+const url = "http://localhost:8080/pessoas";
+//const url = "http://localhost:8080/pessoas";
+const urlEndereco = "http://localhost:8080/enderecos";
 
 const urlSearchParams = new URLSearchParams(window.location.search);
 const pessoaId = urlSearchParams.get("id");
@@ -27,6 +27,24 @@ bBack.addEventListener("click", (e) => {
     window.location.href = `/home/home.html`;
 });
 
+document.querySelector("#relatorio").addEventListener("click", (e) => {
+    gerarRelatorio(pessoaId);
+});
+
+async function gerarRelatorio(id) {
+    response = await fetch(`http://localhost:8080/report/gerar/${pessoaId}`,
+    {
+        method: 'GET',
+        headers: {"Authorization": "Bearer " + `${token}`},
+        responseType:'arraybuffer'
+    })
+    .then((response) => response.blob())
+    .then((blob) => {
+        const objectURL = URL.createObjectURL(blob);
+        window.open(objectURL);
+    })
+
+};
 
 async function getPessoa(id) {
 
@@ -301,8 +319,8 @@ async function getPessoa(id) {
 };
 
 async function getDadosPorCep(cepBusca) {
-    const response = await fetch(`https://objetivo-liv5.onrender.com/enderecos/cep/${cepBusca}`, {headers: {"Authorization": "Bearer " + `${token}`}});
-    //const response = await fetch(`https://objetivo-liv5.onrender.com/enderecos/cep/${cepBusca}`, {headers: {"Authorization": "Bearer " + `${token}`}});
+    const response = await fetch(`http://localhost:8080/enderecos/cep/${cepBusca}`, {headers: {"Authorization": "Bearer " + `${token}`}});
+    //const response = await fetch(`http://localhost:8080/enderecos/cep/${cepBusca}`, {headers: {"Authorization": "Bearer " + `${token}`}});
     const cep = await response.json();
 
     document.querySelector("#iCidadeNew").value = cep.localidade;
@@ -376,7 +394,7 @@ async function putPessoa(pessoaAtualizada) {
 
 async function postEndereco(novoEndereco) {
 
-    const url = "https://objetivo-liv5.onrender.com/enderecos";
+    const url = "http://localhost:8080/enderecos";
 
     await fetch(`${url}/${pessoaId}`,
     {

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.18.1.final using JasperReports Library version 6.18.1-9d75d1969e774d4f179fb3be8401e98a0e6d1611  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Blank_A4" pageWidth="595" pageHeight="842" columnWidth="595" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="29839db4-01b5-46cb-a83a-4f6debfce117">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<parameter name="nome" class="java.lang.String"/>
+	<parameter name="dataNascimento" class="java.time.LocalDate"/>
+	<parameter name="cpf" class="java.lang.String"/>
+	<parameter name="telefone" class="java.lang.String"/>
+	<parameter name="imageJasper" class="java.lang.Object"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="34" width="595" height="30" uuid="d0fecf74-fbed-46e5-b952-c22392c3066c"/>
+				<box>
+					<pen lineWidth="4.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="22" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ficha da Pessoa]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="50" splitType="Stretch">
+			<image>
+				<reportElement x="30" y="0" width="50" height="50" uuid="626d36ae-4429-4e80-9e54-692e78f07acb"/>
+				<imageExpression><![CDATA[$P{imageJasper}]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="90" y="0" width="495" height="45" uuid="a25b05f2-de5f-43ee-8c57-ff847638e16d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nome}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="77" splitType="Stretch">
+			<textField>
+				<reportElement x="30" y="15" width="237" height="20" uuid="46285806-bdec-403d-b6f1-66aafa118d67"/>
+				<textFieldExpression><![CDATA["Data de Nascimento: " + $P{dataNascimento} + "."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="30" y="0" width="237" height="15" uuid="7236a201-b271-4f99-b19c-a0f051d1d7a2"/>
+				<textFieldExpression><![CDATA["CPF: " + $P{cpf} + "."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="30" y="35" width="400" height="15" uuid="3e7bd71e-ef76-4f73-b1f8-c634bedb6182"/>
+				<textFieldExpression><![CDATA["Telefone: " + $P{telefone} + "."]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

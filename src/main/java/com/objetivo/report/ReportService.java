@@ -18,7 +18,7 @@ import java.util.Map;
 @Service
 public class ReportService {
 
-    public static final String JASPER_DIRETORIO = "src/reports/jasper/pessoa/";
+    public static final String JASPER_DIRETORIO = "src/main/reports/jasper/pessoa/";
     public static final String JASPER_PREFIXO = "pessoa";
     public static final String JASPER_SUFIXO = ".jasper";
 

@@ -7,6 +7,7 @@ import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperExportManager;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
+import org.eclipse.jdt.internal.compiler.batch.ClasspathDirectory;
 import org.springframework.stereotype.Service;
 import org.springframework.util.ResourceUtils;
 
@@ -19,7 +20,7 @@ import java.util.Map;
 public class ReportService {
 
     //public static final String JASPER_DIRETORIO = "src/main/reports/jasper/pessoa/";
-    public static final String JASPER_DIRETORIO =  "reports/jasper/pessoa/";
+    public static final String JASPER_DIRETORIO =  "classpath:reports/jasper/pessoa/";
     public static final String JASPER_PREFIXO = "pessoa";
     public static final String JASPER_SUFIXO = ".jasper";
 

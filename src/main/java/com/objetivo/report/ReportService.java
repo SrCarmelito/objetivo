@@ -9,7 +9,6 @@ import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
 import org.springframework.stereotype.Service;
 import org.springframework.util.ResourceUtils;
-import org.springframework.web.jsf.FacesContextUtils;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -20,7 +19,7 @@ import java.util.Map;
 public class ReportService {
 
     //public static final String JASPER_DIRETORIO = "src/main/reports/jasper/pessoa/";
-    public static final String JASPER_DIRETORIO =  "classpath:reports\\jasper\\pessoa\\";
+    public static final String JASPER_DIRETORIO =  "reports/jasper/pessoa/";
     public static final String JASPER_PREFIXO = "pessoa";
     public static final String JASPER_SUFIXO = ".jasper";
 

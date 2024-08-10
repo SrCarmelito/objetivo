@@ -9,31 +9,27 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 @RestController
 @RequestMapping("/report")
 @Slf4j
 public class PessoaReportController {
 
-    private final ReportService pessoaReportService;
-
     private final ReportService reportService;
 
-    public PessoaReportController(ReportService pessoaReportService, ReportService reportService) {
-        this.pessoaReportService = pessoaReportService;
+    public PessoaReportController(ReportService reportService) {
         this.reportService = reportService;
     }
 
     @GetMapping("/gerar/{id}")
     public void gerar(
             @PathVariable Long id,
-            HttpServletResponse response) throws IOException {
+            HttpServletResponse response) throws Exception {
         byte[] bytes = reportService.exportarPDF(id);
         response.setContentType(MediaType.APPLICATION_PDF_VALUE);
 
-      //  log.info("esse é o tamanho do baguio: " + bytes.);
-
-       // response.setHeader("Content-disposition", "inline; filename=pessoa" + id + ".pdf");
+        response.setHeader("Content-disposition", "inline; filename=pessoa" + id + ".pdf");
        // response.setHeader("Content-disposition", "attachment; filename=pessoa" + id + ".pdf");
         response.getOutputStream().write(bytes);
     }

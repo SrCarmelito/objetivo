@@ -16,7 +16,4 @@ public interface PessoaRepository extends JpaRepository<Pessoa, Long> {
 
 	Page<Pessoa> findByCpfContainingAndNomeIgnoreCaseContaining(@Param("cpf") String cpf, @Param("nome") String nome, Pageable pageable);
 
-	@Query(nativeQuery = true, value = "SELECT pessoa_id, cep, logradouro, numero, cidade, bairro, uf from elo.endereco where pessoa_id = 541;")
-	List<String> tigas(); //TODO não pode ser desse jeito
-
 }

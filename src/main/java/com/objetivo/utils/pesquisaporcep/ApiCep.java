@@ -9,4 +9,5 @@ public class ApiCep {
 		RestTemplate restTemplate = new RestTemplate();
         return restTemplate.getForEntity(params, EnderecoJson.class).getBody();
 	}
+
 }

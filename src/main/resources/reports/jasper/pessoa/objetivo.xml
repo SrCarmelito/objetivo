@@ -1,2 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<jdbcDataAdapter class="net.sf.jasperreports.data.jdbc.JdbcDataAdapterImpl"><name>objetivo</name><driver>org.postgresql.Driver</driver><username>elotech</username><password>elo</password><savePassword>true</savePassword><url>jdbc:postgresql://localhost:5432/objetivo</url><database></database><serverAddress></serverAddress></jdbcDataAdapter>

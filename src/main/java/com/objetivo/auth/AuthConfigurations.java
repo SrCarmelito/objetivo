@@ -16,11 +16,11 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
 @Configuration
 @EnableWebSecurity
-public class Configurations {
+public class AuthConfigurations {
 
     private final FilterToken filterToken;
 
-    public Configurations(FilterToken filterToken) {
+    public AuthConfigurations(FilterToken filterToken) {
         this.filterToken = filterToken;
     }
 

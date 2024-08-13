@@ -4,7 +4,7 @@ import com.objetivo.converter.PessoaDTOConverter;
 import com.objetivo.dto.PessoaDTO;
 import com.objetivo.entities.Pessoa;
 import com.objetivo.repository.PessoaRepository;
-import com.objetivo.utils.FormataTelefone;
+import com.objetivo.utils.Formatter;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
@@ -37,7 +37,7 @@ public class PessoaService {
 
     public Page<Pessoa> findByIdCpfNomeContaining(String cpf, String nome, Pageable pageable) {
         Page<Pessoa> pessoaPage = this.pessoaRepository.findByCpfContainingAndNomeIgnoreCaseContaining(cpf, nome, pageable);
-        pessoaPage.forEach(p -> p.setTelefone(FormataTelefone.format(p.getTelefone())));
+        pessoaPage.forEach(p -> p.setTelefone(Formatter.telephoneMask(p.getTelefone())));
         return pessoaPage;
     }
 

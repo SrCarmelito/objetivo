@@ -53,8 +53,6 @@ public class EnderecoService {
         Endereco enderecoAlterado = enderecoRepository.findById(id).orElseThrow(() ->
                 new EntityNotFoundException("Endereço não Encontrado"));
 
-        //endereco.setPessoaDTO(enderecoRepository.findPessoaByIdEndereco(endereco.getId()));
-
         return enderecoRepository.save(enderecoDTOConverter.from(endereco, enderecoAlterado));
     }
 

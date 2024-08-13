@@ -30,7 +30,6 @@ public class PessoaReportController {
         response.setContentType(MediaType.APPLICATION_PDF_VALUE);
 
         response.setHeader("Content-disposition", "inline; filename=pessoa" + id + ".pdf");
-       // response.setHeader("Content-disposition", "attachment; filename=pessoa" + id + ".pdf");
         response.getOutputStream().write(bytes);
     }
 

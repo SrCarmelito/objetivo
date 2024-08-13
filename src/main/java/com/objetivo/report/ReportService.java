@@ -1,30 +1,21 @@
 package com.objetivo.report;
 
+import com.objetivo.dto.PessoaRelatorioDTO;
 import com.objetivo.entities.Pessoa;
-import com.objetivo.repository.PessoaRepository;
 import com.objetivo.service.PessoaService;
-import net.sf.jasperreports.engine.JRDataSource;
-import net.sf.jasperreports.engine.JREmptyDataSource;
+import com.objetivo.utils.Formatter;
 import net.sf.jasperreports.engine.JRException;
-import net.sf.jasperreports.engine.JasperCompileManager;
 import net.sf.jasperreports.engine.JasperExportManager;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
-import net.sf.jasperreports.engine.JasperReport;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
-import org.eclipse.jdt.internal.compiler.batch.ClasspathDirectory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.ResourceUtils;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 @Service
 public class ReportService {
@@ -39,18 +30,12 @@ public class ReportService {
         this.pessoaService = pessoaService;
     }
 
-    private Map<String, Object> params = new HashMap<>();
-
     public byte[] exportarPDF(Long id) {
-        Pessoa pessoa = this.pessoaService.obterPessoaPorId(id);
-
-        Collection<Pessoa> coll = new ArrayList<>();
-        coll.add(pessoa);
 
         byte[] bytes = null;
         try {
             File file = ResourceUtils.getFile(JASPER_DIRETORIO.concat(JASPER_PREFIXO.concat(JASPER_SUFIXO)));
-            JasperPrint print = JasperFillManager.fillReport(file.getAbsolutePath(), params, new JRBeanCollectionDataSource(coll));
+            JasperPrint print = JasperFillManager.fillReport(file.getAbsolutePath(), null, new JRBeanCollectionDataSource(dataToExport(id)));
             bytes = JasperExportManager.exportReportToPdf(print);
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
@@ -58,6 +43,36 @@ public class ReportService {
             throw new RuntimeException(e);
         }
         return bytes;
+
+    }
+
+    public Collection<PessoaRelatorioDTO> dataToExport(Long id) {
+        Pessoa pessoa = this.pessoaService.obterPessoaPorId(id);
+
+        Collection<PessoaRelatorioDTO> coll = new ArrayList<>();
+
+        PessoaRelatorioDTO pessoaExport = new PessoaRelatorioDTO();
+        pessoaExport.setNome(pessoa.getNome());
+        pessoaExport.setCpf(Formatter.cpfCnpjMask(pessoa.getCpf()));
+        pessoaExport.setTelefone(Formatter.telephoneMask(pessoa.getTelefone()));
+        pessoaExport.setIdade(pessoa.getIdade());
+        pessoaExport.setDataNascimento(pessoa.getDataNascimento());
+        coll.add(pessoaExport);
+
+        pessoa.getEnderecos().forEach(endereco -> {
+            PessoaRelatorioDTO dto = new PessoaRelatorioDTO();
+
+            dto.setCep(Formatter.cepMask(endereco.getCep()));
+            dto.setLogradouro(endereco.getLogradouro());
+            dto.setNumero(endereco.getNumero());
+            dto.setCidade(endereco.getCidade());
+            dto.setUf(endereco.getUf());
+            dto.setBairro(endereco.getBairro());
+
+            coll.add(dto);
+        });
+
+        return coll;
     }
 
 }

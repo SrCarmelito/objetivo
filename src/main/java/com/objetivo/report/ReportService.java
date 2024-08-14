@@ -9,18 +9,21 @@ import net.sf.jasperreports.engine.JasperExportManager;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Service;
 import org.springframework.util.ResourceUtils;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 
 @Service
 public class ReportService {
 
-    public static final String JASPER_DIRETORIO =  "classpath:reports/jasper/pessoa/";
+    public static final String JASPER_DIRETORIO =  "/reports/jasper/pessoa/";
     public static final String JASPER_PREFIXO = "pessoa";
     public static final String JASPER_SUFIXO = ".jasper";
 
@@ -34,12 +37,18 @@ public class ReportService {
 
         byte[] bytes = null;
         try {
-            File file = ResourceUtils.getFile(JASPER_DIRETORIO.concat(JASPER_PREFIXO.concat(JASPER_SUFIXO)));
+        //    File file = ResourceUtils.getFile(JASPER_DIRETORIO.concat(JASPER_PREFIXO.concat(JASPER_SUFIXO)));
+
+            Resource resource = new ClassPathResource(JASPER_DIRETORIO.concat(JASPER_PREFIXO.concat(JASPER_SUFIXO)));
+            File file = resource.getFile();
+
             JasperPrint print = JasperFillManager.fillReport(file.getAbsolutePath(), null, new JRBeanCollectionDataSource(dataToExport(id)));
             bytes = JasperExportManager.exportReportToPdf(print);
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         } catch (JRException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
             throw new RuntimeException(e);
         }
         return bytes;

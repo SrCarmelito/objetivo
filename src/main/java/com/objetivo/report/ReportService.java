@@ -25,7 +25,7 @@ public class ReportService {
 
     public static final String JASPER_DIRETORIO =  "/reports/jasper/pessoa/";
     public static final String JASPER_PREFIXO = "pessoa";
-    public static final String JASPER_SUFIXO = ".jasper";
+    public static final String JASPER_SUFIXO  = ".jasper";
 
     private final PessoaService pessoaService;
 

@@ -27,7 +27,7 @@ import org.hibernate.envers.Audited;
 @Table(schema = "elo", name = "endereco")
 @AllArgsConstructor
 @Data
-@Builder()
+@Builder
 @NoArgsConstructor
 @Audited
 @EntityListeners(AuditListener.class)

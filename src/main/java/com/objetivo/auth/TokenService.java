@@ -9,12 +9,12 @@ import java.time.ZoneOffset;
 
 @Service
 public class TokenService {
-    public String gerarToken(Usuario usuario) {
+    public String gerarToken(Usuario usuario, int minutes) {
         return JWT.create()
                 .withSubject(usuario.getUsername())
                 .withClaim("id", usuario.getId())
                 .withExpiresAt(LocalDateTime.now()
-                        .plusMinutes(120)
+                        .plusMinutes(minutes)
                         .toInstant(ZoneOffset.of("-03:00"))
                 ).sign(Algorithm.HMAC256("24c191160-f816-4385-8e98-5f9e3438060c"));
     }

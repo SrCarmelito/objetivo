@@ -16,7 +16,15 @@ public class EnversListener implements RevisionListener {
     @Override
     public void newRevision(Object revisionEntity) {
         Revision revision = (Revision) revisionEntity;
-        Usuario user = (Usuario) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        Usuario user = new Usuario();
+
+        if(SecurityContextHolder.getContext().getAuthentication().getPrincipal().toString().equals("anonymousUser")) {
+            user.setLogin("anonymousUser");
+            user.setNome("anonymousUser");
+            user.setId(999999999L);
+        } else {
+            user = (Usuario) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        }
 
         revision.setUserName(user.getNome());
         revision.setLogin(user.getLogin());

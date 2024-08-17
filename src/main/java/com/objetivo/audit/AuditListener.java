@@ -3,6 +3,7 @@ package com.objetivo.audit;
 import com.objetivo.auth.Usuario;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.PreUpdate;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.context.SecurityContextHolder;
 
 import java.time.LocalDateTime;
@@ -10,6 +11,7 @@ import java.util.Optional;
 
 import static java.util.Objects.isNull;
 
+@Slf4j
 public class AuditListener {
 
     @PrePersist
@@ -18,7 +20,12 @@ public class AuditListener {
         final AuditInfo audit = Optional.ofNullable(auditable.getAudit()).orElse(new AuditInfo());
         Usuario user = new Usuario();
         if (SecurityContextHolder.getContext().getAuthentication() != null) {
-            user = (Usuario) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+            if(SecurityContextHolder.getContext().getAuthentication().getPrincipal().toString().equals("anonymousUser")) {
+                user.setLogin("anonymousUser");
+                user.setNome("anonymousUser");
+            } else {
+                user = (Usuario) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+            }
         }
 
         audit.setDataCriacao(LocalDateTime.now());

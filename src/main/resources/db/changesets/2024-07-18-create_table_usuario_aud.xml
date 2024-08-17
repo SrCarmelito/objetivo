@@ -13,15 +13,17 @@
             <column type="numeric(10)" name="revtype"><constraints nullable="false"/></column>
             <column type="BIGINT" name="id"><constraints nullable="false"/></column>
             <column type="varchar(150)" name="nome"/>
+            <column type="varchar(150)" name="email"/>
             <column type="varchar(150)" name="login"/>
             <column type="varchar(150)" name="senha"/>
+            <column type="varchar(150)" name="reset_token"/>
             <column name="datacriacao" type="datetime"/>
             <column name="dataalteracao" type="datetime"/>
             <column name="usuariocriacao" type="varchar(60)"/>
             <column name="usuarioalteracao" type="varchar(60)"/>
         </createTable>
         <addPrimaryKey schemaName="elo" tableName="usuario_aud" columnNames="id, rev" constraintName="pk_usuario_aud"/>
-        <addUniqueConstraint schemaName="elo" tableName="usuario_aud" columnNames="id" constraintName="u_usuario_aud_id"/>
+        <addUniqueConstraint schemaName="elo" tableName="usuario_aud" columnNames="id, rev" constraintName="u_usuario_aud_id"/>
     </changeSet>
 
 </databaseChangeLog>

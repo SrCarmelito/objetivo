@@ -17,7 +17,7 @@ body {
     background-color: #480ca8;
 }
 
-.formLogin {
+.formUsuario {
     display: flex;
     flex-direction: column;
     background-color: #fff;
@@ -31,21 +31,21 @@ body {
     width: 420px;
 }
 
-.formLogin h1 {
+.formUsuario h1 {
     padding: 0;
     margin: 0;
     font-weight: 500;
     font-size: 2.3em;
 }
 
-.formLogin p {
+.formUsuario p {
     display: inline-block;
     font-size: 14px;
     color: #666;
     margin-bottom: 25px;
 }
 
-.formLogin input {
+.formUsuario input {
     padding: 15px;
     font-size: 14px;
     border: 1px solid #ccc;
@@ -57,16 +57,16 @@ body {
 }
 
 
-.formLogin input:focus {
+.formUsuario input:focus {
     border: 1px solid #f72585;
 }
 
-.formLogin label {
+.formUsuario label {
     font-size: 14px;
     font-weight: 600;
 }
 
-.formLogin a {
+.formUsuario a {
     display: inline-block;
     margin-bottom: 20px;
     font-size: 13px;
@@ -74,11 +74,11 @@ body {
     transition: all linear 160ms;
 }
 
-.formLogin a:hover {
+.formUsuario a:hover {
     color: #f72585;
 }
 
-#submit {
+#submit, #submit-new-password, #submit-confirm-new-password {
     background-color: #f72585;
     color: #fff;
     text-align: center;
@@ -98,6 +98,6 @@ body {
     background-color: #ff0676;
 }
 
-#spacing{
-    color: #fff;
+p{
+   text-align: center;
 }

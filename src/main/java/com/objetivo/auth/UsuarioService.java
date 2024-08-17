@@ -81,7 +81,7 @@ public class UsuarioService {
         usuario.setResetToken(token);
         usuarioRepository.saveAndFlush(usuario);
 
-        String appUrl = "http://127.0.0.1:5500/usuario/confirm-new-password.html?token=" + token;
+        String appUrl = "https://objective.onrender.com/usuario/confirm-new-password.html?token=" + token;
 
         emailService.enviarEmailTexto(userMail, "Plataforma Spring App", "Foi solicitado a troca de sua senha " + " \n" + appUrl);
     }

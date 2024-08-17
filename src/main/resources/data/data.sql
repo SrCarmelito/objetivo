@@ -4234,10 +4234,6 @@ INSERT INTO elo.endereco_aud (rev, revtype, id, pessoa_id, cep, logradouro, nume
 INSERT INTO elo.endereco_aud (rev, revtype, id, pessoa_id, cep, logradouro, numero, cidade, uf, bairro, datacriacao, dataalteracao, usuariocriacao, usuarioalteracao) VALUES (999, 1 , 999, 387, '87050000', 'Rua Afonso Pena', '999', 'SAO ROQUE DE MINAS', 'TO', 'A DEFINIR!', '2024-07-13 22:17:52.579', '2024-07-13 22:17:52.579', 'teste', 'teste');
 INSERT INTO elo.endereco_aud (rev, revtype, id, pessoa_id, cep, logradouro, numero, cidade, uf, bairro, datacriacao, dataalteracao, usuariocriacao, usuarioalteracao) VALUES (1000, 1 , 1000, 571, '13088061', 'AV DOS PALMARES', '1000', 'Juripiranga', 'AC', 'A DEFINIR!', '2024-07-13 22:17:52.579', '2024-07-13 22:17:52.579', 'teste', 'teste');
 
-CREATE SEQUENCE elo.s_endereco;
-CREATE SEQUENCE elo.s_pessoa;
-CREATE SEQUENCE elo.seq_revision;
-
 select setval('elo.s_pessoa', (select max(id) from elo.pessoa));
 select setval('elo.s_endereco', (select max(id) from elo.endereco));
 select setval('elo.seq_revision', (select max(revisionnumber) from elo.revision));

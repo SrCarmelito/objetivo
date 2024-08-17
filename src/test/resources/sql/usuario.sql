@@ -1,4 +1,4 @@
 delete from elo.usuario where 1=1;
 
-INSERT INTO elo.usuario (id, nome, login, senha, datacriacao, dataalteracao, usuariocriacao, usuarioalteracao) VALUES(1, 'Carmelito Junior Delcielo Benali', 'junior', '$2a$12$gSOIuZSP3hDBZ5V0v.9k0O1wLMYyBGOG/uPAe3odJ8.ygto5Hxi0e', '2024-07-13 22:17:52.579', '2024-07-13 22:17:52.579', 'system', 'system');
-INSERT INTO elo.usuario (id, nome, login, senha, datacriacao, dataalteracao, usuariocriacao, usuarioalteracao) VALUES(2, 'Alex Martin', 'alex', '$2a$12$gSOIuZSP3hDBZ5V0v.9k0O1wLMYyBGOG/uPAe3odJ8.ygto5Hxi0e', '2024-07-13 22:17:52.579', '2024-07-13 22:17:52.579', 'system', 'system');
+INSERT INTO elo.usuario (id, nome, login, senha, datacriacao, dataalteracao, usuariocriacao, usuarioalteracao, email) VALUES(1, 'Carmelito Junior Delcielo Benali', 'junior', '$2a$12$gSOIuZSP3hDBZ5V0v.9k0O1wLMYyBGOG/uPAe3odJ8.ygto5Hxi0e', '2024-07-13 22:17:52.579', '2024-07-13 22:17:52.579', 'system', 'system', 'carmelito.benali@hotmail.com');
+INSERT INTO elo.usuario (id, nome, login, senha, datacriacao, dataalteracao, usuariocriacao, usuarioalteracao, email) VALUES(2, 'Alex Martin', 'alex', '$2a$12$gSOIuZSP3hDBZ5V0v.9k0O1wLMYyBGOG/uPAe3odJ8.ygto5Hxi0e', '2024-07-13 22:17:52.579', '2024-07-13 22:17:52.579', 'system', 'system', 'carmelito.benali@hotmail.com');

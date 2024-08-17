@@ -70,7 +70,7 @@ class EnversListenerTest {
         loginDTO.setLogin("junior");
         loginDTO.setSenha("123");
 
-        MvcResult mvcResult = mockMvc.perform(post("/login")
+        MvcResult mvcResult = mockMvc.perform(post("/auth/login")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(loginDTO)))
                 .andDo(print())

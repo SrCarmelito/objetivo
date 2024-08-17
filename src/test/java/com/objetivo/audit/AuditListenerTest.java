@@ -7,6 +7,7 @@ import com.objetivo.entities.Pessoa;
 import com.objetivo.fixtures.EnderecoDTOFixtures;
 import com.objetivo.repository.EnderecoRepository;
 import com.objetivo.repository.PessoaRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -41,6 +42,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
         "/sql/usuario.sql"
 })
 @Transactional
+@Slf4j
 public class AuditListenerTest {
 
     @Autowired
@@ -69,15 +71,17 @@ public class AuditListenerTest {
         loginDTO.setLogin("alex");
         loginDTO.setSenha("123");
 
-        MvcResult mvcResult = mockMvc.perform(post("/login")
+        MvcResult mvcResult = mockMvc.perform(post("/auth/login")
                         .contentType(MediaType.APPLICATION_JSON)
-                        .content(objectMapper.writeValueAsString(loginDTO)))
+                        .content(this.objectMapper.writeValueAsString(loginDTO)))
                 .andDo(print())
                 .andReturn();
 
         String token = mvcResult.getResponse().getContentAsString();
 
         EnderecoDTO enderecoDTO = EnderecoDTOFixtures.enderecoDTOManhattan();
+
+        log.info("Esse é o log do baguio " + token);
 
         mockMvc.perform(post("/enderecos/{id}", 3)
                         .contentType(MediaType.APPLICATION_JSON)
@@ -98,7 +102,7 @@ public class AuditListenerTest {
         loginDTO.setLogin("junior");
         loginDTO.setSenha("123");
 
-        MvcResult mvcResult = mockMvc.perform(post("/login")
+        MvcResult mvcResult = mockMvc.perform(post("/auth/login")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(loginDTO)))
                 .andDo(print())

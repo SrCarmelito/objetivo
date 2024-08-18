@@ -2,12 +2,15 @@ package com.objetivo.auth;
 
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 @Service
@@ -71,7 +74,7 @@ public class UsuarioService {
         }
     }
 
-    public void resetPassword(HttpServletRequest request, String email)  {
+    public void resetPassword(HttpServletRequest request, String email) throws IOException {
         String userMail = email.replace("{\"email\":\"", "").replace("\"}", "");
 
         Usuario usuario = usuarioRepository.findByEmail(userMail).orElseThrow(
@@ -81,9 +84,16 @@ public class UsuarioService {
         usuario.setResetToken(token);
         usuarioRepository.saveAndFlush(usuario);
 
-        String appUrl = "https://objective.onrender.com/usuario/confirm-new-password.html?token=" + token;
+        String html = montaHtml(token, usuario);
 
-        emailService.enviarEmailTexto(userMail, "Plataforma Spring App", "Foi solicitado a troca de sua senha " + " \n" + appUrl);
+        emailService.enviarEmailTexto(userMail, "Plataforma Spring App", "Foi solicitado a troca de sua senha " + " \n\n" + html);
+    }
+
+    private String montaHtml(String token, Usuario usuario) throws IOException {
+        ClassPathResource resource = new ClassPathResource("templates/teste.html");
+        String html = new String(resource.getInputStream().readAllBytes(), StandardCharsets.UTF_8);
+        final String replaceHref = html.replace("href-reset-password-to-replace", "https://objective.onrender.com/usuario/confirm-new-password.html?token=" + token);
+        return replaceHref.replace("usuario_to_replace", usuario.getNome());
     }
 
     public void confirmResetPassword(NewPasswordDTO newPasswordDTO) {

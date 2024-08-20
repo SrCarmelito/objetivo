@@ -1,5 +1,10 @@
-package com.objetivo.auth;
+package com.objetivo.auth.service;
 
+import com.objetivo.auth.dto.LoginDTO;
+import com.objetivo.auth.dto.NewPasswordDTO;
+import com.objetivo.auth.domain.Usuario;
+import com.objetivo.auth.dto.UsuarioDTO;
+import com.objetivo.auth.repository.UsuarioRepository;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.io.ClassPathResource;
@@ -36,6 +41,7 @@ public class UsuarioService {
     public void newUser(UsuarioDTO usuarioDTO) {
         validaUsuario(usuarioDTO);
         validaSenha(usuarioDTO.getSenha(), usuarioDTO.getSenhaConfirmacao());
+
         Usuario novoUsuario = new Usuario();
         novoUsuario.setNome(usuarioDTO.getNome());
         novoUsuario.setEmail(usuarioDTO.getEmail());
@@ -43,35 +49,6 @@ public class UsuarioService {
         novoUsuario.setSenha(passwordEncoder.encode(usuarioDTO.getSenha()));
 
         usuarioRepository.save(novoUsuario);
-    }
-
-    public void validaUsuario(UsuarioDTO usuarioDTO) {
-        if (usuarioRepository.findByLogin(usuarioDTO.getLogin()) != null) {
-            throw new IllegalArgumentException("Usuário já existe, tente novamente!");
-        }
-
-        if (usuarioRepository.findByEmail(usuarioDTO.getEmail()).isPresent()) {
-            throw new IllegalArgumentException("E-mail já cadastrado, tente novamente!");
-        }
-
-        Pattern patternEmail = Pattern.compile("^(.+)@(\\S+)$");
-        Matcher matcherEmail = patternEmail.matcher(usuarioDTO.getEmail());
-        if (!matcherEmail.find()) {
-            throw new IllegalArgumentException("Não é um E-mail Válido!");
-        }
-    }
-
-    public void validaSenha(String senha, String senhaConfirmacao) {
-        Pattern patternSenha = Pattern.compile("(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]{6,150}$");
-        Matcher matcherSenha = patternSenha.matcher(senha);
-        if (!matcherSenha.find()) {
-            throw new IllegalArgumentException
-                ("Senha deve conter entre 6 e 150 números e letras e ao menos 1 letra maiúscula, 1 minúscula e 1 número!");
-        }
-
-        if (!senha.equals(senhaConfirmacao)){
-            throw new IllegalArgumentException("Senha e Senha de Confirmação não Conferem, tente novamente!");
-        }
     }
 
     public void resetPassword(HttpServletRequest request, String email) throws IOException {
@@ -86,13 +63,14 @@ public class UsuarioService {
 
         String html = montaHtml(token, usuario);
 
-        emailService.enviarEmailTexto(userMail, "Plataforma Spring App", "Foi solicitado a troca de sua senha " + " \n\n" + html);
+        emailService.enviarEmail(userMail, "Carmelito - App", html);
     }
 
     private String montaHtml(String token, Usuario usuario) throws IOException {
-        ClassPathResource resource = new ClassPathResource("templates/teste.html");
+        ClassPathResource resource = new ClassPathResource("templates/new-password.html");
         String html = new String(resource.getInputStream().readAllBytes(), StandardCharsets.UTF_8);
-        final String replaceHref = html.replace("href-reset-password-to-replace", "https://objective.onrender.com/usuario/confirm-new-password.html?token=" + token);
+        final String replaceHref = html.replace("href-reset-password-to-replace",
+                "https://objective.onrender.com/usuario/confirm-new-password.html?token=" + token);
         return replaceHref.replace("usuario_to_replace", usuario.getNome());
     }
 
@@ -122,6 +100,35 @@ public class UsuarioService {
         var usuario = (Usuario) authentication.getPrincipal();
 
         return tokenService.gerarToken(usuario, EXPIRATION_TIME_LOGIN);
+    }
+
+    public void validaUsuario(UsuarioDTO usuarioDTO) {
+        if (usuarioRepository.findByLogin(usuarioDTO.getLogin()) != null) {
+            throw new IllegalArgumentException("Usuário já existe, tente novamente!");
+        }
+
+        if (usuarioRepository.findByEmail(usuarioDTO.getEmail()).isPresent()) {
+            throw new IllegalArgumentException("E-mail já cadastrado, tente novamente!");
+        }
+
+        Pattern patternEmail = Pattern.compile("^(.+)@(\\S+)$");
+        Matcher matcherEmail = patternEmail.matcher(usuarioDTO.getEmail());
+        if (!matcherEmail.find()) {
+            throw new IllegalArgumentException("Não é um E-mail Válido!");
+        }
+    }
+
+    public void validaSenha(String senha, String senhaConfirmacao) {
+        Pattern patternSenha = Pattern.compile("(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]{6,150}$");
+        Matcher matcherSenha = patternSenha.matcher(senha);
+        if (!matcherSenha.find()) {
+            throw new IllegalArgumentException
+                    ("Senha deve conter entre 6 e 150 caracteres sendo ao menos 1 letra maiúscula, 1 minúscula e 1 número!");
+        }
+
+        if (!senha.equals(senhaConfirmacao)){
+            throw new IllegalArgumentException("Senha e Senha de Confirmação não Conferem, tente novamente!");
+        }
     }
 
 }

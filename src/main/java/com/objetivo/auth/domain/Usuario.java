@@ -1,4 +1,4 @@
-package com.objetivo.auth;
+package com.objetivo.auth.domain;
 
 import com.objetivo.audit.AuditInfo;
 import com.objetivo.audit.AuditListener;

@@ -1,7 +1,7 @@
 package com.objetivo.audit;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.objetivo.auth.LoginDTO;
+import com.objetivo.auth.dto.LoginDTO;
 import com.objetivo.dto.EnderecoDTO;
 import com.objetivo.entities.Pessoa;
 import com.objetivo.fixtures.EnderecoDTOFixtures;

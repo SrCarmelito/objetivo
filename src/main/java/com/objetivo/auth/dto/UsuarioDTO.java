@@ -1,4 +1,4 @@
-package com.objetivo.auth;
+package com.objetivo.auth.dto;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;

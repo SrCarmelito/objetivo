@@ -1,7 +1,6 @@
 package com.objetivo.fixtures;
 
-import com.objetivo.dto.PessoaDTO;
-import com.objetivo.dto.PessoaRelatorioDTO;
+import com.objetivo.report.PessoaRelatorioDTO;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;

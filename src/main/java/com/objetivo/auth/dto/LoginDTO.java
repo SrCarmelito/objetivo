@@ -1,4 +1,4 @@
-package com.objetivo.auth;
+package com.objetivo.auth.dto;
 
 import lombok.Data;
 

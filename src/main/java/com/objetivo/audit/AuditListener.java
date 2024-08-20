@@ -1,6 +1,6 @@
 package com.objetivo.audit;
 
-import com.objetivo.auth.Usuario;
+import com.objetivo.auth.domain.Usuario;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.PreUpdate;
 import lombok.extern.slf4j.Slf4j;

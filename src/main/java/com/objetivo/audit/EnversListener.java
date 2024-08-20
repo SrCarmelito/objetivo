@@ -1,6 +1,6 @@
 package com.objetivo.audit;
 
-import com.objetivo.auth.Usuario;
+import com.objetivo.auth.domain.Usuario;
 import org.hibernate.envers.RevisionListener;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.context.request.RequestAttributes;

@@ -1,4 +1,4 @@
-package com.objetivo.auth;
+package com.objetivo.auth.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

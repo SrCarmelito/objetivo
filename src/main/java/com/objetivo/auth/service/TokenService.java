@@ -1,7 +1,8 @@
-package com.objetivo.auth;
+package com.objetivo.auth.service;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
+import com.objetivo.auth.domain.Usuario;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;

@@ -1,5 +1,6 @@
-package com.objetivo.auth;
+package com.objetivo.auth.repository;
 
+import com.objetivo.auth.domain.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

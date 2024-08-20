@@ -1,5 +1,7 @@
-package com.objetivo.auth;
+package com.objetivo.auth.config;
 
+import com.objetivo.auth.repository.UsuarioRepository;
+import com.objetivo.auth.service.TokenService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

@@ -1,9 +1,12 @@
-package com.objetivo.auth;
+package com.objetivo.auth.controller;
 
+import com.objetivo.auth.dto.LoginDTO;
+import com.objetivo.auth.dto.NewPasswordDTO;
+import com.objetivo.auth.dto.UsuarioDTO;
+import com.objetivo.auth.service.UsuarioService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.Valid;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -32,8 +35,9 @@ public class UsuarioController {
     }
 
     @PostMapping("/reset-password")
-    public ResponseEntity<String> resetPassword(HttpServletRequest request, @RequestBody String email, HttpServletResponse response) throws Exception {
-        //response.setContentType(MediaType.TEXT_PLAIN_VALUE);
+    public ResponseEntity<String> resetPassword(HttpServletRequest request,
+                                                @RequestBody String email,
+                                                HttpServletResponse response) throws Exception {
         usuarioService.resetPassword(request, email);
         return ResponseEntity.ok(email);
     }

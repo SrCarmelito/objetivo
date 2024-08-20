@@ -1,8 +1,7 @@
-package com.objetivo.auth;
+package com.objetivo.auth.service;
 
 import jakarta.mail.internet.MimeMessage;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
@@ -19,7 +18,7 @@ public class EmailService {
         this.javaMailSender = javaMailSender;
     }
 
-    public String enviarEmailTexto(String destinatario, String assunto, String mensagem) {
+    public String enviarEmail(String destinatario, String assunto, String mensagem) {
         try {
             MimeMessage message = javaMailSender.createMimeMessage();
             MimeMessageHelper helper = new MimeMessageHelper(message, true);

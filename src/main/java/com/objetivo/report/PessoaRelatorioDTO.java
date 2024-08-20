@@ -1,4 +1,4 @@
-package com.objetivo.dto;
+package com.objetivo.report;
 
 import lombok.Data;
 

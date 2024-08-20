@@ -1,6 +1,5 @@
 package com.objetivo.report;
 
-import com.objetivo.dto.PessoaRelatorioDTO;
 import com.objetivo.entities.Pessoa;
 import com.objetivo.service.PessoaService;
 import com.objetivo.utils.Formatter;
@@ -12,7 +11,6 @@ import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Service;
-import org.springframework.util.ResourceUtils;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -23,7 +21,7 @@ import java.util.Collection;
 @Service
 public class ReportService {
 
-    public static final String JASPER_DIRETORIO =  "/reports/jasper/pessoa/";
+    public static final String JASPER_DIRETORIO = "/BOOT-INF/classes/reports/jasper/pessoa"; //"./reports/jasper/pessoa/";
     public static final String JASPER_PREFIXO = "pessoa";
     public static final String JASPER_SUFIXO = ".jasper";
 

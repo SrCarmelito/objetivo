@@ -8,6 +8,7 @@ import net.sf.jasperreports.engine.JasperExportManager;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
+import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Service;
@@ -36,10 +37,11 @@ public class ReportService {
 
         byte[] bytes = null;
         try {
-            File file = ResourceUtils.getFile(JASPER_DIRETORIO.concat(JASPER_PREFIXO.concat(JASPER_SUFIXO)));
+           // File file = ResourceUtils.getFile(JASPER_DIRETORIO.concat(JASPER_PREFIXO.concat(JASPER_SUFIXO)));
 
-          //  Resource resource = new ClassPathResource(JASPER_DIRETORIO.concat(JASPER_PREFIXO.concat(JASPER_SUFIXO)));
-        //    File file = resource.getFile();
+/*            Resource resource = new ClassPathResource(JASPER_DIRETORIO.concat(JASPER_PREFIXO.concat(JASPER_SUFIXO)));
+            File file = resource.getFile();*/
+            File file = ResourceUtils.getFile(JASPER_DIRETORIO.concat(JASPER_PREFIXO.concat(JASPER_SUFIXO)));
 
             JasperPrint print = JasperFillManager.fillReport(file.getAbsolutePath(), null, new JRBeanCollectionDataSource(dataToExport(id)));
             bytes = JasperExportManager.exportReportToPdf(print);

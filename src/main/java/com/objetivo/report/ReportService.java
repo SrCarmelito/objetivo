@@ -21,7 +21,7 @@ import java.util.Collection;
 @Service
 public class ReportService {
 
-    public static final String JASPER_DIRETORIO = "/BOOT-INF/classes/reports/jasper/pessoa"; //"./reports/jasper/pessoa/";
+    public static final String JASPER_DIRETORIO = "./reports/jasper/pessoa/"; //"./reports/jasper/pessoa/";
     public static final String JASPER_PREFIXO = "pessoa";
     public static final String JASPER_SUFIXO = ".jasper";
 

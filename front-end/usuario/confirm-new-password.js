@@ -16,7 +16,7 @@ document.querySelector("#submit-confirm-new-password").addEventListener("click",
 
 async function confirmPassword(newPassword) {
 
-    const response = await fetch("http://localhost:8080/auth/confirm-reset-password",
+    const response = await fetch("https://objetivo-liv5.onrender.com/auth/confirm-reset-password",
     {
         body: JSON.stringify(newPassword),
         method: 'POST',

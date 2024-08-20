@@ -14,7 +14,7 @@ document.querySelector("#submit").addEventListener("click", (e) => {
 
 async function createUser(user) {
 
-    const response = await fetch("http://localhost:8080/auth/novo-usuario",
+    const response = await fetch("https://objetivo-liv5.onrender.com/auth/novo-usuario",
     {
         body: JSON.stringify(user),
         method: 'POST',

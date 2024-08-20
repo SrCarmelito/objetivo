@@ -1,4 +1,4 @@
-const url = "http://localhost:8080/auth/login";
+const url = "https://objetivo-liv5.onrender.com/auth/login";
 
 document.querySelector("#submit").addEventListener("click", (e) => {
     e.preventDefault();
@@ -16,7 +16,7 @@ document.querySelector("#submit").addEventListener("click", (e) => {
 
 async function login(user) {
 
-    const response = await fetch("http://localhost:8080/auth/login",
+    const response = await fetch("https://objetivo-liv5.onrender.com/auth/login",
     {
         body: JSON.stringify(user),
         method: 'POST',

@@ -1,7 +1,7 @@
 const pessoaContainer = document.querySelector("#pessoas-container");
 
-//let url = `http://localhost:8080/pessoas?sort=nome,asc`;
-let url = `http://localhost:8080/pessoas?sort=nome,asc`;
+//let url = `https://objetivo-liv5.onrender.com/pessoas?sort=nome,asc`;
+let url = `https://objetivo-liv5.onrender.com/pessoas?sort=nome,asc`;
 
 const urlSearchParams = new URLSearchParams(window.location.search);
 const pessoaId = urlSearchParams.get("id");
@@ -47,14 +47,14 @@ if(!token) {
 
 async function getAll() {
         
-    url = `http://localhost:8080/pessoas?cpf=${filtroValorCpf}&nome=${filtroValorNome}&page=${page}&size=${size}&sort=nome,asc`;
+    url = `https://objetivo-liv5.onrender.com/pessoas?cpf=${filtroValorCpf}&nome=${filtroValorNome}&page=${page}&size=${size}&sort=nome,asc`;
   //  url = `${API}/pessoas?cpf=${filtroValorCpf}&nome=${filtroValorNome}&page=${page}&size=${size}&sort=nome,asc`;
 
     const response = await fetch(url, {headers: {"Authorization": "Bearer " + `${token}`}});
     const data = await response.json();
 
-    //const responseCount = await fetch("http://localhost:8080/pessoas/count");
-    const responseCount = await fetch("http://localhost:8080/pessoas/count", {headers: {"Authorization": "Bearer " + token}});
+    //const responseCount = await fetch("https://objetivo-liv5.onrender.com/pessoas/count");
+    const responseCount = await fetch("https://objetivo-liv5.onrender.com/pessoas/count", {headers: {"Authorization": "Bearer " + token}});
     const dataCount = await responseCount.json();
     const lbCount = document.querySelector("#lb-count");
     lbCount.textContent = `${dataCount} Pessoas Cadastradas`;
@@ -159,8 +159,8 @@ async function getAll() {
 
 async function deletePessoa(pessoaExcluida) {
 
-    //url = "http://localhost:8080/pessoas";
-    url = "http://localhost:8080/pessoas";
+    //url = "https://objetivo-liv5.onrender.com/pessoas";
+    url = "https://objetivo-liv5.onrender.com/pessoas";
 
     const response = await fetch(`${url}/${pessoaExcluida}`,
     {
@@ -184,7 +184,7 @@ async function deletePessoa(pessoaExcluida) {
 };
 
 async function gerarRelatorio(id) {
-    response = await fetch(`http://localhost:8080/report/gerar/${id}`,
+    response = await fetch(`https://objetivo-liv5.onrender.com/report/gerar/${id}`,
     {
         method: 'GET',
         headers: {"Authorization": "Bearer " + `${token}`},
@@ -328,8 +328,8 @@ window.onclick = function(event) {
 // função para atualizar a pessoa
 async function postPessoa(novaPessoa, token) {
 
-    //await fetch("http://localhost:8080/pessoas",
-    await fetch("http://localhost:8080/pessoas",
+    //await fetch("https://objetivo-liv5.onrender.com/pessoas",
+    await fetch("https://objetivo-liv5.onrender.com/pessoas",
         {
             body: JSON.stringify(novaPessoa),
             method: 'POST',
@@ -363,7 +363,7 @@ async function postPessoa(novaPessoa, token) {
 };
 
 async function redirectPessoa(novaPessoa) {
-    const response = await fetch(`http://localhost:8080/pessoas?id=${novaPessoa}`, {headers: {"Authorization": "Bearer " + `${token}`}});
+    const response = await fetch(`https://objetivo-liv5.onrender.com/pessoas?id=${novaPessoa}`, {headers: {"Authorization": "Bearer " + `${token}`}});
     const pessoa = await response.json();
     window.location.href = `/edit-pessoa/edit.html?id=${novaPessoa}&auth=${token}`;
 };

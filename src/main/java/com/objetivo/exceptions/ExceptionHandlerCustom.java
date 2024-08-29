@@ -22,15 +22,15 @@ import java.util.Set;
 @RestControllerAdvice
 public class ExceptionHandlerCustom {
 
-//    @ExceptionHandler(Exception.class)
-//    public ResponseEntity<StandardError> general(Exception e, HttpServletRequest request) {
-//        Set<String> errors = new HashSet<>();
-//        errors.add("Ops, ocorreu um erro inesperado!");
-//        String message = "Ops, ocorreu um erro inesperado!";
-//        HttpStatus status = HttpStatus.NOT_FOUND;
-//        StandardError err = new StandardError(Instant.now(), status.value(), message, request.getRequestURI(), errors);
-//        return ResponseEntity.status(status).body(err);
-//    }
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity<StandardError> general(Exception e, HttpServletRequest request) {
+        Set<String> errors = new HashSet<>();
+        errors.add("Ops, ocorreu um erro inesperado!");
+        String message = "Ops, ocorreu um erro inesperado!";
+        HttpStatus status = HttpStatus.NOT_FOUND;
+        StandardError err = new StandardError(Instant.now(), status.value(), message, request.getRequestURI(), errors);
+        return ResponseEntity.status(status).body(err);
+    }
 
     @ExceptionHandler(DataIntegrityViolationException.class)
     public ResponseEntity<StandardError> dataIntegrity(DataIntegrityViolationException e, HttpServletRequest request) {

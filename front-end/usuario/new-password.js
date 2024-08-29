@@ -7,7 +7,7 @@ document.querySelector("#submit-new-password").addEventListener("click", (e) => 
 });
 
 async function resetPassword(email) {
-    const response = await fetch("https://objetivo-liv5.onrender.com/auth/reset-password",
+    const response = await fetch("http://localhost:8080/auth/reset-password",
     {
         body: JSON.stringify(email),
         method: 'POST',

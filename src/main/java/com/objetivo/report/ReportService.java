@@ -39,8 +39,6 @@ public class ReportService {
         try {
             File file = ResourceUtils.getFile(JASPER_DIRETORIO.concat(JASPER_PREFIXO.concat(JASPER_SUFIXO))).getAbsoluteFile();
 
-        //    File file = new ClassPathResource(JASPER_DIRETORIO.concat(JASPER_PREFIXO.concat(JASPER_SUFIXO))).getFile().getAbsoluteFile();
-
             JasperPrint print = JasperFillManager.fillReport(file.getAbsolutePath(), null, new JRBeanCollectionDataSource(dataToExport(id)));
             bytes = JasperExportManager.exportReportToPdf(print);
         } catch (FileNotFoundException e) {

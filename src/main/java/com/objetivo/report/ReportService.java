@@ -23,7 +23,7 @@ import java.util.Collection;
 @Service
 public class ReportService {
 
-    public static final String JASPER_DIRETORIO = "classpath:reports/jasper/pessoa/"; //"./reports/jasper/pessoa/";
+    public static final String JASPER_DIRETORIO = "classpath:reports/jasper/pessoa/";
     public static final String JASPER_PREFIXO = "pessoa";
     public static final String JASPER_SUFIXO = ".jasper";
 
@@ -37,11 +37,9 @@ public class ReportService {
 
         byte[] bytes = null;
         try {
-           // File file = ResourceUtils.getFile(JASPER_DIRETORIO.concat(JASPER_PREFIXO.concat(JASPER_SUFIXO)));
+            File file = ResourceUtils.getFile(JASPER_DIRETORIO.concat(JASPER_PREFIXO.concat(JASPER_SUFIXO))).getAbsoluteFile();
 
-/*            Resource resource = new ClassPathResource(JASPER_DIRETORIO.concat(JASPER_PREFIXO.concat(JASPER_SUFIXO)));
-            File file = resource.getFile();*/
-            File file = ResourceUtils.getFile(JASPER_DIRETORIO.concat(JASPER_PREFIXO.concat(JASPER_SUFIXO)));
+        //    File file = new ClassPathResource(JASPER_DIRETORIO.concat(JASPER_PREFIXO.concat(JASPER_SUFIXO))).getFile().getAbsoluteFile();
 
             JasperPrint print = JasperFillManager.fillReport(file.getAbsolutePath(), null, new JRBeanCollectionDataSource(dataToExport(id)));
             bytes = JasperExportManager.exportReportToPdf(print);

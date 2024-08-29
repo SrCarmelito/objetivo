@@ -10,6 +10,8 @@ public class ObjetivoApplication {
 		SpringApplication.run(ObjetivoApplication.class, args);
 	}
 
-	//TODO: ALTERAR CAMINHO DOS REPORT, POIS ESTÁ DANDO ERRO NO RENDER
+	//TODO: ALTERAR CAMINHO DOS REPORT, incluir em pacote junto com as classes POIS ESTÁ DANDO ERRO NO RENDER
+	//TODO: ESTUDAR API DO GOVERNO PARA VALIDAR PESSOA EXISTENTE NA RFB
+	//TODO: ALTERAR PARA VARIAVEIS DE AMBIENTE AS CONFIGS DE E-MAIL
 
 }

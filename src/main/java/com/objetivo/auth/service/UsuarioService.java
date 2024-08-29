@@ -70,7 +70,7 @@ public class UsuarioService {
         ClassPathResource resource = new ClassPathResource("templates/new-password.html");
         String html = new String(resource.getInputStream().readAllBytes(), StandardCharsets.UTF_8);
         final String replaceHref = html.replace("href-reset-password-to-replace",
-                "https://objective.onrender.com/usuario/confirm-new-password.html?token=" + token);
+                "http://127.0.0.1:5500/usuario/confirm-new-password.html?token=" + token);
         return replaceHref.replace("usuario_to_replace", usuario.getNome());
     }
 
